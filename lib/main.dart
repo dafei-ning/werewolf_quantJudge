@@ -22,8 +22,23 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Center(
-        child: Column(),
+      body: Column(
+        children: <Widget>[
+          
+          Container(
+            width: double.infinity,
+            // This card contains bar graph which indicates dimensions of judge.
+            child: Card(
+              child: Text('这里放柱状图'),
+              color: Colors.blueGrey,
+              elevation: 2,
+            ),
+          ),
+          Card(
+            child: Text('这里是角色的属性'),
+            elevation: 2,
+          ),
+        ],
       ),
     );
   }
