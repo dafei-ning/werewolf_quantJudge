@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './behavior.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,8 +14,36 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  /*
+   *  Class properties
+   */
   final String title;
+  final List<Behavior> behaviors = [
+    Behavior(
+      id: '1',
+      title: '坐姿状态',
+      quantity: 50,
+      date: DateTime.now(),
+    ), 
+     Behavior(
+      id: '1',
+      title: '发言逻辑',
+      quantity: 30,
+      date: DateTime.now(),
+    ), 
+     Behavior(
+      id: '1',
+      title: '站边举票行为',
+      quantity: 20,
+      date: DateTime.now(),
+    ), 
+  ];
+
+  /*
+   * Constructor
+   */
   MyHomePage(this.title);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
