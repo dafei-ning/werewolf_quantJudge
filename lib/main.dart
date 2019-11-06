@@ -65,8 +65,34 @@ class MyHomePage extends StatelessWidget {
           Column(
             children: behaviors.map((bh) {
               return Card(
-                child: Text(bh.title),
-                
+                child: Row(
+                  children: <Widget>[
+                    // Character's behavior's record.
+                    Column(
+                      children: <Widget>[
+                        Card(child: Text("角色号码 1")),
+                        // Behavior Tag and quantity.
+                        Row(
+                          children: <Widget>[
+                            Card(
+                              child: Text("角色的状态"),
+                            ),
+                            Card(
+                              child: Text("quantity is 60"),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    // 增删查改按钮
+                    Row(
+                      children: <Widget>[
+                        Card(child: Text("删除")),
+                        Card(child: Text("修改")),
+                      ],
+                    )
+                  ],
+                ),
               );
             }).toList(),
           )
