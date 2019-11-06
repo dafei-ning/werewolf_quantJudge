@@ -24,19 +24,19 @@ class MyHomePage extends StatelessWidget {
       title: '坐姿状态',
       quantity: 50,
       date: DateTime.now(),
-    ), 
-     Behavior(
+    ),
+    Behavior(
       id: '1',
       title: '发言逻辑',
       quantity: 30,
       date: DateTime.now(),
-    ), 
-     Behavior(
+    ),
+    Behavior(
       id: '1',
       title: '站边举票行为',
       quantity: 20,
       date: DateTime.now(),
-    ), 
+    ),
   ];
 
   /*
@@ -62,11 +62,14 @@ class MyHomePage extends StatelessWidget {
               elevation: 2,
             ),
           ),
-          Card(
-            child: Text('这里是角色的属性'),
-            elevation: 2,
-            color: Colors.red[300],
-          ),
+          Column(
+            children: behaviors.map((bh) {
+              return Card(
+                child: Text(bh.title),
+                
+              );
+            }).toList(),
+          )
         ],
       ),
     );

@@ -4,6 +4,7 @@ class Behavior {
   String id;
   String title;
   double quantity;
+  // Turns selector, use date widget to simulate.
   DateTime date;
 
   Behavior({

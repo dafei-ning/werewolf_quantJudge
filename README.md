@@ -22,3 +22,9 @@ samples, guidance on mobile development, and a full API reference.
 是否在掰他人逻辑
 是否在掰自己逻辑
 是否与自己逻辑不相符
+
+
+## TODOLIST
+
+轮数选择器（暂时由date模拟）
+角色选择器
