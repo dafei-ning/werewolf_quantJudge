@@ -24,18 +24,21 @@ class MyHomePage extends StatelessWidget {
       title: '坐姿状态',
       quantity: 50,
       date: DateTime.now(),
+      turn: '第2轮',
     ),
     Behavior(
-      id: '1',
+      id: '2',
       title: '发言逻辑',
       quantity: 30,
       date: DateTime.now(),
+      turn: '第1轮',
     ),
     Behavior(
-      id: '1',
+      id: '3',
       title: '站边举票行为',
       quantity: 20,
       date: DateTime.now(),
+      turn: '第2轮',
     ),
   ];
 
@@ -70,15 +73,21 @@ class MyHomePage extends StatelessWidget {
                     // Character's behavior's record.
                     Column(
                       children: <Widget>[
-                        Card(child: Text("角色号码 1")),
+                        // 角色号码
+                        Row(
+                          children: <Widget>[
+                            Card(child: Text(bh.id.toString())),
+                            Card(child: Text(bh.turn)),
+                          ],
+                        ),
                         // Behavior Tag and quantity.
                         Row(
                           children: <Widget>[
                             Card(
-                              child: Text("角色的状态"),
+                              child: Text(bh.title),
                             ),
                             Card(
-                              child: Text("quantity is 60"),
+                              child: Text(bh.quantity.toString()),
                             ),
                           ],
                         )
@@ -86,7 +95,9 @@ class MyHomePage extends StatelessWidget {
                     ),
                     // 增删查改按钮
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
+                        
                         Card(child: Text("删除")),
                         Card(child: Text("修改")),
                       ],
