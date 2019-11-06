@@ -54,10 +54,12 @@ class MyHomePage extends StatelessWidget {
         title: Text(title),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
+          // 1
           Container(
             width: double.infinity,
+            height: 200,
             // This card contains bar graph which indicates dimensions of judge.
             child: Card(
               child: Text('这里放柱状图'),
@@ -65,27 +67,32 @@ class MyHomePage extends StatelessWidget {
               elevation: 2,
             ),
           ),
+          // 2
           Column(
             children: behaviors.map((bh) {
               return Card(
                 child: Row(
                   children: <Widget>[
-                    // Character's behavior's record.
+                    // 2.1 Character's behavior's record.
                     Column(
                       children: <Widget>[
-                        // 角色号码
+                        // 2.1.1 角色号码
                         Row(
                           children: <Widget>[
+                            // 2.1.1.1 
                             Card(child: Text(bh.id.toString())),
+                            // 2.1.1.2
                             Card(child: Text(bh.turn)),
                           ],
                         ),
-                        // Behavior Tag and quantity.
+                        // 2.1.2 Behavior Tag and quantity.
                         Row(
                           children: <Widget>[
+                            // 2.1.2.1
                             Card(
                               child: Text(bh.title),
                             ),
+                            // 2.1.2.2
                             Card(
                               child: Text(bh.quantity.toString()),
                             ),
@@ -93,11 +100,10 @@ class MyHomePage extends StatelessWidget {
                         )
                       ],
                     ),
-                    // 增删查改按钮
+                    // 2.2 增删查改按钮
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
-                        
                         Card(child: Text("删除")),
                         Card(child: Text("修改")),
                       ],
