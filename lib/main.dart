@@ -7,15 +7,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: MyHomePage(title: '角色行为量化判断记录'),
+      home: MyHomePage('角色行为量化判断记录'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage(this.title);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +22,8 @@ class MyHomePage extends StatelessWidget {
         title: Text(title),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          
           Container(
             width: double.infinity,
             // This card contains bar graph which indicates dimensions of judge.
@@ -37,6 +36,7 @@ class MyHomePage extends StatelessWidget {
           Card(
             child: Text('这里是角色的属性'),
             elevation: 2,
+            color: Colors.red[300],
           ),
         ],
       ),
