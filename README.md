@@ -28,3 +28,12 @@ samples, guidance on mobile development, and a full API reference.
 
 轮数选择器（暂时由date模拟）
 角色选择器
+
+## Demo
+
+玩家根据角色的行为进行判定：
+1. app只记录行为，不提供身份引导和判断
+2. 记录的行为均以数值体现
+3. 记录的行为均以tag形式体现，并且根据tag形成可视化
+   3.1. 比如跳一个角色行为，隐含着跳还是明着跳，
+        3.1.1. 明着跳的tag又分为悍跳还是正身份还是不确定

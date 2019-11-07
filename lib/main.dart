@@ -76,26 +76,25 @@ class MyHomePage extends StatelessWidget {
                     // 2.1 Character's behavior's record.
                     Column(
                       children: <Widget>[
-                        // 2.1.1 角色号码
+                        // 2.1.1 角色信息
                         Row(
                           children: <Widget>[
-                            // 2.1.1.1 
-                            Card(child: Text(bh.id.toString())),
-                            // 2.1.1.2
-                            Card(child: Text(bh.turn)),
+                            // 2.1.1.1 角色号码
+                            Container(child: Text(bh.id.toString())),
+
+                            // 2.1.1.2 角色轮数
+                            Container(child: Card(child: Text(bh.turn))),
                           ],
                         ),
                         // 2.1.2 Behavior Tag and quantity.
                         Row(
                           children: <Widget>[
                             // 2.1.2.1
-                            Card(
-                              child: Text(bh.title),
-                            ),
+                            Container(child: Card(child: Text(bh.title))),
                             // 2.1.2.2
-                            Card(
-                              child: Text(bh.quantity.toString()),
-                            ),
+                            Container(child: Card(child: Text(bh.quantity.toString()))),
+                            // 2.1.2.3
+                            Container(child: Card(child: Text(bh.date.toString()))),
                           ],
                         )
                       ],
