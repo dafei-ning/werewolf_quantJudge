@@ -64,7 +64,9 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // 1
-            Container(child: BehaviorChart()),
+            Container(
+              child: BehaviorChart(),
+            ),
             // 2
             Container(
               child: Column(

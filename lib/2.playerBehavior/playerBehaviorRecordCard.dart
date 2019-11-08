@@ -24,8 +24,10 @@ class playerBehaviorRecordCard extends StatelessWidget {
                 behavior.id,
                 behavior.turn,
               ),
+
               // 2.1.2 Behavior Tag and quantity.
               PlayerBehaviorInfo(
+                behavior.player,
                 behavior.title,
                 behavior.quantity,
                 behavior.date,
@@ -33,6 +35,7 @@ class playerBehaviorRecordCard extends StatelessWidget {
 
               Row(
                 children: <Widget>[
+                  Container(child: Text(behavior.player.toString())),
                   // 2.1.2.1
                   Container(child: Card(child: Text(behavior.title))),
                   // 2.1.2.2
