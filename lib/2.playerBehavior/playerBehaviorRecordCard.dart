@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.1.playerRecord/playerBasicInfo.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.1.playerRecord/playerBehaviorInfo.dart';
 import './behavior.dart';
 
 class playerBehaviorRecordCard extends StatelessWidget {
@@ -12,33 +14,28 @@ class playerBehaviorRecordCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Row(
-        children: <Widget>[
+      child: Container(
+        child: Row(children: <Widget>[
           // 2.1 Character's behavior's record.
-          Column(
-            children: <Widget>[
+          Container(
+            child: Column(children: <Widget>[
+              PlayerBasicInfo(behavior.id, behavior.turn),
+              PlayerBehaviorInfo(),
               // 2.1.1 角色信息
-              Row(
-                children: <Widget>[
-                  // 2.1.1.1 角色号码
-                  Container(child: Text(behavior.id.toString())),
-
-                  // 2.1.1.2 角色轮数
-                  Container(child: Card(child: Text(behavior.turn))),
-                ],
-              ),
+              
               // 2.1.2 Behavior Tag and quantity.
               Row(
                 children: <Widget>[
                   // 2.1.2.1
                   Container(child: Card(child: Text(behavior.title))),
                   // 2.1.2.2
-                  Container(child: Card(child: Text(behavior.quantity.toString()))),
+                  Container(
+                      child: Card(child: Text(behavior.quantity.toString()))),
                   // 2.1.2.3
                   Container(child: Card(child: Text(behavior.date.toString()))),
                 ],
               )
-            ],
+            ]),
           ),
           // 2.2 增删查改按钮
           Row(
@@ -48,7 +45,7 @@ class playerBehaviorRecordCard extends StatelessWidget {
               Card(child: Text("修改")),
             ],
           )
-        ],
+        ]),
       ),
     );
   }
