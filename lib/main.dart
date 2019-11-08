@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
     Behavior(
       id: 1,
       player: 1,
-      turn: '第2.2轮',
+      turn: 2,
       title: '坐姿状态',
       quantity: 50,
       date: DateTime.now(),
@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
       title: '发言逻辑',
       quantity: 30,
       date: DateTime.now(),
-      turn: '第1轮',
+      turn: 1,
     ),
     Behavior(
       id: 3,
@@ -44,7 +44,23 @@ class MyHomePage extends StatelessWidget {
       title: '站边举票行为',
       quantity: 20,
       date: DateTime.now(),
-      turn: '第2轮',
+      turn: 1,
+    ),
+    Behavior(
+      id: 4,
+      player: 2,
+      title: '站边举票行为',
+      quantity: 20,
+      date: DateTime.now(),
+      turn: 2,
+    ),
+    Behavior(
+      id: 5,
+      player: 3,
+      title: '站边举票行为',
+      quantity: 20,
+      date: DateTime.now(),
+      turn: 3,
     ),
   ];
 

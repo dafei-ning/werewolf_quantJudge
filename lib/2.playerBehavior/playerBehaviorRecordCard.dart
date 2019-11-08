@@ -32,19 +32,6 @@ class playerBehaviorRecordCard extends StatelessWidget {
                 behavior.quantity,
                 behavior.date,
               ),
-
-              Row(
-                children: <Widget>[
-                  Container(child: Text(behavior.player.toString())),
-                  // 2.1.2.1
-                  Container(child: Card(child: Text(behavior.title))),
-                  // 2.1.2.2
-                  Container(
-                      child: Card(child: Text(behavior.quantity.toString()))),
-                  // 2.1.2.3
-                  Container(child: Card(child: Text(behavior.date.toString()))),
-                ],
-              )
             ]),
           ),
           // 2.2 增删查改按钮

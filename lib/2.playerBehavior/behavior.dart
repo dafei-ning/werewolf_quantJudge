@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Behavior {
   int id;
-  String turn;
+  int turn;
   int player;
   String title;
   double quantity;

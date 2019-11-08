@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TurnInfo extends StatelessWidget {
 
   final int id;
-  final String turn; // to be changed into turnselector object.
+  final int turn; // to be changed into turnselector object.
 
   /*
    * Constructor
@@ -14,10 +14,10 @@ class TurnInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        // 2.1.1.1 角色号码
+        // 2.1.1.1 behavior id
         Container(child: Text(id.toString())),
-        // 2.1.1.2 角色轮数
-        Container(child: Card(child: Text(turn))),
+        // 2.1.1.2 轮数
+        Container(child: Card(child: Text("第" + turn.toString() + "轮"))),
       ],
     );
   }
