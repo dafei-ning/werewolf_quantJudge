@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.1.playerRecord/playerBasicInfo.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.1.playerRecord/playerBehaviorInfo.dart';
+import './2.1.playerRecord/turnInfo.dart';
+import './2.1.playerRecord/playerBehaviorInfo.dart';
 import './behavior.dart';
 
 class playerBehaviorRecordCard extends StatelessWidget {
@@ -20,7 +20,7 @@ class playerBehaviorRecordCard extends StatelessWidget {
           Container(
             child: Column(children: <Widget>[
               // 2.1.1 角色信息
-              PlayerBasicInfo(
+              TurnInfo(
                 behavior.id,
                 behavior.turn,
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PlayerBasicInfo extends StatelessWidget {
+class TurnInfo extends StatelessWidget {
 
   final int id;
   final String turn; // to be changed into turnselector object.
@@ -8,7 +8,7 @@ class PlayerBasicInfo extends StatelessWidget {
   /*
    * Constructor
    */
-  PlayerBasicInfo(this.id, this.turn);
+  TurnInfo(this.id, this.turn);
 
   @override
   Widget build(BuildContext context) {

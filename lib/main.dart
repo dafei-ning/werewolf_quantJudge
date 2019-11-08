@@ -70,11 +70,8 @@ class MyHomePage extends StatelessWidget {
             // 2
             Container(
               child: Column(
-                // Convenient for future single card change.
                 children: behaviors.map((bh) {
-                  return Container(
-                    child: playerBehaviorRecordCard(bh),
-                  );
+                  return Container(child: playerBehaviorRecordCard(bh));
                 }).toList(),
               ),
             )
