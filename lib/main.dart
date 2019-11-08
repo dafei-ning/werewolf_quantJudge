@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './behavior.dart';
+import './playerBehavior/behavior.dart';
+import './playerBehavior/playerBehaviorRecordCard.dart';
 
 void main() => runApp(MyApp());
 
@@ -70,7 +71,7 @@ class MyHomePage extends StatelessWidget {
           // 2
           Column(
             children: behaviors.map((bh) {
-              return 
+              return playerBehaviorRecordCard(bh);
             }).toList(),
           )
         ],
