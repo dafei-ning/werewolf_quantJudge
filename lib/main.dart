@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './playerBehavior/behavior.dart';
-import './playerBehavior/playerBehaviorRecordCard.dart';
+import './2.playerBehavior/behavior.dart';
+import './2.playerBehavior/playerBehaviorRecordCard.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
       title: '坐姿状态',
       quantity: 50,
       date: DateTime.now(),
-      turn: '第2轮',
+      turn: '第2.2轮',
     ),
     Behavior(
       id: '2',
@@ -70,6 +70,7 @@ class MyHomePage extends StatelessWidget {
           ),
           // 2
           Column(
+            // Convenient for future single card change.
             children: behaviors.map((bh) {
               return playerBehaviorRecordCard(bh);
             }).toList(),
