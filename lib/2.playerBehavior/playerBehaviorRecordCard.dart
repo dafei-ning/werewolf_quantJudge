@@ -19,11 +19,18 @@ class playerBehaviorRecordCard extends StatelessWidget {
           // 2.1 Character's behavior's record.
           Container(
             child: Column(children: <Widget>[
-              PlayerBasicInfo(behavior.id, behavior.turn),
-              PlayerBehaviorInfo(),
               // 2.1.1 角色信息
-              
+              PlayerBasicInfo(
+                behavior.id,
+                behavior.turn,
+              ),
               // 2.1.2 Behavior Tag and quantity.
+              PlayerBehaviorInfo(
+                behavior.title,
+                behavior.quantity,
+                behavior.date,
+              ),
+
               Row(
                 children: <Widget>[
                   // 2.1.2.1
