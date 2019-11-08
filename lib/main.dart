@@ -4,7 +4,6 @@ import './2.playerBehavior/playerBehaviorRecordCard.dart';
 
 import './2.playerBehavior/behavior.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -65,9 +64,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // 1
-            Container(
-              child: BehaviorChart(),        
-            ),
+            Container(child: BehaviorChart()),
             // 2
             Container(
               child: Column(
