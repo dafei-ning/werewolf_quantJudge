@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import './2.playerBehavior/behavior.dart';
+import './1.behaviorChart/behaviorChart.dart';
 import './2.playerBehavior/playerBehaviorRecordCard.dart';
+
+import './2.playerBehavior/behavior.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -21,21 +24,24 @@ class MyHomePage extends StatelessWidget {
   final String title;
   final List<Behavior> behaviors = [
     Behavior(
-      id: '1',
+      id: 1,
+      player: 1,
+      turn: '第2.2轮',
       title: '坐姿状态',
       quantity: 50,
       date: DateTime.now(),
-      turn: '第2.2轮',
     ),
     Behavior(
-      id: '2',
+      id: 2,
+      player: 1,
       title: '发言逻辑',
       quantity: 30,
       date: DateTime.now(),
       turn: '第1轮',
     ),
     Behavior(
-      id: '3',
+      id: 3,
+      player: 2,
       title: '站边举票行为',
       quantity: 20,
       date: DateTime.now(),
@@ -54,32 +60,27 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          // 1
-          Container(
-            width: double.infinity,
-            height: 200,
-            // This card contains bar graph which indicates dimensions of judge.
-            child: Card(
-              child: Text('这里放柱状图'),
-              color: Colors.blueGrey,
-              elevation: 2,
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            // 1
+            Container(
+              child: BehaviorChart(),        
             ),
-          ),
-          // 2
-          Container(
-            child: Column(
-              // Convenient for future single card change.
-              children: behaviors.map((bh) {
-                return Container(
-                  child: playerBehaviorRecordCard(bh),
-                );
-              }).toList(),
-            ),
-          )
-        ],
+            // 2
+            Container(
+              child: Column(
+                // Convenient for future single card change.
+                children: behaviors.map((bh) {
+                  return Container(
+                    child: playerBehaviorRecordCard(bh),
+                  );
+                }).toList(),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
