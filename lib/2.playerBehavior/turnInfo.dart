@@ -43,14 +43,14 @@ class TurnInfo extends StatelessWidget {
         child: Column(children: <Widget>[
           // 轮数
           Container(
-            child: Card(
-              child: Text(
-                "第" + mappedBehavior.turn.toString() + "天",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
-                  color: Colors.grey,
-                ),
+            width: 80,
+            alignment: Alignment.center,
+            child: Text(
+              "第" + mappedBehavior.turn.toString() + "天",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                color: Colors.grey,
               ),
             ),
           ),
