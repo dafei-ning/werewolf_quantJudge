@@ -4,12 +4,15 @@ import 'package:werewolf_quantjudge/2.playerBehavior/playerBehaviorRecordCard.da
 
 class TurnInfo extends StatelessWidget {
   final int turn; // to be changed into turnselector object.
-  final List<Behavior> mappedBehaviors;
+  final List<Behavior> turnBehaviors;
 
   /*
    * Constructor
    */
-  TurnInfo(this.turn, this.mappedBehaviors);
+  TurnInfo(
+    this.turn,
+    this.turnBehaviors,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class TurnInfo extends StatelessWidget {
         // 每一轮的用户行为
         Container(
           child: Column(
-            children: behaviors.map((bh) {
+            children: turnBehaviors.map((bh) {
               return Container(child: playerBehaviorRecordCard(bh));
             }).toList(),
           ),
