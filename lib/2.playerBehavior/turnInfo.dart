@@ -4,44 +4,67 @@ import 'package:werewolf_quantjudge/2.playerBehavior/playerBehaviorRecordCard.da
 
 class TurnInfo extends StatelessWidget {
   final int turn; // to be changed into turnselector object.
-  final List<Behavior> turnBehaviors;
+  final List<Behavior> turnBehaviors = [
+    Behavior(
+      turn: 1,
+      id: 1,
+      player: 1,
+      title: "坐姿表情3",
+      quantity: 50,
+      date: DateTime.now(),
+    ),
+    Behavior(
+      turn: 1,
+      id: 3,
+      player: 2,
+      title: "站边举票3",
+      quantity: 50,
+      date: DateTime.now(),
+    ),
+  ];
 
   /*
    * Constructor
    */
   TurnInfo(
     this.turn,
-    this.turnBehaviors,
+    //this.turnBehaviors,
   );
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        // // 2.1.1.1 behavior id
-        // Container(child: Text(id.toString())),
-        // 2.1.1.1 轮数
-        Container(
-          child: Card(
-            child: Text(
-              "第" + turn.toString() + "轮",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
+    return Card(
+      child: Container(
+        // turnInfo's decoration.
+        width: 300,
+        margin: EdgeInsets.symmetric(
+          vertical: 5,
+          horizontal: 5,
+        ),
+        child: Column(children: <Widget>[
+          // 轮数
+          Container(
+            child: Card(
+              child: Text(
+                "第" + turn.toString() + "轮",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
               ),
             ),
           ),
-        ),
 
-        // 每一轮的用户行为
-        Container(
-          child: Column(
-            children: turnBehaviors.map((bh) {
-              return Container(child: playerBehaviorRecordCard(bh));
-            }).toList(),
-          ),
-        )
-      ],
+          // 每一轮的用户行为
+          Container(
+            child: Column(
+              children: turnBehaviors.map((bh) {
+                return Container(child: PlayerBehaviorRecordCard());
+              }).toList(),
+            ),
+          )
+        ]),
+      ),
     );
   }
 }

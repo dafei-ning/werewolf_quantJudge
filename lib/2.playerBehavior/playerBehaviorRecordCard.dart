@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import './2.1.playerRecord/playerBehaviorInfo.dart';
 import './behavior.dart';
 
-class playerBehaviorRecordCard extends StatelessWidget {
-  final Behavior behavior;
+class PlayerBehaviorRecordCard extends StatelessWidget {
+  final Behavior behavior = Behavior(
+    turn: 1,
+    id: 1,
+    player: 1,
+    title: "坐姿表情3",
+    quantity: 50,
+    date: DateTime.now(),
+  );
 
   /*
    * Constructor
    */
-  playerBehaviorRecordCard(this.behavior);
+  //PlayerBehaviorRecordCard(this.behavior);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +25,8 @@ class playerBehaviorRecordCard extends StatelessWidget {
           // 2.1 Character's behavior's record.
           Container(
             margin: EdgeInsets.symmetric(
-              vertical: 10,
-              horizontal: 5,
+              vertical: 2,
+              horizontal: 2,
             ),
             decoration: BoxDecoration(
               border: Border.all(
@@ -27,26 +34,24 @@ class playerBehaviorRecordCard extends StatelessWidget {
                 width: 2,
               ),
             ),
-            //padding: EdgeInsets.all(5),
-            child: Column(children: <Widget>[
-              
+            padding: EdgeInsets.all(2),
 
-              // 2.1.2 Behavior Tag and quantity.
-              PlayerBehaviorInfo(
-                behavior.player,
-                behavior.title,
-                behavior.quantity,
-                behavior.date,
-              ),
-            ]),
+            child: PlayerBehaviorInfo(
+              behavior.player,
+              behavior.title,
+              behavior.quantity,
+              behavior.date,
+            ),
           ),
           // 2.2 增删查改按钮
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              Card(child: Text("删除")),
-              Card(child: Text("修改")),
-            ],
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Card(child: Text("删除")),
+                Card(child: Text("修改")),
+              ],
+            ),
           )
         ]),
       ),
