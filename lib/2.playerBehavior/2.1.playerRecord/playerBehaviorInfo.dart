@@ -23,7 +23,7 @@ class PlayerBehaviorInfo extends StatelessWidget {
         // 2.1.2.2
         Container(child: Card(child: Text(quantity.toString()))),
         // 2.1.2.3
-        Container(child: Card(child: Text(date.toString()))),
+        //Container(child: Card(child: Text(date.toString()))),
       ],
     );
   }

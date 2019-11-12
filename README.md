@@ -37,3 +37,19 @@ samples, guidance on mobile development, and a full API reference.
 3. 记录的行为均以tag形式体现，并且根据tag形成可视化
    3.1. 比如跳一个角色行为，隐含着跳还是明着跳，
         3.1.1. 明着跳的tag又分为悍跳还是正身份还是不确定
+
+
+## Properties
+
+EdgeInsets.symmetric：上下左右对称边界，用于margin
+
+Container的边界
+```Dart
+decoration: 
+  BoxDecoration(
+    border: Border.all(
+      color: Colors.black,
+      width: 5,
+    ),
+  ),
+```

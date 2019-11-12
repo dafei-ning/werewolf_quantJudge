@@ -41,7 +41,7 @@ class MyHomePage extends StatelessWidget {
     Behavior(
       id: 3,
       player: 2,
-      title: '站边举票行为',
+      title: '站边举票',
       quantity: 20,
       date: DateTime.now(),
       turn: 1,
@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
     Behavior(
       id: 4,
       player: 2,
-      title: '站边举票行为',
+      title: '站边举票',
       quantity: 20,
       date: DateTime.now(),
       turn: 2,
