@@ -22,49 +22,7 @@ class MyHomePage extends StatelessWidget {
    *  Class properties
    */
   final String title;
-  final List<Behavior> behaviors = [
-    Behavior(
-      id: 1,
-      player: 1,
-      turn: 2,
-      title: '坐姿状态',
-      quantity: 50,
-      date: DateTime.now(),
-    ),
-    Behavior(
-      id: 2,
-      player: 1,
-      title: '发言逻辑',
-      quantity: 30,
-      date: DateTime.now(),
-      turn: 1,
-    ),
-    Behavior(
-      id: 3,
-      player: 2,
-      title: '站边举票',
-      quantity: 20,
-      date: DateTime.now(),
-      turn: 1,
-    ),
-    Behavior(
-      id: 4,
-      player: 2,
-      title: '站边举票',
-      quantity: 20,
-      date: DateTime.now(),
-      turn: 2,
-    ),
-    Behavior(
-      id: 5,
-      player: 3,
-      title: '站边举票行为',
-      quantity: 20,
-      date: DateTime.now(),
-      turn: 3,
-    ),
-  ];
-
+  
   final List<MappedBehavior> mappedBehaviors = [
     MappedBehavior(
       turn: 1,
@@ -133,7 +91,7 @@ class MyHomePage extends StatelessWidget {
       ],
     ),
     MappedBehavior(
-      turn: 2,
+      turn: 3,
       turnBehaviors: [
         Behavior(
           turn: 1,
@@ -179,8 +137,7 @@ class MyHomePage extends StatelessWidget {
             Container(
               child: Column(
                 children: mappedBehaviors.map((mbh) {
-                  return Container(
-                      child: TurnInfo(mbh.turn));
+                  return Container(child: TurnInfo(mbh));
                 }).toList(),
               ),
             )

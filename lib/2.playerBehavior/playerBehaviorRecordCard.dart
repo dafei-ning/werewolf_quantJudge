@@ -3,19 +3,11 @@ import './2.1.playerRecord/playerBehaviorInfo.dart';
 import './behavior.dart';
 
 class PlayerBehaviorRecordCard extends StatelessWidget {
-  final Behavior behavior = Behavior(
-    turn: 1,
-    id: 1,
-    player: 1,
-    title: "坐姿表情3",
-    quantity: 50,
-    date: DateTime.now(),
-  );
-
+  final Behavior behavior;
   /*
    * Constructor
    */
-  //PlayerBehaviorRecordCard(this.behavior);
+  PlayerBehaviorRecordCard(this.behavior);
 
   @override
   Widget build(BuildContext context) {

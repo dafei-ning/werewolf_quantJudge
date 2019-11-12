@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/behavior.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/mappedBehavior.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/playerBehaviorRecordCard.dart';
 
 class TurnInfo extends StatelessWidget {
-  final int turn; // to be changed into turnselector object.
+  /*
+   * Properties.
+   */
+  final MappedBehavior mappedBehavior;
+
   final List<Behavior> turnBehaviors = [
     Behavior(
       turn: 1,
       id: 1,
       player: 1,
-      title: "坐姿表情3",
+      title: "坐姿表情356",
       quantity: 50,
       date: DateTime.now(),
     ),
@@ -17,7 +22,7 @@ class TurnInfo extends StatelessWidget {
       turn: 1,
       id: 3,
       player: 2,
-      title: "站边举票3",
+      title: "站边举票332",
       quantity: 50,
       date: DateTime.now(),
     ),
@@ -26,10 +31,7 @@ class TurnInfo extends StatelessWidget {
   /*
    * Constructor
    */
-  TurnInfo(
-    this.turn,
-    //this.turnBehaviors,
-  );
+  TurnInfo(this.mappedBehavior);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class TurnInfo extends StatelessWidget {
           Container(
             child: Card(
               child: Text(
-                "第" + turn.toString() + "轮",
+                "第" + mappedBehavior.turn.toString() + "轮",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 12,
@@ -58,8 +60,8 @@ class TurnInfo extends StatelessWidget {
           // 每一轮的用户行为
           Container(
             child: Column(
-              children: turnBehaviors.map((bh) {
-                return Container(child: PlayerBehaviorRecordCard());
+              children: turnBehaviors.map((tbh) {
+                return Container(child: PlayerBehaviorRecordCard(tbh));
               }).toList(),
             ),
           )
