@@ -6,16 +6,16 @@ class TurnInfo extends StatelessWidget {
   final int id;
   final int turn; // to be changed into turnselector object.
 
-  final List<Behavior> behaviors = [
-    Behavior(
+  final List<Behavior> mappedBehaviors = [
+    mappedBehavior(
       id: 1,
       player: 1,
-      turn: 2,
+      turn: 1,
       title: '坐姿状态',
       quantity: 50,
       date: DateTime.now(),
     ),
-    Behavior(
+    mappedBehavior(
       id: 2,
       player: 1,
       title: '发言逻辑',
@@ -23,7 +23,7 @@ class TurnInfo extends StatelessWidget {
       date: DateTime.now(),
       turn: 1,
     ),
-    Behavior(
+    mappedBehavior(
       id: 3,
       player: 2,
       title: '站边举票',
@@ -31,7 +31,7 @@ class TurnInfo extends StatelessWidget {
       date: DateTime.now(),
       turn: 1,
     ),
-    Behavior(
+    mappedBehavior(
       id: 4,
       player: 2,
       title: '站边举票',
@@ -39,7 +39,7 @@ class TurnInfo extends StatelessWidget {
       date: DateTime.now(),
       turn: 2,
     ),
-    Behavior(
+    mappedBehavior(
       id: 5,
       player: 3,
       title: '站边举票行为',

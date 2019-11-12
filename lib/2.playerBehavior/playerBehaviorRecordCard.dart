@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './2.1.playerRecord/turnInfo.dart';
 import './2.1.playerRecord/playerBehaviorInfo.dart';
 import './behavior.dart';
 
@@ -30,11 +29,7 @@ class playerBehaviorRecordCard extends StatelessWidget {
             ),
             //padding: EdgeInsets.all(5),
             child: Column(children: <Widget>[
-              // 2.1.1 Turn信息
-              TurnInfo(
-                behavior.id,
-                behavior.turn,
-              ),
+              
 
               // 2.1.2 Behavior Tag and quantity.
               PlayerBehaviorInfo(
