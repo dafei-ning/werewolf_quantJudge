@@ -9,7 +9,7 @@ class TurnInfo extends StatelessWidget {
    */
   final MappedBehavior mappedBehavior;
 
-  final List<Behavior> turnBehaviors = [
+  final List<Behavior> turnBehaviors2 = [
     Behavior(
       turn: 1,
       id: 1,
@@ -39,20 +39,14 @@ class TurnInfo extends StatelessWidget {
       child: Container(
         // turnInfo's decoration.
         width: 300,
-        margin: EdgeInsets.symmetric(
-          vertical: 5,
-          horizontal: 5,
-        ),
+        margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
         child: Column(children: <Widget>[
           // 轮数
           Container(
             child: Card(
               child: Text(
                 "第" + mappedBehavior.turn.toString() + "轮",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
-                ),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
               ),
             ),
           ),
@@ -60,7 +54,7 @@ class TurnInfo extends StatelessWidget {
           // 每一轮的用户行为
           Container(
             child: Column(
-              children: turnBehaviors.map((tbh) {
+              children: mappedBehavior.turnBehaviors.map((tbh) {
                 return Container(child: PlayerBehaviorRecordCard(tbh));
               }).toList(),
             ),

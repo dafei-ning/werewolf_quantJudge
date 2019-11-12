@@ -17,17 +17,16 @@ class PlayerBehaviorRecordCard extends StatelessWidget {
           // 2.1 Character's behavior's record.
           Container(
             margin: EdgeInsets.symmetric(
-              vertical: 2,
+              vertical: 1,
               horizontal: 2,
             ),
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.black,
-                width: 2,
+                color: Colors.black12,
+                width: 1,
               ),
             ),
-            padding: EdgeInsets.all(2),
-
+            padding: EdgeInsets.all(0.5),
             child: PlayerBehaviorInfo(
               behavior.player,
               behavior.title,

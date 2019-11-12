@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
    *  Class properties
    */
   final String title;
-  
+
   final List<MappedBehavior> mappedBehaviors = [
     MappedBehavior(
       turn: 1,
@@ -129,13 +129,12 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
-            Container(
-              child: BehaviorChart(),
-            ),
+            Container(child: BehaviorChart()),
 
             // 2 显示每一轮玩家的行为汇总
             Container(
               child: Column(
+                // mbh -> turn, turnBehaviors
                 children: mappedBehaviors.map((mbh) {
                   return Container(child: TurnInfo(mbh));
                 }).toList(),
