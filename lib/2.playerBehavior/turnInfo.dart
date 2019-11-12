@@ -1,91 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/behavior.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/playerBehaviorRecordCard.dart';
-import './mappedBehavior.dart';
 
 class TurnInfo extends StatelessWidget {
-  final int id;
   final int turn; // to be changed into turnselector object.
-
-  final List<MappedBehavior> mappedBehaviors = [
-    MappedBehavior(turn: 1, turnBehaviors: [
-      Behavior(
-        turn: 1,
-        id: 1,
-        player: 1,
-        title: "坐姿表情",
-        quantity: 50,
-      ),
-      Behavior(
-        turn: 1,
-        id: 2,
-        player: 1,
-        title: "发言逻辑",
-        quantity: 50,
-      ),
-      Behavior(
-        turn: 1,
-        id: 3,
-        player: 2,
-        title: "站边举票",
-        quantity: 50,
-      ),
-      Behavior(
-        turn: 1,
-        id: 4,
-        player: 3,
-        title: "站边举票行为",
-        quantity: 40,
-      ),
-    ]),
-    
-    MappedBehavior(turn: 2, turnBehaviors: [
-      Behavior(
-        turn: 1,
-        id: 1,
-        player: 1,
-        title: "坐姿表情2",
-        quantity: 50,
-      ),
-      Behavior(
-        turn: 1,
-        id: 3,
-        player: 2,
-        title: "站边举票2",
-        quantity: 50,
-      ),
-      Behavior(
-        turn: 1,
-        id: 4,
-        player: 3,
-        title: "站边举票行为2",
-        quantity: 40,
-      ),
-    ]),
-
-    MappedBehavior(turn: 2, turnBehaviors: [
-      Behavior(
-        turn: 1,
-        id: 1,
-        player: 1,
-        title: "坐姿表情3",
-        quantity: 50,
-      ),
-      Behavior(
-        turn: 1,
-        id: 3,
-        player: 2,
-        title: "站边举票3",
-        quantity: 50,
-      ),
-    ]),
-
-  ];
+  final List<Behavior> mappedBehaviors;
 
   /*
    * Constructor
    */
-  TurnInfo(this.id, this.turn);
+  TurnInfo(this.turn, this.mappedBehaviors);
 
   @override
   Widget build(BuildContext context) {
