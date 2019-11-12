@@ -8,10 +8,8 @@ class Behavior {
   double quantity;
   // Turns selector, use date widget to simulate.
   DateTime date;
-
-  String side;
+  List<String> side;
   
-
   Behavior({
     @required this.id,
     @required this.player,
