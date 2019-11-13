@@ -1,5 +1,5 @@
-import '2.playerBehavior/behavior.dart';
-import '2.playerBehavior/mappedBehavior.dart';
+import './behavior.dart';
+import './mappedBehavior.dart';
 
 class SimulateData {
   List<MappedBehavior> get mappedBehaviors {

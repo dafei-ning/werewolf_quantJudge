@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'data.dart';
+import 'models/data.dart';
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfo.dart';
 import '3.behaviorInput/behaviorInput.dart';
 
-import '2.playerBehavior/mappedBehavior.dart';
+import 'models/mappedBehavior.dart';
 
 void main() => runApp(MyApp());
 

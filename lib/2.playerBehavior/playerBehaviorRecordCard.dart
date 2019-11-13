@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './2.1.playerRecord/playerBehaviorInfo.dart';
-import './behavior.dart';
+import '../models/behavior.dart';
 
 class PlayerBehaviorRecordCard extends StatelessWidget {
   final Behavior behavior;
