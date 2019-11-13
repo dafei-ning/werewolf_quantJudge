@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class BehaviorInput extends StatelessWidget {
+  /*
+   * User input properties.
+   */
+  final turnInputController = TextEditingController();
+  final behaviorInputController = TextEditingController();
+  final scoreInputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -12,20 +19,32 @@ class BehaviorInput extends StatelessWidget {
           children: <Widget>[
             TextField(
               decoration: InputDecoration(labelText: '时间(天)'),
+              //onChanged: (val) => turnInput = val,
+              controller: turnInputController,
             ),
             TextField(
               decoration: InputDecoration(labelText: '行为标签'),
+              //onChanged: (val) => behaviorInput = val,
+              controller: behaviorInputController,
             ),
             TextField(
               decoration: InputDecoration(labelText: '分数'),
+              //onChanged: (val) => scoreInput = val,
+              controller: scoreInputController,
             ),
             FlatButton(
-              child: Text('Add Behavior',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold,
-                  )),
-              onPressed: () {},
+              child: Text(
+                'Add Behavior',
+                style: TextStyle(
+                  color: Colors.red[400],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () {
+                print(turnInputController.text);
+                print(behaviorInputController.text);
+                print(scoreInputController.text);
+              },
             )
           ],
         ),

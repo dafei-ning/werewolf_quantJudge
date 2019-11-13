@@ -4,7 +4,7 @@ import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfo.dart';
 import '3.behaviorInput/behaviorInput.dart';
 
-import './2.playerBehavior/mappedBehavior.dart';
+import '2.playerBehavior/mappedBehavior.dart';
 
 void main() => runApp(MyApp());
 
