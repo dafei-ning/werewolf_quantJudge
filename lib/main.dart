@@ -131,6 +131,31 @@ class MyHomePage extends StatelessWidget {
             // 1 最上面的显示玩家行为记录的chart
             Container(child: BehaviorChart()),
 
+            // 3 用来增加玩家行为的输入框
+            Container(
+              child: Card(
+                child: Container(
+                  child: Column(
+                    children: <Widget>[
+                      TextField(
+                        decoration: InputDecoration(labelText: '时间(天)'),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(labelText: '行为标签'),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(labelText: '分数'),
+                      ),
+                      FlatButton(
+                        child: Text('Add Behavior'),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
             // 2 显示每一轮玩家的行为汇总
             Container(
               child: Column(
