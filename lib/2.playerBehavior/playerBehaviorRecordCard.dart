@@ -21,12 +21,12 @@ class PlayerBehaviorRecordCard extends StatelessWidget {
                 vertical: 1,
                 horizontal: 2,
               ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.black12,
-                  width: 1,
-                ),
-              ),
+              // decoration: BoxDecoration(
+              //   border: Border.all(
+              //     color: Colors.black12,
+              //     width: 1,
+              //   ),
+              // ),
               padding: EdgeInsets.all(0.5),
               child: PlayerBehaviorInfo(
                 behavior.player,
@@ -37,7 +37,6 @@ class PlayerBehaviorRecordCard extends StatelessWidget {
             ),
             // 2.2 增删查改按钮
             Container(
-              
               width: 100,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,

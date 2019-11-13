@@ -16,6 +16,7 @@ class PlayerBehaviorInfo extends StatelessWidget {
     return Row(
       children: <Widget>[
         Container(
+          alignment: Alignment.center,
           child: Text(
             player.toString() + "号玩家",
             style: TextStyle(
@@ -25,17 +26,16 @@ class PlayerBehaviorInfo extends StatelessWidget {
           ),
           width: 60,
         ),
-        // 2.1.2.1
+        // 具体的行为标签描述。
         Container(
           child: Card(child: Text(title)),
           width: 120,
         ),
-        // 2.1.2.2
+        // 对于所选行为标签的狼面值。
         Container(
           child: Card(child: Text(quantity.toString())),
           width:50,
         ),
-        // 2.1.2.3
         //Container(child: Card(child: Text(date.toString()))),
       ],
     );

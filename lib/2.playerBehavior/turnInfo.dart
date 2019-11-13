@@ -46,7 +46,7 @@ class TurnInfo extends StatelessWidget {
             width: 80,
             alignment: Alignment.center,
             child: Text(
-              "第" + mappedBehavior.turn.toString() + "天",
+              "第 ${mappedBehavior.turn} 天",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 12,
