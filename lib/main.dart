@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './1.behaviorChart/behaviorChart.dart';
+import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfo.dart';
+import '3.behaviorInput/behaviorInput.dart';
 
 import './2.playerBehavior/behavior.dart';
 import './2.playerBehavior/mappedBehavior.dart';
@@ -132,36 +133,7 @@ class MyHomePage extends StatelessWidget {
             Container(child: BehaviorChart()),
 
             // 3 用来增加玩家行为的输入框
-            Container(
-              child: Card(
-                elevation: 10,
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      TextField(
-                        decoration: InputDecoration(labelText: '时间(天)'),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(labelText: '行为标签'),
-                      ),
-                      TextField(
-                        decoration: InputDecoration(labelText: '分数'),
-                      ),
-                      FlatButton(
-                        child: Text('Add Behavior',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold,
-                            )),
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            Container(child: BehaviorInput()),
 
             // 2 显示每一轮玩家的行为汇总
             Container(
