@@ -134,8 +134,11 @@ class MyHomePage extends StatelessWidget {
             // 3 用来增加玩家行为的输入框
             Container(
               child: Card(
+                elevation: 10,
                 child: Container(
+                  padding: EdgeInsets.all(10),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       TextField(
                         decoration: InputDecoration(labelText: '时间(天)'),
@@ -147,7 +150,11 @@ class MyHomePage extends StatelessWidget {
                         decoration: InputDecoration(labelText: '分数'),
                       ),
                       FlatButton(
-                        child: Text('Add Behavior'),
+                        child: Text('Add Behavior',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                            )),
                         onPressed: () {},
                       )
                     ],
