@@ -37,11 +37,10 @@ class PlayerBehaviorRecordCard extends StatelessWidget {
             ),
             // 2.2 增删查改按钮
             Container(
-              width: 100,
+              width: 40,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Card(child: Text("删除")),
                   Card(child: Text("修改")),
                 ],
               ),
