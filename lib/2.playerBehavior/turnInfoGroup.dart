@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/mappedBehavior.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/playerBehaviorRecordCard.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
-import '../models/mappedBehavior.dart';
 
 class TurnInfoGroup extends StatelessWidget {
   /*

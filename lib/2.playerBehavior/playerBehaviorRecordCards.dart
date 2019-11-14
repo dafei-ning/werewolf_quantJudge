@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import './2.1.playerRecord/playerBehaviorInfo.dart';
 import '../models/behavior.dart';
-import '../models/mappedBehavior.dart';
 
 class PlayerBehaviorRecordCardGroup extends StatelessWidget {
-  
   final List<Behavior> turnBehaviors;
   /*
    * Constructor
@@ -22,16 +20,7 @@ class PlayerBehaviorRecordCardGroup extends StatelessWidget {
                 children: <Widget>[
                   // 2.1 Character's behavior's record.
                   Container(
-                    margin: EdgeInsets.symmetric(
-                      vertical: 1,
-                      horizontal: 2,
-                    ),
-                    // decoration: BoxDecoration(
-                    //   border: Border.all(
-                    //     color: Colors.black12,
-                    //     width: 1,
-                    //   ),
-                    // ),
+                    margin: EdgeInsets.symmetric(vertical: 1, horizontal: 2),
                     padding: EdgeInsets.all(0.5),
                     child: PlayerBehaviorInfo(
                       behavior.player,
