@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './playerBehaviorInfo.dart';
+import './2.1.1.playerBehaviorInfo.dart';
 import '../../models/behavior.dart';
+import '2.1.2.cardButton/cardButton.dart';
 
 class PlayerBehaviorRecordCardGroup extends StatelessWidget {
   final List<Behavior> turnBehaviors;
@@ -22,24 +23,11 @@ class PlayerBehaviorRecordCardGroup extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 1, horizontal: 2),
                     padding: EdgeInsets.all(0.5),
-                    child: PlayerBehaviorInfo(
-                      behavior.player,
-                      behavior.title,
-                      behavior.quantity,
-                      behavior.date,
-                    ),
+                    child: PlayerBehaviorInfo(behavior),
                   ),
 
                   // 2.2 增删查改按钮
-                  Container(
-                    width: 40,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Card(child: Text("修改")),
-                      ],
-                    ),
-                  )
+                  Container(child: CardButton()),
                 ],
               ),
             ),
