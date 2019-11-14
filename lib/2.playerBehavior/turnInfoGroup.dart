@@ -31,11 +31,7 @@ class TurnInfoGroup extends StatelessWidget {
 
                 // 每一轮的用户行为
                 Container(
-                  child: Column(
-                    children: mappedBehavior.turnBehaviors.map((tbh) {
-                      return Container(child: PlayerBehaviorRecordCard(tbh));
-                    }).toList(),
-                  ),
+                  child: PlayerBehaviorRecordCardGroup(mappedBehavior.turnBehaviors)
                 )
               ]),
             ),
