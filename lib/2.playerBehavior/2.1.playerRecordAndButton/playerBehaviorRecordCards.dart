@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './2.1.playerRecord/playerBehaviorInfo.dart';
-import '../models/behavior.dart';
+import './playerBehaviorInfo.dart';
+import '../../models/behavior.dart';
 
 class PlayerBehaviorRecordCardGroup extends StatelessWidget {
   final List<Behavior> turnBehaviors;
