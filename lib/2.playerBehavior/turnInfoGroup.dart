@@ -3,14 +3,17 @@ import '../models/mappedBehavior.dart';
 import '2.1.playerRecordAndButton/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
 import '2.2.behaviorInput/behaviorInput.dart';
+import '../models/data.dart';
 
 
-class TurnInfoGroup extends StatelessWidget {
+class TurnInfoGroup extends StatefulWidget {
+  @override
+  _TurnInfoGroupState createState() => _TurnInfoGroupState();
+}
+
+class _TurnInfoGroupState extends State<TurnInfoGroup> {
   /*  Properties. */
-  final List<MappedBehavior> mappedBehaviors;
-
-  /* Constructor. */
-  TurnInfoGroup(this.mappedBehaviors);
+  final List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +30,14 @@ class TurnInfoGroup extends StatelessWidget {
                   // 2.0. 轮数
                   Container(child: TurnTitle(mappedBehavior.turn)),
 
+                  // 2.2. 用来增加玩家行为的输入框
+                  Container(child: BehaviorInput()),
+
                   // 2.1. 每一轮的用户行为(组)
                   Container(
                     child: PlayerBehaviorRecordCardGroup(
                         mappedBehavior.turnBehaviors),
                   ),
-                  // 2.2. 用来增加玩家行为的输入框
-                  Container(child: BehaviorInput()),
                 ],
               ),
             ),
