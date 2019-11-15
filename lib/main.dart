@@ -18,15 +18,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  /*
-   *  Class properties
-   */
+  /* Class properties */
   final String title;
-  final List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
-
-  /*
-   * Constructor
-   */
+  
+  /* Constructor */
   MyHomePage(this.title);
 
   @override
@@ -41,7 +36,7 @@ class MyHomePage extends StatelessWidget {
             Container(child: BehaviorChart()),
 
             // 2 显示每一轮玩家的行为汇总(组)
-            Container(child: TurnInfoGroup(mappedBehaviors))
+            Container(child: TurnInfoGroup())
           ],
         ),
       ),

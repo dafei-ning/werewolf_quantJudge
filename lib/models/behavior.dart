@@ -4,7 +4,7 @@ class Behavior {
   int id;
   int turn;
   int player;
-  String title;
+  String describeTab;
   double quantity;
   // Turns selector, use date widget to simulate.
   DateTime date;
@@ -13,7 +13,7 @@ class Behavior {
   Behavior({
     @required this.id,
     @required this.player,
-    @required this.title,
+    @required this.describeTab,
     @required this.quantity,
     @required this.date,
     @required this.turn,

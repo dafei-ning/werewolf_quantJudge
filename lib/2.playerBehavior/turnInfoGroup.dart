@@ -5,7 +5,6 @@ import '2.0.turnTitle.dart';
 import '2.2.behaviorInput/behaviorInput.dart';
 import '../models/data.dart';
 
-
 class TurnInfoGroup extends StatefulWidget {
   @override
   _TurnInfoGroupState createState() => _TurnInfoGroupState();
