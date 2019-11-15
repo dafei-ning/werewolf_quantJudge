@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/models/behavior.dart';
 import '../models/mappedBehavior.dart';
 import '2.1.playerRecordAndButton/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
@@ -13,6 +14,20 @@ class TurnInfoGroup extends StatefulWidget {
 class _TurnInfoGroupState extends State<TurnInfoGroup> {
   /*  Properties. */
   final List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  final List<Behavior> behaviors = SimulateData().behaviors;
+
+  void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
+    final newBehavior = Behavior(
+      // id to be iterated automatically.
+      id: 888,
+      turn: inTurn,
+      player: inPlayer,
+      describeTab: inDescribeTab,
+      quantity: inQuantity,
+      date: DateTime.now(),
+    );
+
+  }
 
   @override
   Widget build(BuildContext context) {
