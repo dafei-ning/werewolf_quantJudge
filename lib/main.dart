@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'models/data.dart';
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
-import '3.behaviorInput/behaviorInput.dart';
 
 import 'models/mappedBehavior.dart';
 
@@ -40,9 +39,6 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
             Container(child: BehaviorChart()),
-
-            // 3 用来增加玩家行为的输入框
-            Container(child: BehaviorInput()),
 
             // 2 显示每一轮玩家的行为汇总(组)
             Container(child: TurnInfoGroup(mappedBehaviors))

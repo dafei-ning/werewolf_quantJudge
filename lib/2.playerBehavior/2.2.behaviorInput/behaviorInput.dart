@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class BehaviorInput extends StatelessWidget {
+
+  final Function inputFunction;
   /*
    * User input properties.
    */
   final turnInputController = TextEditingController();
   final behaviorInputController = TextEditingController();
   final scoreInputController = TextEditingController();
+
+  BehaviorInput(this.inputFunction);
 
   @override
   Widget build(BuildContext context) {
