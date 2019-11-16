@@ -16,6 +16,6 @@ class Behavior {
     @required this.describeTab,
     @required this.quantity,
     @required this.date,
-    @required this.turn,
+    this.turn,
   });
 }

@@ -32,6 +32,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
     );
 
     setState(() {
+      behaviors.add(newBehavior);
       mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
     });
   }
