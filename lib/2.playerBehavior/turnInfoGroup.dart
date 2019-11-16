@@ -17,11 +17,11 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
   List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   final List<Behavior> behaviors = SimulateData().behaviors;
   // 是不是有更好的方法归类这一系列function？
-  BehaviorController bhObject;
+  BehaviorController bhObject = new BehaviorController();
 
   void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
     final newBehavior = Behavior(
-      // id to be iterated automatically.
+      // TODO: id to be iterated automatically.
       id: 888,
       turn: inTurn,
       player: inPlayer,
@@ -32,7 +32,6 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
     setState(() {
       behaviors.add(newBehavior);
       mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
-      print(mappedBehaviors);
     });
   }
 
