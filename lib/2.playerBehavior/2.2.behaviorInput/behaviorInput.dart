@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class BehaviorInput extends StatelessWidget {
-
   final Function inputFunction;
   /*
    * User input properties.
    */
   final turnInputController = TextEditingController();
-  final behaviorInputController = TextEditingController();
+  final describeInputController = TextEditingController();
+  final playerInputController = TextEditingController();
   final scoreInputController = TextEditingController();
 
   BehaviorInput(this.inputFunction);
@@ -22,32 +22,37 @@ class BehaviorInput extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: '时间(天)'),
-              //onChanged: (val) => turnInput = val,
+              decoration: InputDecoration(labelText: '玩家号码'),
+              controller: playerInputController,
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: '天数轮次'),
               controller: turnInputController,
             ),
             TextField(
               decoration: InputDecoration(labelText: '行为标签'),
-              //onChanged: (val) => behaviorInput = val,
-              controller: behaviorInputController,
+              controller: describeInputController,
             ),
+            // TODO: 输入的分数将与其他玩家同样标签的分数值做比较
             TextField(
               decoration: InputDecoration(labelText: '分数'),
-              //onChanged: (val) => scoreInput = val,
               controller: scoreInputController,
             ),
             FlatButton(
               child: Text(
-                'Add Behavior',
+                '添加玩家行为评估',
                 style: TextStyle(
                   color: Colors.red[400],
                   fontWeight: FontWeight.bold,
                 ),
               ),
               onPressed: () {
-                print(turnInputController.text);
-                print(behaviorInputController.text);
-                print(scoreInputController.text);
+                inputFunction(
+                  int.parse(turnInputController.text),
+                  int.parse(playerInputController.text),
+                  describeInputController.text,
+                  double.parse(scoreInputController.text),
+                );
               },
             )
           ],

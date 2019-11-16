@@ -19,8 +19,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
   // 是不是有更好的方法归类这一系列function？
   BehaviorController bhObject;
 
-  void _addNewBehavior(
-      int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
+  void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
     final newBehavior = Behavior(
       // id to be iterated automatically.
       id: 888,
@@ -33,6 +32,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
     setState(() {
       behaviors.add(newBehavior);
       mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
+      print(mappedBehaviors);
     });
   }
 
@@ -50,15 +50,13 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
                 children: <Widget>[
                   // 2.0. 轮数
                   Container(child: TurnTitle(mappedBehavior.turn)),
-
-                  // 2.2. 用来增加玩家行为的输入框
-                  Container(child: BehaviorInput(_addNewBehavior)),
-
                   // 2.1. 每一轮的用户行为(组)
                   Container(
                     child: PlayerBehaviorRecordCardGroup(
                         mappedBehavior.turnBehaviors),
                   ),
+                  // 2.2. 用来增加玩家行为的输入框
+                  Container(child: BehaviorInput(_addNewBehavior)),
                 ],
               ),
             ),
