@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   /* Class properties */
   final String title;
-  
+
   /* Constructor */
   MyHomePage(this.title);
 
@@ -28,16 +28,18 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            // 1 最上面的显示玩家行为记录的chart
-            Container(child: BehaviorChart()),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              // 1 最上面的显示玩家行为记录的chart
+              Container(child: BehaviorChart()),
 
-            // 2 显示每一轮玩家的行为汇总(组)
-            Container(child: TurnInfoGroup())
-          ],
+              // 2 显示每一轮玩家的行为汇总(组)
+              Container(child: TurnInfoGroup())
+            ],
+          ),
         ),
       ),
     );

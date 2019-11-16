@@ -16,7 +16,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   final List<Behavior> behaviors = SimulateData().behaviors;
-  // 是不是有更好的方法归类这一系列function？
+  // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhObject = new BehaviorController();
 
   void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
