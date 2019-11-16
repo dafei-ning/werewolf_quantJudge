@@ -5,6 +5,7 @@ import '2.1.playerRecordAndButton/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
 import '2.2.behaviorInput/behaviorInput.dart';
 import '../models/data.dart';
+import '../controllers/behaviorController.dart';
 
 class TurnInfoGroup extends StatefulWidget {
   @override
@@ -13,10 +14,13 @@ class TurnInfoGroup extends StatefulWidget {
 
 class _TurnInfoGroupState extends State<TurnInfoGroup> {
   /*  Properties. */
-  final List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   final List<Behavior> behaviors = SimulateData().behaviors;
+  // 是不是有更好的方法归类这一系列function？
+  BehaviorController bhObject;
 
-  void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
+  void _addNewBehavior(
+      int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
     final newBehavior = Behavior(
       // id to be iterated automatically.
       id: 888,
@@ -27,6 +31,9 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
       date: DateTime.now(),
     );
 
+    setState(() {
+      mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
+    });
   }
 
   @override
