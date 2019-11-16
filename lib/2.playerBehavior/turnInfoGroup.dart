@@ -30,7 +30,6 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
       quantity: inQuantity,
       date: DateTime.now(),
     );
-
     setState(() {
       behaviors.add(newBehavior);
       mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
@@ -53,7 +52,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
                   Container(child: TurnTitle(mappedBehavior.turn)),
 
                   // 2.2. 用来增加玩家行为的输入框
-                  Container(child: BehaviorInput()),
+                  Container(child: BehaviorInput(_addNewBehavior)),
 
                   // 2.1. 每一轮的用户行为(组)
                   Container(
