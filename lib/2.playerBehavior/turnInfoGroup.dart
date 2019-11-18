@@ -37,23 +37,21 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: mappedBehaviors.map((mappedBehavior) {
+    return ListView.builder(
+      itemCount: mappedBehaviors.length,
+      itemBuilder: (ctx, index) {
         return Container(
           child: Card(
             child: Container(
               // turnInfo's decoration.
-              width: 350,
+              //width: 350,
               margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
               child: Column(
                 children: <Widget>[
                   // 2.0. 轮数
-                  Container(child: TurnTitle(mappedBehavior.turn)),
+                  Container(child: TurnTitle(mappedBehaviors[index].turn)),
                   // 2.1. 每一轮的用户行为(组)
-                  Container(
-                    child: PlayerBehaviorRecordCardGroup(
-                        mappedBehavior.turnBehaviors),
-                  ),
+                  Container(child: PlayerBehaviorRecordCardGroup(mappedBehaviors[index].turnBehaviors)),
                   // 2.2. 用来增加玩家行为的输入框
                   Container(child: BehaviorInput(_addNewBehavior)),
                 ],
@@ -61,7 +59,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
             ),
           ),
         );
-      }).toList(),
+      },
     );
   }
 }
