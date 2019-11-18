@@ -12,6 +12,14 @@ class BehaviorInput extends StatelessWidget {
 
   BehaviorInput(this.inputFunction);
 
+  void submitData() {
+    final inputTurn = int.parse(turnInputController.text);
+    final inputPlayer = int.parse(playerInputController.text);
+    final inputDescribe = describeInputController.text;
+    final inputScore = double.parse(scoreInputController.text);
+    inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,7 +30,8 @@ class BehaviorInput extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: '玩家号码'),
+              decoration:
+                  InputDecoration(labelText: '当前玩家号码', hintText: '例: 1, 2...'),
               controller: playerInputController,
               keyboardType: TextInputType.number,
             ),
@@ -43,6 +52,7 @@ class BehaviorInput extends StatelessWidget {
               keyboardType: TextInputType.numberWithOptions(decimal: true),
             ),
             FlatButton(
+              onPressed: submitData,
               child: Text(
                 '添加玩家行为评估',
                 style: TextStyle(
@@ -50,14 +60,6 @@ class BehaviorInput extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () {
-                inputFunction(
-                  int.parse(turnInputController.text),
-                  int.parse(playerInputController.text),
-                  describeInputController.text,
-                  double.parse(scoreInputController.text),
-                );
-              },
             )
           ],
         ),
