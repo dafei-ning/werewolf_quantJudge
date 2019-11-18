@@ -10,13 +10,24 @@ class BehaviorInput extends StatelessWidget {
   final playerInputController = TextEditingController();
   final scoreInputController = TextEditingController();
 
+  /*
+   * Constructor
+   */
   BehaviorInput(this.inputFunction);
 
-  void submitData() {
+  void _submitData() {
     final inputTurn = int.parse(turnInputController.text);
     final inputPlayer = int.parse(playerInputController.text);
     final inputDescribe = describeInputController.text;
     final inputScore = double.parse(scoreInputController.text);
+
+    // Error protection.
+    if (!(inputTurn is int) || !(inputPlayer is int) || !(inputScore is double))
+      return;
+    if (inputTurn < 1 || inputPlayer < 1 || inputScore.isNegative) return;
+    if (inputTurn.isNaN || inputPlayer.isNaN || inputDescribe.isEmpty) return;
+    
+    // If inputs correct, calling inputting behavior.
     inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
   }
 
@@ -30,8 +41,8 @@ class BehaviorInput extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration:
-                  InputDecoration(labelText: '当前玩家号码', hintText: '例: 1, 2...'),
+              decoration: InputDecoration(
+                  labelText: '玩家号码', hintText: '输入某位玩家的号码, 例如: 1, 2...'),
               controller: playerInputController,
               keyboardType: TextInputType.number,
             ),
@@ -41,18 +52,20 @@ class BehaviorInput extends StatelessWidget {
               keyboardType: TextInputType.number,
             ),
             TextField(
-              decoration: InputDecoration(labelText: '行为标签'),
+              decoration:
+                  InputDecoration(labelText: '行为标签', hintText: '例如: 发言逻辑断层'),
               controller: describeInputController,
               keyboardType: TextInputType.text,
             ),
             // TODO: 输入的分数将与其他玩家同样标签的分数值做比较
             TextField(
-              decoration: InputDecoration(labelText: '分数'),
+              decoration: InputDecoration(
+                  labelText: '分数', hintText: '例如: 60.5, 99.0...'),
               controller: scoreInputController,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
             ),
             FlatButton(
-              onPressed: submitData,
+              onPressed: _submitData,
               child: Text(
                 '添加玩家行为评估',
                 style: TextStyle(
