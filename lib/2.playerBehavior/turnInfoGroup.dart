@@ -42,7 +42,7 @@ class _TurnInfoGroupState extends State<TurnInfoGroup> {
       children: <Widget>[
         Container(child: BehaviorInput(_addNewBehavior)),
         Container(
-          height: 180,
+          height: 200,
           child: ListView.builder(
             itemCount: mappedBehaviors.length,
             itemBuilder: (ctx, index) {
