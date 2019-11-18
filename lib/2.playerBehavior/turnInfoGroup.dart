@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:werewolf_quantjudge/models/behavior.dart';
 import '../models/mappedBehavior.dart';
 import '2.1.playerRecordAndButton/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
-import '2.2.behaviorInput/behaviorInput.dart';
 import '../models/data.dart';
-import '../controllers/behaviorController.dart';
 
 class TurnInfoGroup extends StatefulWidget {
   @override

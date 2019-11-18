@@ -33,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Behavior> behaviors = SimulateData().behaviors;
   // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhObject = new BehaviorController();
+
   void _addNewBehavior(
       int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
     final newBehavior = Behavior(
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void startInputNewBehavior(BuildContext ctx) {
     showModalBottomSheet(
       context: ctx,
-      builder: (bCtx) {
+      builder: (_) {
         return Container(child: BehaviorInput(_addNewBehavior));
       },
     );
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add_box),
-            onPressed: () {},
+            onPressed: () => startInputNewBehavior(context),
           )
         ],
       ),
@@ -86,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_box),
-        onPressed: () {},
+        onPressed: () => startInputNewBehavior(context),
       ),
     );
   }
