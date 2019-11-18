@@ -24,19 +24,23 @@ class BehaviorInput extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: '玩家号码'),
               controller: playerInputController,
+              keyboardType: TextInputType.number,
             ),
             TextField(
               decoration: InputDecoration(labelText: '天数轮次'),
               controller: turnInputController,
+              keyboardType: TextInputType.number,
             ),
             TextField(
               decoration: InputDecoration(labelText: '行为标签'),
               controller: describeInputController,
+              keyboardType: TextInputType.text,
             ),
             // TODO: 输入的分数将与其他玩家同样标签的分数值做比较
             TextField(
               decoration: InputDecoration(labelText: '分数'),
               controller: scoreInputController,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
             ),
             FlatButton(
               child: Text(
