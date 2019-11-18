@@ -15,61 +15,33 @@ class TurnInfoGroup extends StatefulWidget {
 class _TurnInfoGroupState extends State<TurnInfoGroup> {
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
-  final List<Behavior> behaviors = SimulateData().behaviors;
-  // TODO: 是不是有更好的方法归类这一系列function？
-  BehaviorController bhObject = new BehaviorController();
-
-  void _addNewBehavior(
-      int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
-    final newBehavior = Behavior(
-      // TODO: id to be iterated automatically.
-      id: 888,
-      turn: inTurn,
-      player: inPlayer,
-      describeTab: inDescribeTab,
-      quantity: inQuantity,
-      date: DateTime.now(),
-    );
-    setState(() {
-      behaviors.add(newBehavior);
-      mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(child: BehaviorInput(_addNewBehavior)),
-        Container(
-          height: 200,
-          child: ListView.builder(
-            itemCount: mappedBehaviors.length,
-            itemBuilder: (ctx, index) {
-              return Container(
-                child: Card(
-                  child: Container(
-                    // turnInfo's decoration.
-                    //width: 350,
-                    margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
-                    child: Column(
-                      children: <Widget>[
-                        // 2.0. 轮数
-                        Container(
-                            child: TurnTitle(mappedBehaviors[index].turn)),
-                        // 2.1. 每一轮的用户行为(组)
-                        Container(
-                            child: PlayerBehaviorRecordCardGroup(
-                                mappedBehaviors[index].turnBehaviors)),
-                      ],
-                    ),
-                  ),
+    return Container(
+      height: 500,
+      child: ListView.builder(
+        itemCount: mappedBehaviors.length,
+        itemBuilder: (ctx, index) {
+          return Container(
+            child: Card(
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+                child: Column(
+                  children: <Widget>[
+                    // 轮数
+                    Container(child: TurnTitle(mappedBehaviors[index].turn)),
+                    // 每一轮的用户行为(组)
+                    Container(
+                        child: PlayerBehaviorRecordCardGroup(
+                            mappedBehaviors[index].turnBehaviors)),
+                  ],
                 ),
-              );
-            },
-          ),
-        ),
-      ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }
