@@ -37,10 +37,7 @@ class MyHomePage extends StatelessWidget {
               Container(child: BehaviorChart()),
 
               // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
-              Container(
-                height: 500,
-                child: TurnInfoGroup(),
-              )
+              Container(child: TurnInfoGroup())
             ],
           ),
         ),
