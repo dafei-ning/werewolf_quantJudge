@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:werewolf_quantjudge/models/behavior.dart';
 
 class PlayerBehaviorInfo extends StatelessWidget {
-
   final Behavior behavior;
 
   /*
@@ -34,11 +33,11 @@ class PlayerBehaviorInfo extends StatelessWidget {
         // 对于所选行为标签的狼面值。
         Container(
           child: Card(child: Text(behavior.quantity.toString())),
-          width:45,
+          width: 45,
         ),
         Container(
           child: Card(child: Text(DateFormat('Hms').format(behavior.date))),
-          width:85,
+          width: 85,
         ),
         //Container(child: Card(child: Text(date.toString()))),
       ],

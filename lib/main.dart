@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'apppp',
+      title: '狼人杀记录器',
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+        accentColor: Colors.amber,
+      ),
       home: MyHomePage('角色行为量化判断记录'),
     );
   }
@@ -29,15 +33,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   final List<Behavior> behaviors = SimulateData().behaviors;
   // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhObject = new BehaviorController();
 
-  void _addNewBehavior(
-      int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
+  void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
     final newBehavior = Behavior(
       // TODO: id to be iterated automatically.
       id: 888,
@@ -92,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add_box),
+        child: Icon(Icons.add),
         onPressed: () => startInputNewBehavior(context),
       ),
     );

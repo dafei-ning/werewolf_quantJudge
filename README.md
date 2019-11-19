@@ -62,3 +62,8 @@ child: ListView.builder(
 ```
 
 showModalBottomSheet(context: ctx, builder: (bCtx) {});
+
+输入以后关闭
+```Dart
+Navigator.of(context).pop();
+```
