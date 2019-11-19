@@ -18,7 +18,7 @@ class TurnInfoGroup extends StatelessWidget {
           return Container(
             child: Card(
               child: Container(
-                margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 child: Column(
                   children: <Widget>[
                     // 轮数

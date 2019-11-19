@@ -30,6 +30,8 @@ class _BehaviorInputState extends State<BehaviorInput> {
 
     // If inputs correct, calling inputting behavior.
     widget.inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
+
+    Navigator.of(context).pop();
   }
 
   @override

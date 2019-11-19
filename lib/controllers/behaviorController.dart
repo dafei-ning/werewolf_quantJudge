@@ -1,9 +1,9 @@
 import '../models/mappedBehavior.dart';
 import '../models/behavior.dart';
 
-
 class BehaviorController {
-  List<MappedBehavior> mapAndAdd(List<MappedBehavior> mappedBehaviors, Behavior behavior) {
+  List<MappedBehavior> mapAndAdd(
+      List<MappedBehavior> mappedBehaviors, Behavior behavior) {
     bool noTurnInfo = true;
     int catchTurn = behavior.turn;
     behavior.turn = null;
@@ -14,9 +14,18 @@ class BehaviorController {
       }
     }
     if (noTurnInfo) {
-      MappedBehavior newMappedBehavior;
-      newMappedBehavior.turn = catchTurn;
-      newMappedBehavior.turnBehaviors.add(behavior);
+      MappedBehavior newMappedBehavior = new MappedBehavior(
+        turn: catchTurn,
+        turnBehaviors: [
+          Behavior(
+            id: 888,
+            player: behavior.player,
+            describeTab: behavior.describeTab,
+            quantity: behavior.quantity,
+            date: DateTime.now(),
+          ),
+        ],
+      );
       mappedBehaviors.add(newMappedBehavior);
     }
     return mappedBehaviors;
