@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.amber,
+        fontFamily: 'Quicksand',
       ),
       home: MyHomePage('角色行为量化判断记录'),
     );
