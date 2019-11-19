@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-class BehaviorInput extends StatelessWidget {
+class BehaviorInput extends StatefulWidget {
   final Function inputFunction;
-  /*
-   * User input properties.
-   */
+  /* User input properties. */
+
+  BehaviorInput(this.inputFunction);
+
+  @override
+  _BehaviorInputState createState() => _BehaviorInputState();
+}
+
+class _BehaviorInputState extends State<BehaviorInput> {
   final turnInputController = TextEditingController();
   final describeInputController = TextEditingController();
   final playerInputController = TextEditingController();
   final scoreInputController = TextEditingController();
-
-  /*
-   * Constructor
-   */
-  BehaviorInput(this.inputFunction);
 
   void _submitData() {
     final inputTurn = int.parse(turnInputController.text);
@@ -26,9 +27,9 @@ class BehaviorInput extends StatelessWidget {
       return;
     if (inputTurn < 1 || inputPlayer < 1 || inputScore.isNegative) return;
     if (inputTurn.isNaN || inputPlayer.isNaN || inputDescribe.isEmpty) return;
-    
+
     // If inputs correct, calling inputting behavior.
-    inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
+    widget.inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
   }
 
   @override

@@ -4,14 +4,9 @@ import '2.1.playerRecordAndButton/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
 import '../models/data.dart';
 
-class TurnInfoGroup extends StatefulWidget {
-  @override
-  _TurnInfoGroupState createState() => _TurnInfoGroupState();
-}
-
-class _TurnInfoGroupState extends State<TurnInfoGroup> {
-  /*  Properties. */
-  List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+class TurnInfoGroup extends StatelessWidget {
+  final List<MappedBehavior> mappedBehaviors;
+  TurnInfoGroup(this.mappedBehaviors);
 
   @override
   Widget build(BuildContext context) {

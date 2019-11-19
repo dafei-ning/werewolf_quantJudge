@@ -13,20 +13,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return MaterialApp(
+      title: 'apppp',
+      home: MyHomePage('角色行为量化判断记录'),
+    );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  final String title;
+  MyHomePage(this.title);
+
   @override
-  _MyHomePageState createState() => _MyHomePageState('角色行为量化判断记录');
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  /* Class properties */
-  final String title;
-  /* Constructor */
-  _MyHomePageState(this.title);
 
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
@@ -55,7 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
-        return Container(child: BehaviorInput(_addNewBehavior));
+        return GestureDetector(
+          onTap: () {},
+          child: BehaviorInput(_addNewBehavior),
+          behavior: HitTestBehavior.opaque,
+        );
       },
     );
   }
@@ -64,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add_box),
@@ -80,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(child: BehaviorChart()),
 
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
-            Container(child: TurnInfoGroup())
+            Container(child: TurnInfoGroup(mappedBehaviors))
           ],
         ),
       ),

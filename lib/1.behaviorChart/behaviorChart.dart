@@ -12,7 +12,7 @@ class BehaviorChart extends StatelessWidget {
       elevation: 2,
       child: Container(
         width: double.infinity,
-        height: 100,
+        height: 150,
         child: Text('这里放柱状图'),
       ),
     );
