@@ -19,11 +19,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              title: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontFamily: 'OpenSans',
+                fontSize: 13,
+              ),
+            ),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(
                   fontFamily: 'OpenSans',
                   fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
         ),
@@ -82,10 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: TextStyle(fontFamily: 'Open Sans'),
-        ),
+        title: Text(widget.title),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add_box),

@@ -27,7 +27,12 @@ class PlayerBehaviorInfo extends StatelessWidget {
         ),
         // 具体的行为标签描述。
         Container(
-          child: Card(child: Text(behavior.describeTab)),
+          child: Card(
+            child: Text(
+              behavior.describeTab,
+              style: Theme.of(context).textTheme.title,
+            ),
+          ),
           width: 110,
         ),
         // 对于所选行为标签的狼面值。
