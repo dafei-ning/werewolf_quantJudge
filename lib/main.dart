@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
       ),
-      home: MyHomePage('角色行为量化判断记录'),
+      home: MyHomePage('角色行为量化判断记录ABC'),
     );
   }
 }
@@ -40,7 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhObject = new BehaviorController();
 
-  void _addNewBehavior(int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
+  void _addNewBehavior(
+      int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
     final newBehavior = Behavior(
       // TODO: id to be iterated automatically.
       id: 888,
@@ -73,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title, style: TextStyle(fontFamily: 'Open Sans')),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add_box),
