@@ -16,7 +16,11 @@ class TurnInfoGroup extends StatelessWidget {
               children: <Widget>[
                 Text(
                   '还没有添加用户行为',
-                  style: Theme.of(context).textTheme.title,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey,
+                  ),
                 )
               ],
             )
