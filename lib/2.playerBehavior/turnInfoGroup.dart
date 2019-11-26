@@ -21,7 +21,8 @@ class TurnInfoGroup extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.grey,
                   ),
-                )
+                ),
+                Image.asset('assets/images/waiting.png'),
               ],
             )
           : ListView.builder(
