@@ -22,7 +22,15 @@ class TurnInfoGroup extends StatelessWidget {
                     color: Colors.grey,
                   ),
                 ),
-                Image.asset('assets/images/waiting.png'),
+                SizedBox(
+                  height: 40,
+                ),
+                Container(
+                    height: 200,
+                    child: Image.asset(
+                      'assets/images/waiting.png',
+                      fit: BoxFit.cover,
+                    )),
               ],
             )
           : ListView.builder(
