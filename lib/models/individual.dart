@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/models/behavior.dart';
 
-class Individual {
+class IndividualRecord {
   int player;
   List<TurnRecord> turnRecords;
+  List<Behavior> behaviorRecords;
 
-  List<BehaviorRecord> behaviorRecords;
-  
+  IndividualRecord({
+    this.player,
+    this.turnRecords,
+    this.behaviorRecords,
+  });
 }
+
+class TurnRecord {
+  int turn;
+  List<Behavior> behaviors;
+  TurnRecord({this.turn, this.behaviors});
+}
+

@@ -11,11 +11,11 @@ class Behavior {
   List<String> side;
   
   Behavior({
-    @required this.id,
-    @required this.player,
-    @required this.describeTab,
-    @required this.quantity,
-    @required this.date,
+    this.id,
+    this.player,
+    this.describeTab,
+    this.quantity,
+    this.date,
     this.turn,
   });
 }
