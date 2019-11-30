@@ -5,15 +5,19 @@
 import 'package:flutter/material.dart';
 
 class BehaviorChart extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.blueGrey,
-      elevation: 2,
+      elevation: 10,
+      margin: EdgeInsets.all(10),
       child: Container(
         width: double.infinity,
         height: 150,
-        child: Text('这里放柱状图'),
+        child: Row(children: <Widget>[
+          
+        ],)
       ),
     );
   }
