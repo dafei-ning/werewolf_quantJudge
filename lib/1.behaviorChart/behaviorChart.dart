@@ -3,8 +3,22 @@
  * 角色行为记录chart值为唯一引导玩家做判断的内容。
  */
 import 'package:flutter/material.dart';
+import '../models/individual.dart';
+import '../models/behavior.dart';
 
 class BehaviorChart extends StatelessWidget {
+
+  final List<Behavior> behaviors;
+
+
+
+  List<IndividualRecord> get groupedBehaviorValues {
+
+  }
+
+  BehaviorChart(this.behaviors);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +30,7 @@ class BehaviorChart extends StatelessWidget {
         width: double.infinity,
         height: 150,
         child: Row(children: <Widget>[
-          
+
         ],)
       ),
     );
