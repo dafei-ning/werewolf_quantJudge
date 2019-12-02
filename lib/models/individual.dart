@@ -12,9 +12,14 @@ class IndividualRecord {
   });
 }
 
+/*
+ * 内嵌class
+ */
 class TurnRecord {
   int turn;
   List<Behavior> behaviors;
-  TurnRecord({this.turn, this.behaviors});
+  TurnRecord({
+    this.turn,
+    this.behaviors,
+  });
 }
-

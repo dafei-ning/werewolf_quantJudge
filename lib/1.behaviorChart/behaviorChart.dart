@@ -8,6 +8,7 @@ import '../models/behavior.dart';
 
 class BehaviorChart extends StatelessWidget {
 
+  // 引进来的是从main里额外记录的behaviors，要转换成以player为主导的单人behaviors集合。
   final List<Behavior> behaviors;
 
 
