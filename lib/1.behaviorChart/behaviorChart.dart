@@ -5,17 +5,17 @@
 import 'package:flutter/material.dart';
 import '../models/individual.dart';
 import '../models/behavior.dart';
+import '../controllers/behaviorController.dart';
 
 class BehaviorChart extends StatelessWidget {
 
   // 引进来的是从main里额外记录的behaviors，要转换成以player为主导的单人behaviors集合。
+  
+  /* Properties */
   final List<Behavior> behaviors;
+  Map<int, IndividualRecord> individualRecords = {};
 
-
-
-  List<IndividualRecord> get groupedBehaviorValues {
-
-  }
+  BehaviorController chartObject = new BehaviorController();
 
   BehaviorChart(this.behaviors);
 
