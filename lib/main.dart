@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Behavior> behaviors = SimulateData().behaviors;
 
   // TODO: 是不是有更好的方法归类这一系列function？
-  BehaviorController bhController = new BehaviorController();
+  BehaviorController bhCtrl = new BehaviorController();
 
   void _addNewBehavior(
       int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
@@ -73,8 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     setState(() {
       behaviors.add(newBehavior);
-      mappedBehaviors = bhController.mapAndAdd(mappedBehaviors, newBehavior);
-      individualRecords = bhController.groupedBehaviorValues(individualRecords, newBehavior)
+      mappedBehaviors = bhCtrl.mapAndAdd(mappedBehaviors, newBehavior);
+      individualRecords = bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
     });
   }
 

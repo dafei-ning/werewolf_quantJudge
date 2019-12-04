@@ -39,43 +39,41 @@ class BehaviorController {
   // 并将结果加入到 turnRecords 和 behaviorRecords 中。
   Map<int, IndividualRecord> groupedBehaviorValues(
     Map<int, IndividualRecord> individualRecords,
-    List<Behavior> behaviors,
+    Behavior bh,
   ) {
-    for (Behavior bh in behaviors) {
-      if (!individualRecords.containsKey(bh.player)) {
-        individualRecords.addAll({
-          bh.player: new IndividualRecord(
-            player: bh.player,
-            turnRecords: [],
-            behaviorRecords: {},
-          )
-        });
-      }
-      var currentIndividualRecord = individualRecords[bh.player];
-
-      // turnRecords
-      bool noTurnInfo = true;
-      for (TurnRecord eachTR in currentIndividualRecord.turnRecords) {
-        if (eachTR.turn == bh.turn) {
-          eachTR.behaviors.add(bh);
-          noTurnInfo = false;
-        }
-      }
-      if (noTurnInfo) {
-        currentIndividualRecord.turnRecords.add(TurnRecord(
-          turn: bh.turn,
-          behaviors: [bh],
-        )); //暂时不知道会不会出现问题
-      }
-      // behaviorRecords
-      if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
-        currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity;
-      } else {
-        currentIndividualRecord.behaviorRecords
-            .addAll({'bh.describeTab': bh.quantity});
-      }
-      individualRecords[bh.player] = currentIndividualRecord;
+    if (!individualRecords.containsKey(bh.player)) {
+      individualRecords.addAll({
+        bh.player: new IndividualRecord(
+          player: bh.player,
+          turnRecords: [],
+          behaviorRecords: {},
+        )
+      });
     }
+    var currentIndividualRecord = individualRecords[bh.player];
+
+    // turnRecords
+    bool noTurnInfo = true;
+    for (TurnRecord eachTR in currentIndividualRecord.turnRecords) {
+      if (eachTR.turn == bh.turn) {
+        eachTR.behaviors.add(bh);
+        noTurnInfo = false;
+      }
+    }
+    if (noTurnInfo) {
+      currentIndividualRecord.turnRecords.add(TurnRecord(
+        turn: bh.turn,
+        behaviors: [bh],
+      )); //暂时不知道会不会出现问题
+    }
+    // behaviorRecords
+    if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
+      currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity;
+    } else {
+      currentIndividualRecord.behaviorRecords
+          .addAll({'bh.describeTab': bh.quantity});
+    }
+    individualRecords[bh.player] = currentIndividualRecord;
     return individualRecords;
   }
 }
