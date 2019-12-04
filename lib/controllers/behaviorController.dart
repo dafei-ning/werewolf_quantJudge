@@ -19,7 +19,7 @@ class BehaviorController {
       }
     }
     if (noTurnInfo) {
-      MappedBehavior newMappedBehavior = new MappedBehavior(
+      mappedBehaviors.add(MappedBehavior(
         turn: catchTurn,
         turnBehaviors: [
           Behavior(
@@ -30,41 +30,50 @@ class BehaviorController {
             date: DateTime.now(),
           ),
         ],
-      );
-      mappedBehaviors.add(newMappedBehavior);
+      ));
     }
     return mappedBehaviors;
   }
 
   // 将每一次记录的玩家Behavior
-  Map<String, IndividualRecord> groupedBehaviorValues(Map<String, IndividualRecord> individualRecords, List<Behavior> behaviors,) {
+  Map<int, IndividualRecord> groupedBehaviorValues(
+    Map<int, IndividualRecord> individualRecords,
+    List<Behavior> behaviors,
+  ) {
     int playerNumber = 0;
 
     for (Behavior bh in behaviors) {
-      if (individualRecords.containsKey(bh.player)) {
-        var currentIndividualRecord = individualRecords[bh.player];
+      if (!individualRecords.containsKey(bh.player)) {
+        individualRecords.addAll({
+          bh.player: new IndividualRecord(
+            player: bh.player,
+            turnRecords: [],
+            behaviorRecords: {},
+          )
+        });
+      }
+      var currentIndividualRecord = individualRecords[bh.player];
 
-        // turnRecords
-        bool noTurnInfo = true;
-        for (TurnRecord eachTR in currentIndividualRecord.turnRecords) {
-          if (eachTR.turn == bh.turn) {
-            eachTR.behaviors.add(bh);
-            noTurnInfo = false;
-          }
+      // turnRecords
+      bool noTurnInfo = true;
+      for (TurnRecord eachTR in currentIndividualRecord.turnRecords) {
+        if (eachTR.turn == bh.turn) {
+          eachTR.behaviors.add(bh);
+          noTurnInfo = false;
         }
-        if (noTurnInfo) {
-          TurnRecord newTurnRecord = new TurnRecord(turn: bh.turn, behaviors: [bh]);
-          currentIndividualRecord.turnRecords.add(newTurnRecord); //暂时不知道会不会出现问题
-        }
-
-        // behaviorRecords
-        if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
-          currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity; 
-        } else {
-          currentIndividualRecord.behaviorRecords.addAll({'bh.describeTab': bh.quantity});
-        }
+      }
+      if (noTurnInfo) {
+        currentIndividualRecord.turnRecords.add(TurnRecord(
+          turn: bh.turn,
+          behaviors: [bh],
+        )); //暂时不知道会不会出现问题
+      }
+      // behaviorRecords
+      if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
+        currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity;
       } else {
-        
+        currentIndividualRecord.behaviorRecords
+            .addAll({'bh.describeTab': bh.quantity});
       }
     }
 
