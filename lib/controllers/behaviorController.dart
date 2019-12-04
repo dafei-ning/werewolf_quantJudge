@@ -35,7 +35,8 @@ class BehaviorController {
     return mappedBehaviors;
   }
 
-  // 将每一次记录的玩家Behavior
+  // 将每一次记录的玩家Behavior map成以玩家号码为主导的behavior集合
+  // 并将结果加入到 turnRecords 和 behaviorRecords 中。
   Map<int, IndividualRecord> groupedBehaviorValues(
     Map<int, IndividualRecord> individualRecords,
     List<Behavior> behaviors,
@@ -75,8 +76,8 @@ class BehaviorController {
         currentIndividualRecord.behaviorRecords
             .addAll({'bh.describeTab': bh.quantity});
       }
+      individualRecords[bh.player] = currentIndividualRecord;
     }
-
-    return List.generate(playerNumber, (index) {});
+    return individualRecords;
   }
 }
