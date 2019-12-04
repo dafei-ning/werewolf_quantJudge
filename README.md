@@ -67,3 +67,12 @@ showModalBottomSheet(context: ctx, builder: (bCtx) {});
 ```Dart
 Navigator.of(context).pop();
 ```
+
+将list里的东西map出来
+```Dart
+Row (
+  children: list.map((data) {
+    return Text('$data['day']);
+  }).toList(),
+),
+```

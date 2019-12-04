@@ -37,17 +37,21 @@ class BehaviorController {
 
   // 将每一次记录的玩家Behavior map成以玩家号码为主导的behavior集合
   // 并将结果加入到 turnRecords 和 behaviorRecords 中。
-  Map<int, IndividualRecord> groupedBehaviorValues(
-    Map<int, IndividualRecord> individualRecords,
-    Behavior bh,
-  ) {
-    if (!individualRecords.containsKey(bh.player)) {
-      individualRecords.addAll({
-        bh.player: new IndividualRecord(
-            player: bh.player, turnRecords: [], behaviorRecords: {})
-      });
+  List<IndividualRecord> groupedBehaviorValues(
+      List<IndividualRecord> individualRecords, Behavior bh) {
+    bool noPlayerRecord = true;
+    var currentIndividualRecord;
+    for (IndividualRecord ir in individualRecords) {
+      if (ir.player == bh.player) {
+        currentIndividualRecord = ir;
+        noPlayerRecord = false;
+      }
     }
-    var currentIndividualRecord = individualRecords[bh.player];
+    if (noPlayerRecord) {
+      individualRecords.add(IndividualRecord(
+          player: bh.player, turnRecords: [], behaviorRecords: {}));
+      currentIndividualRecord = individualRecords[0];
+    }
 
     // turnRecords
     bool noTurnInfo = true;
@@ -58,17 +62,14 @@ class BehaviorController {
       }
     }
     if (noTurnInfo) {
-      currentIndividualRecord.turnRecords
-          .add(TurnRecord(turn: bh.turn, behaviors: [bh])); //暂时不知道会不会出现问题
+      currentIndividualRecord.turnRecords.add(TurnRecord(turn: bh.turn, behaviors: [bh])); //暂时不知道会不会出现问题
     }
     // behaviorRecords
     if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
       currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity;
     } else {
-      currentIndividualRecord.behaviorRecords
-          .addAll({'bh.describeTab': bh.quantity});
+      currentIndividualRecord.behaviorRecords.addAll({'bh.describeTab': bh.quantity});
     }
-    individualRecords[bh.player] = currentIndividualRecord;
     return individualRecords;
   }
 }
