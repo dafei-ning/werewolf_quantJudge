@@ -44,10 +44,7 @@ class BehaviorController {
     if (!individualRecords.containsKey(bh.player)) {
       individualRecords.addAll({
         bh.player: new IndividualRecord(
-          player: bh.player,
-          turnRecords: [],
-          behaviorRecords: {},
-        )
+            player: bh.player, turnRecords: [], behaviorRecords: {})
       });
     }
     var currentIndividualRecord = individualRecords[bh.player];
@@ -61,10 +58,8 @@ class BehaviorController {
       }
     }
     if (noTurnInfo) {
-      currentIndividualRecord.turnRecords.add(TurnRecord(
-        turn: bh.turn,
-        behaviors: [bh],
-      )); //暂时不知道会不会出现问题
+      currentIndividualRecord.turnRecords
+          .add(TurnRecord(turn: bh.turn, behaviors: [bh])); //暂时不知道会不会出现问题
     }
     // behaviorRecords
     if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {

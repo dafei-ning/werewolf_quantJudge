@@ -9,12 +9,12 @@ import '../controllers/behaviorController.dart';
 
 class BehaviorChart extends StatelessWidget {
 
-  // 引进来的是从main里额外记录的behaviors，要转换成以player为主导的单人behaviors集合。
-
   /* Properties */
   final Map<int, IndividualRecord> individualRecords;
 
+  /* Constructor */
   BehaviorChart(this.individualRecords);
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BehaviorChart extends StatelessWidget {
         width: double.infinity,
         height: 150,
         child: Row(children: <Widget>[
-
+          
         ],)
       ),
     );

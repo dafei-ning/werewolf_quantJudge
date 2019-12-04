@@ -51,12 +51,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  //List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = [];
   Map<int, IndividualRecord> individualRecords = {};
-  //List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   final List<Behavior> behaviors = SimulateData().behaviors;
-
   // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhCtrl = new BehaviorController();
 
@@ -108,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
-            Container(child: BehaviorChart(behaviors)),
+            Container(child: BehaviorChart(individualRecords)),
 
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
             Container(child: TurnInfoGroup(mappedBehaviors))
