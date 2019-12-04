@@ -3,6 +3,7 @@
  * 角色行为记录chart值为唯一引导玩家做判断的内容。
  */
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/1.behaviorChart/chartBar.dart';
 import '../models/individual.dart';
 
 class BehaviorChart extends StatelessWidget {
@@ -23,7 +24,7 @@ class BehaviorChart extends StatelessWidget {
         width: double.infinity,
         height: 150,
         child: Row(children: individualRecords.map((data) {
-          return Text('player ${data.player} ');
+          return ChartBar(1, 100, {'a':10, 'b': 20});
         }).toList(),)
       ),
     );
