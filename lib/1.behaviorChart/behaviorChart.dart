@@ -4,8 +4,6 @@
  */
 import 'package:flutter/material.dart';
 import '../models/individual.dart';
-import '../models/behavior.dart';
-import '../controllers/behaviorController.dart';
 
 class BehaviorChart extends StatelessWidget {
 
