@@ -37,10 +37,7 @@ class BehaviorController {
   }
 
   // 将每一次记录的玩家Behavior
-  Map<String, IndividualRecord> groupedBehaviorValues(
-    Map<String, IndividualRecord> individualRecords,
-    List<Behavior> behaviors,
-  ) {
+  Map<String, IndividualRecord> groupedBehaviorValues(Map<String, IndividualRecord> individualRecords, List<Behavior> behaviors,) {
     int playerNumber = 0;
 
     for (Behavior bh in behaviors) {
@@ -56,8 +53,8 @@ class BehaviorController {
           }
         }
         if (noTurnInfo) {
-          TurnRecord newTurnRecord =
-              new TurnRecord(turn: bh.turn, behaviors: [bh]);
+          TurnRecord newTurnRecord = new TurnRecord(turn: bh.turn, behaviors: [bh]);
+          currentPersonRecord.turnRecords.add(newTurnRecord);
         }
 
         // behaviorRecords
