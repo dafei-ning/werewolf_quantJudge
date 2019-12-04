@@ -8,7 +8,7 @@ import '../models/individual.dart';
 class BehaviorChart extends StatelessWidget {
 
   /* Properties */
-  final Map<int, IndividualRecord> individualRecords;
+  final List<IndividualRecord> individualRecords;
 
   /* Constructor */
   BehaviorChart(this.individualRecords);

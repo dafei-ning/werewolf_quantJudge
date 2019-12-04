@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = [];
-  Map<int, IndividualRecord> individualRecords = {};
+  List<IndividualRecord> individualRecords = [];
   final List<Behavior> behaviors = SimulateData().behaviors;
   // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhCtrl = new BehaviorController();
