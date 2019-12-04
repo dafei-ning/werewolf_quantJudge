@@ -5,6 +5,7 @@ import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
 import 'models/data.dart';
 import 'models/mappedBehavior.dart';
 import 'models/behavior.dart';
+import 'models/individual.dart';
 import 'controllers/behaviorController.dart';
 
 void main() => runApp(MyApp());
@@ -52,11 +53,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = [];
+  Map<int, IndividualRecord> individualRecords = {};
   //List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   final List<Behavior> behaviors = SimulateData().behaviors;
 
   // TODO: 是不是有更好的方法归类这一系列function？
-  BehaviorController bhObject = new BehaviorController();
+  BehaviorController bhController = new BehaviorController();
 
   void _addNewBehavior(
       int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
@@ -71,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     setState(() {
       behaviors.add(newBehavior);
-      mappedBehaviors = bhObject.mapAndAdd(mappedBehaviors, newBehavior);
+      mappedBehaviors = bhController.mapAndAdd(mappedBehaviors, newBehavior);
+      individualRecords = bhController.groupedBehaviorValues(individualRecords, newBehavior)
     });
   }
 
