@@ -41,8 +41,6 @@ class BehaviorController {
     Map<int, IndividualRecord> individualRecords,
     List<Behavior> behaviors,
   ) {
-    int playerNumber = 0;
-
     for (Behavior bh in behaviors) {
       if (!individualRecords.containsKey(bh.player)) {
         individualRecords.addAll({
