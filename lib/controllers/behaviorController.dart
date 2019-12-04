@@ -42,11 +42,11 @@ class BehaviorController {
 
     for (Behavior bh in behaviors) {
       if (individualRecords.containsKey(bh.player)) {
-        var currentPersonRecord = individualRecords[bh.player];
+        var currentIndividualRecord = individualRecords[bh.player];
 
         // turnRecords
         bool noTurnInfo = true;
-        for (TurnRecord eachTR in currentPersonRecord.turnRecords) {
+        for (TurnRecord eachTR in currentIndividualRecord.turnRecords) {
           if (eachTR.turn == bh.turn) {
             eachTR.behaviors.add(bh);
             noTurnInfo = false;
@@ -54,11 +54,17 @@ class BehaviorController {
         }
         if (noTurnInfo) {
           TurnRecord newTurnRecord = new TurnRecord(turn: bh.turn, behaviors: [bh]);
-          currentPersonRecord.turnRecords.add(newTurnRecord);
+          currentIndividualRecord.turnRecords.add(newTurnRecord); //暂时不知道会不会出现问题
         }
 
         // behaviorRecords
-
+        if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
+          currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity; 
+        } else {
+          currentIndividualRecord.behaviorRecords.addAll({'bh.describeTab': bh.quantity});
+        }
+      } else {
+        
       }
     }
 
