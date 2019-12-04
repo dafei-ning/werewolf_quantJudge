@@ -13,7 +13,6 @@ class BehaviorChart extends StatelessWidget {
   /* Constructor */
   BehaviorChart(this.individualRecords);
 
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -23,9 +22,9 @@ class BehaviorChart extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 150,
-        child: Row(children: <Widget>[
-          
-        ],)
+        child: Row(children: individualRecords.map((data) {
+          return Text('player ${data.player} ');
+        }).toList(),)
       ),
     );
   }

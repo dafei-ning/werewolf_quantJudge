@@ -52,7 +52,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  //List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
 
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = [];
