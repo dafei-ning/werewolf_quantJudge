@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
               ),
         ),
       ),
-      home: MyHomePage('角色行为量化判断记录ABC'),
+      home: MyHomePage('狼人杀玩家行为量化记录'),
     );
   }
 }
