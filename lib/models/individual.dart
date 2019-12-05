@@ -2,15 +2,15 @@ import 'package:werewolf_quantjudge/models/behavior.dart';
 
 class IndividualRecord {
   int player;
-  double indiTotalBehaviorQuantity;
-  double maxTotalBehaviorQuantity;
+  double indBehaviorTotal;
+  double maxBehaviorTotal;
   List<TurnRecord> turnRecords;
   List<BehaviorRecord> behaviorRecords;
 
   IndividualRecord({
     this.player,
-    this.indiTotalBehaviorQuantity,
-    this.maxTotalBehaviorQuantity,
+    this.indBehaviorTotal,
+    this.maxBehaviorTotal,
     this.turnRecords,
     this.behaviorRecords,
   });

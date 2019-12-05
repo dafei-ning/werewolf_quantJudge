@@ -26,8 +26,8 @@ class BehaviorChart extends StatelessWidget {
             children: individualRecords.map((individualRecord) {
               return ChartBar(
                 individualRecord.player,
-                100,
-                individualRecord.indiTotalBehaviorQuantity,
+                individualRecord.maxBehaviorTotal,
+                individualRecord.indBehaviorTotal,
                 individualRecord.behaviorRecords,
               );
             }).toList(),

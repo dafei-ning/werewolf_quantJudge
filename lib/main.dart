@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       behaviors.add(newBehavior);
       mappedBehaviors = bhCtrl.mapAndAdd(mappedBehaviors, newBehavior);
       individualRecords = bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
-      print("P1 indi: ${individualRecords[0].indiTotalBehaviorQuantity}, max: ${individualRecords[0].maxTotalBehaviorQuantity}");
+      //print("P1 indi: ${individualRecords[0].indBehaviorTotal}, max: ${individualRecords[0].maxBehaviorTotal}");
     });
   }
 
