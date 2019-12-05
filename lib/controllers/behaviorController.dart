@@ -48,11 +48,16 @@ class BehaviorController {
       }
     }
     if (noPlayerRecord) {
-      individualRecords.add(IndividualRecord(
-          player: bh.player, turnRecords: [], behaviorRecords: []));
+      individualRecords.add(
+        IndividualRecord(
+          player: bh.player,
+          totalBehaviorQuantity: 0,
+          turnRecords: [],
+          behaviorRecords: [],
+        ),
+      );
       currentIndividualRecord = individualRecords[0];
     }
-
     // turnRecords
     bool noTurnInfo = true;
     for (TurnRecord eachTR in currentIndividualRecord.turnRecords) {
@@ -77,6 +82,7 @@ class BehaviorController {
       currentIndividualRecord.behaviorRecords
           .add(BehaviorRecord(bh.describeTab, bh.quantity));
     }
+    currentIndividualRecord.totalBehaviorQuantity += bh.quantity;
     return individualRecords;
   }
 }

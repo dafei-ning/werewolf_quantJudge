@@ -13,6 +13,13 @@ class BehaviorChart extends StatelessWidget {
   /* Constructor */
   BehaviorChart(this.individualRecords);
 
+  double getMaxBehaviorTotal(List<IndividualRecord> indiRecords) {
+
+  }
+  double getIndBehaviorTotal(IndividualRecord indiRecord) {
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -23,9 +30,13 @@ class BehaviorChart extends StatelessWidget {
           width: double.infinity,
           height: 150,
           child: Row(
-            children: individualRecords.map((data) {
+            children: individualRecords.map((individualRecord) {
               return ChartBar(
-                  1, 100, 90, [BehaviorRecord('a', 10), BehaviorRecord('b', 20)]);
+                individualRecord.player,
+                100,
+                90,
+                individualRecord.behaviorRecords,
+              );
             }).toList(),
           )),
     );
