@@ -13,11 +13,8 @@ class BehaviorChart extends StatelessWidget {
   /* Constructor */
   BehaviorChart(this.individualRecords);
 
-  double getMaxBehaviorTotal(List<IndividualRecord> indiRecords) {
-
-  }
-  double getIndBehaviorTotal(IndividualRecord indiRecord) {
-
+  double getMaxBehaviorTotal(List<IndividualRecord> individualRecords) {
+    
   }
 
   @override
@@ -34,7 +31,7 @@ class BehaviorChart extends StatelessWidget {
               return ChartBar(
                 individualRecord.player,
                 100,
-                90,
+                individualRecord.indiTotalBehaviorQuantity,
                 individualRecord.behaviorRecords,
               );
             }).toList(),

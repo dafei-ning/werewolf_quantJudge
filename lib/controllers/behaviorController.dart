@@ -51,7 +51,7 @@ class BehaviorController {
       individualRecords.add(
         IndividualRecord(
           player: bh.player,
-          totalBehaviorQuantity: 0,
+          indiTotalBehaviorQuantity: 0,
           turnRecords: [],
           behaviorRecords: [],
         ),
@@ -82,7 +82,7 @@ class BehaviorController {
       currentIndividualRecord.behaviorRecords
           .add(BehaviorRecord(bh.describeTab, bh.quantity));
     }
-    currentIndividualRecord.totalBehaviorQuantity += bh.quantity;
+    currentIndividualRecord.indiTotalBehaviorQuantity += bh.quantity;
     return individualRecords;
   }
 }
