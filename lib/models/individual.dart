@@ -3,7 +3,7 @@ import 'package:werewolf_quantjudge/models/behavior.dart';
 class IndividualRecord {
   int player;
   List<TurnRecord> turnRecords;
-  Map<String, double> behaviorRecords;
+  List<BehaviorRecord> behaviorRecords;
 
   IndividualRecord({
     this.player,
@@ -22,4 +22,13 @@ class TurnRecord {
     this.turn,
     this.behaviors,
   });
+}
+
+class BehaviorRecord {
+  String behaviorTag;
+  double behaviorQuantity;
+  BehaviorRecord(
+    this.behaviorTag,
+    this.behaviorQuantity,
+  );
 }

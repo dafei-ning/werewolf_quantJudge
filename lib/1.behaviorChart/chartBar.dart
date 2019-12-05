@@ -3,12 +3,13 @@
  */
 
 import 'package:flutter/material.dart';
+import '../models/individual.dart';
 
 class ChartBar extends StatelessWidget {
   final int player;
   final double maxBehaviorTotal; // 个人最大的行为量的总和，用来做柱状图的100% base。
   final double indBehaviorTotal; // 当前个人的行动量总和，所占柱状图的最高高度
-  final List<MapEntry> behaviorRecords; // 当掐按个人行动量的分布
+  final List<BehaviorRecord> behaviorRecords; // 当掐按个人行动量的分布
 
   ChartBar(
     this.player,

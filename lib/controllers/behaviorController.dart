@@ -49,7 +49,7 @@ class BehaviorController {
     }
     if (noPlayerRecord) {
       individualRecords.add(IndividualRecord(
-          player: bh.player, turnRecords: [], behaviorRecords: {}));
+          player: bh.player, turnRecords: [], behaviorRecords: []));
       currentIndividualRecord = individualRecords[0];
     }
 
@@ -66,11 +66,16 @@ class BehaviorController {
           .add(TurnRecord(turn: bh.turn, behaviors: [bh])); //暂时不知道会不会出现问题
     }
     // behaviorRecords
-    if (currentIndividualRecord.behaviorRecords.containsKey(bh.describeTab)) {
-      currentIndividualRecord.behaviorRecords[bh.describeTab] += bh.quantity;
-    } else {
+    bool noBhTag = true;
+    for (BehaviorRecord bhR in currentIndividualRecord.behaviorRecords) {
+      if (bhR.behaviorTag == bh.describeTab) {
+        bhR.behaviorQuantity += bh.quantity;
+        noBhTag = false;
+      }
+    }
+    if (noBhTag) {
       currentIndividualRecord.behaviorRecords
-          .addAll({'bh.describeTab': bh.quantity});
+          .add(BehaviorRecord(bh.describeTab, bh.quantity));
     }
     return individualRecords;
   }

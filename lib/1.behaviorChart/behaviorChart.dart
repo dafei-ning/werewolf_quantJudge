@@ -7,7 +7,6 @@ import 'package:werewolf_quantjudge/1.behaviorChart/chartBar.dart';
 import '../models/individual.dart';
 
 class BehaviorChart extends StatelessWidget {
-
   /* Properties */
   final List<IndividualRecord> individualRecords;
 
@@ -21,12 +20,14 @@ class BehaviorChart extends StatelessWidget {
       elevation: 10,
       margin: EdgeInsets.all(10),
       child: Container(
-        width: double.infinity,
-        height: 150,
-        child: Row(children: individualRecords.map((data) {
-          return ChartBar(1, 100, 90, [MapEntry('a', 10), MapEntry('b', 20)]);
-        }).toList(),)
-      ),
+          width: double.infinity,
+          height: 150,
+          child: Row(
+            children: individualRecords.map((data) {
+              return ChartBar(
+                  1, 100, 90, [BehaviorRecord('a', 10), BehaviorRecord('b', 20)]);
+            }).toList(),
+          )),
     );
   }
 }
