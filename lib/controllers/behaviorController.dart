@@ -48,15 +48,15 @@ class BehaviorController {
       }
     }
     if (noPlayerRecord) {
-      individualRecords.add(
-        IndividualRecord(
-          player: bh.player,
-          indiTotalBehaviorQuantity: 0,
-          turnRecords: [],
-          behaviorRecords: [],
-        ),
+      var newIndividualRecord = IndividualRecord(
+        player: bh.player,
+        indiTotalBehaviorQuantity: 0,
+        maxTotalBehaviorQuantity: 0,
+        turnRecords: [],
+        behaviorRecords: [],
       );
-      currentIndividualRecord = individualRecords[0];
+      currentIndividualRecord = newIndividualRecord;
+      individualRecords.add(newIndividualRecord);
     }
     // turnRecords
     bool noTurnInfo = true;
@@ -83,6 +83,17 @@ class BehaviorController {
           .add(BehaviorRecord(bh.describeTab, bh.quantity));
     }
     currentIndividualRecord.indiTotalBehaviorQuantity += bh.quantity;
+    // maxTotalBehaviorQuantity
+    double curMaxTotalBehaviorQuantity = 0;
+    for (IndividualRecord ir in individualRecords) {
+      curMaxTotalBehaviorQuantity =
+          ir.indiTotalBehaviorQuantity >= curMaxTotalBehaviorQuantity
+              ? ir.indiTotalBehaviorQuantity
+              : curMaxTotalBehaviorQuantity;
+    }
+    for (IndividualRecord ir in individualRecords) {
+      ir.maxTotalBehaviorQuantity = curMaxTotalBehaviorQuantity;
+    }
     return individualRecords;
   }
 }

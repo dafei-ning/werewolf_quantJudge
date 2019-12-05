@@ -3,12 +3,14 @@ import 'package:werewolf_quantjudge/models/behavior.dart';
 class IndividualRecord {
   int player;
   double indiTotalBehaviorQuantity;
+  double maxTotalBehaviorQuantity;
   List<TurnRecord> turnRecords;
   List<BehaviorRecord> behaviorRecords;
 
   IndividualRecord({
     this.player,
     this.indiTotalBehaviorQuantity,
+    this.maxTotalBehaviorQuantity,
     this.turnRecords,
     this.behaviorRecords,
   });

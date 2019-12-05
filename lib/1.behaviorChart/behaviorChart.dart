@@ -13,10 +13,6 @@ class BehaviorChart extends StatelessWidget {
   /* Constructor */
   BehaviorChart(this.individualRecords);
 
-  double getMaxBehaviorTotal(List<IndividualRecord> individualRecords) {
-    
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(
