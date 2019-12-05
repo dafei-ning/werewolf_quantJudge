@@ -24,7 +24,7 @@ class BehaviorChart extends StatelessWidget {
         width: double.infinity,
         height: 150,
         child: Row(children: individualRecords.map((data) {
-          return ChartBar(1, 100, {'a':10, 'b': 20});
+          return ChartBar(1, 100, 90, [MapEntry('a', 10), MapEntry('b', 20)]);
         }).toList(),)
       ),
     );
