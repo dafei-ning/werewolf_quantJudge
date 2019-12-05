@@ -6,10 +6,16 @@ import 'package:flutter/material.dart';
 
 class ChartBar extends StatelessWidget {
   final int player;
-  final double totalBehaviorAmount;
-  final Map<String, double> behaviorRecords;
+  final double maxBehaviorTotal; // 个人最大的行为量的总和，用来做柱状图的100% base。
+  final double indBehaviorTotal; // 当前个人的行动量总和，所占柱状图的最高高度
+  final List<MapEntry> behaviorRecords; // 当掐按个人行动量的分布
 
-  ChartBar(this.player, this.totalBehaviorAmount, this.behaviorRecords);
+  ChartBar(
+    this.player,
+    this.maxBehaviorTotal,
+    this.indBehaviorTotal,
+    this.behaviorRecords,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +30,7 @@ class ChartBar extends StatelessWidget {
             height: 105,
             width: 13,
             child: Stack(
+              alignment: Alignment.bottomCenter,
               children: <Widget>[
                 Container(
                   decoration: BoxDecoration(
@@ -40,6 +47,17 @@ class ChartBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
+                // 用fractionallySizedBox 按比例表现柱状图大小
+                FractionallySizedBox(
+                  heightFactor: 0.2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 1.5),
+                      color: Color.fromRGBO(100, 0, 220, 1),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
