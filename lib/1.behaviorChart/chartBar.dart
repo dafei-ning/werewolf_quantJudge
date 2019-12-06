@@ -48,7 +48,9 @@ class ChartBar extends StatelessWidget {
                 // ),
                 // 用fractionallySizedBox 按比例表现柱状图大小
                 FractionallySizedBox(
-                  heightFactor: indBehaviorTotal / maxBehaviorTotal,
+                  heightFactor: maxBehaviorTotal == 0
+                      ? 0
+                      : indBehaviorTotal / maxBehaviorTotal,
                   child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey, width: 1.5),
