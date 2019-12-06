@@ -76,3 +76,21 @@ Row (
   }).toList(),
 ),
 ```
+
+### 改变AppIcon
+
+在```pubspec.yaml```里，添加：
+```yaml
+dependencies:
+  flutter_launcher_icons: "^0.7.0"
+
+flutter_icons:
+  image_path: "assets/images/IconWerewolf.png" 
+  android: "launcher_icon"
+  ios: true
+```
+Terminal指令：
+```
+flutter pub get
+flutter pub pub run flutter_launcher_icons:main
+```
