@@ -142,4 +142,712 @@ class SimulateData {
     ];
     return behaviors;
   }
+
+  List<IndividualRecord> get individualRecords {
+    List<IndividualRecord> individualRecords = [
+      IndividualRecord(
+        player: 1,
+        indBehaviorTotal: 140,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 30,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 30,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 2,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                describeTab: "坐姿表情2",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                describeTab: "发言逻辑2",
+                quantity: 40,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 40,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 3,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 40,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 50,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 100,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 50,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 4,
+        indBehaviorTotal: 140,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 30,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 30,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 5,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                describeTab: "坐姿表情2",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                describeTab: "发言逻辑2",
+                quantity: 40,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 40,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 6,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 40,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 50,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 100,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 50,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 7,
+        indBehaviorTotal: 140,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 30,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 30,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 8,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                describeTab: "坐姿表情2",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                describeTab: "发言逻辑2",
+                quantity: 40,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 40,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 9,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 40,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 50,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 100,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 50,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 10,
+        indBehaviorTotal: 140,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 30,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 30,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 11,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                describeTab: "坐姿表情2",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                describeTab: "发言逻辑2",
+                quantity: 40,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 40,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 12,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 40,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 50,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 100,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 50,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 13,
+        indBehaviorTotal: 140,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 30,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 30,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 14,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                describeTab: "坐姿表情2",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                describeTab: "发言逻辑2",
+                quantity: 40,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 40,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 15,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 40,
+              ),
+              Behavior(
+                turn: 1,
+                player: 1,
+                describeTab: "发言逻辑",
+                quantity: 50,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                player: 1,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 100,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 50,
+          ),
+        ],
+      ),
+      IndividualRecord(
+        player: 16,
+        indBehaviorTotal: 150,
+        maxBehaviorTotal: 160,
+        turnRecords: [
+          TurnRecord(
+            turn: 1,
+            behaviors: [
+              Behavior(
+                turn: 1,
+                describeTab: "坐姿表情2",
+                quantity: 50,
+              ),
+              Behavior(
+                turn: 1,
+                describeTab: "发言逻辑2",
+                quantity: 40,
+              ),
+            ],
+          ),
+          TurnRecord(
+            turn: 2,
+            behaviors: [
+              Behavior(
+                turn: 2,
+                describeTab: "坐姿表情",
+                quantity: 60,
+              ),
+            ],
+          ),
+        ],
+        behaviorRecords: [
+          BehaviorRecord (
+            behaviorTag: '坐姿表情',
+            behaviorQuantity: 110,
+          ),
+          BehaviorRecord (
+            behaviorTag: '发言逻辑',
+            behaviorQuantity: 40,
+          ),
+        ],
+      ),
+      
+    ];
+  }
 }
