@@ -10,7 +10,7 @@ class TurnInfoGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 490,
+      height: 480,
       child: mappedBehaviors.isEmpty
           ? Column(
               children: <Widget>[

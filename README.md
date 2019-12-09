@@ -77,6 +77,19 @@ Row (
 ),
 ```
 
+让chart在mainAxis里保持间距一致
+```Dart
+return Flexible(
+  fit: FlexFit.tight,
+  child: ChartBar(
+    individualRecord.player,
+    individualRecord.maxBehaviorTotal,
+    individualRecord.indBehaviorTotal,
+    individualRecord.behaviorRecords,
+  ),
+);
+```
+
 ### 改变AppIcon
 
 在```pubspec.yaml```里，添加：

@@ -25,15 +25,18 @@ class BehaviorChart extends StatelessWidget {
       child: Container(
           width: double.infinity,
           height: 150,
-          margin: EdgeInsets.all(10),
+          margin: EdgeInsets.all(6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: individualRecords.map((individualRecord) {
-              return ChartBar(
-                individualRecord.player,
-                individualRecord.maxBehaviorTotal,
-                individualRecord.indBehaviorTotal,
-                individualRecord.behaviorRecords,
+              return Flexible(
+                fit: FlexFit.tight,
+                child: ChartBar(
+                  individualRecord.player,
+                  individualRecord.maxBehaviorTotal,
+                  individualRecord.indBehaviorTotal,
+                  individualRecord.behaviorRecords,
+                ),
               );
             }).toList(),
           )),
