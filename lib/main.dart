@@ -75,7 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       behaviors.add(newBehavior);
       mappedBehaviors = bhCtrl.mapAndAdd(mappedBehaviors, newBehavior);
+      mappedBehaviors.sort((mb1, mb2) {
+        return mb1.turn.compareTo(mb2.turn);
+      });
       individualRecords = bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
+      individualRecords.sort((ir1, ir2) {
+        return ir1.player.compareTo(ir2.player);
+      });
       //print("P1 indi: ${individualRecords[0].indBehaviorTotal}, max: ${individualRecords[0].maxBehaviorTotal}");
     });
   }

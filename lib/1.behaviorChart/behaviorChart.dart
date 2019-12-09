@@ -8,13 +8,13 @@ import '../models/individual.dart';
 import '../models/data.dart';
 
 class BehaviorChart extends StatelessWidget {
-  /* Properties */
-  final List<IndividualRecord> individualRecords2;
-
-  final List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
   /* Constructor */
   BehaviorChart(this.individualRecords2);
+
+  /* Properties */
+  final List<IndividualRecord> individualRecords2;
+  final List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
   @override
   Widget build(BuildContext context) {
