@@ -23,9 +23,11 @@ class ChartBar extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-          Text(
-            '${indBehaviorTotal.toStringAsFixed(0)}',
-            style: TextStyle(fontSize: 10),
+          FittedBox(
+            child: Text(
+              '${indBehaviorTotal.toStringAsFixed(0)}',
+              style: TextStyle(fontSize: 10),
+            ),
           ),
           SizedBox(
             height: 4,
@@ -74,9 +76,9 @@ class ChartBar extends StatelessWidget {
           ),
           FittedBox(
             child: Text(
-            'P${player}',
-            style: TextStyle(fontSize: 10),
-          ),
+              'P${player}',
+              style: TextStyle(fontSize: 10),
+            ),
           ),
         ],
       ),

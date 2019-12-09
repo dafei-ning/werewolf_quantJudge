@@ -90,6 +90,16 @@ return Flexible(
 );
 ```
 
+固定区域里，text的大小随着text量改变
+```Dart
+FittedBox(
+  child: Text(
+    'P${player}',
+    style: TextStyle(fontSize: 10),
+  ),
+),
+```
+
 ### 改变AppIcon
 
 在```pubspec.yaml```里，添加：
