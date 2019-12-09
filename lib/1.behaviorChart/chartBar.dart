@@ -31,7 +31,7 @@ class ChartBar extends StatelessWidget {
             height: 4,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 3.5),
+            //margin: EdgeInsets.symmetric(horizontal: 3.5),
             height: 105,
             width: 15,
             // ----------------- 柱状图分布 -------------------
@@ -75,6 +75,7 @@ class ChartBar extends StatelessWidget {
           ),
           Text(
             'P${player}',
+            style: TextStyle(fontSize: 10),
           ),
         ],
       ),

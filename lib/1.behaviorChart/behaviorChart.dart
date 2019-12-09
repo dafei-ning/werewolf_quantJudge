@@ -21,11 +21,13 @@ class BehaviorChart extends StatelessWidget {
     return Card(
       color: Colors.blueGrey,
       elevation: 10,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(8),
       child: Container(
           width: double.infinity,
           height: 150,
+          margin: EdgeInsets.all(10),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: individualRecords.map((individualRecord) {
               return ChartBar(
                 individualRecord.player,
