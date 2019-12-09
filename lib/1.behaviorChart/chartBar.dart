@@ -23,6 +23,7 @@ class ChartBar extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
+          // behavior quantity
           FittedBox(
             child: Text(
               '${indBehaviorTotal.toStringAsFixed(0)}',
@@ -33,7 +34,7 @@ class ChartBar extends StatelessWidget {
             height: 4,
           ),
           Container(
-            height: 105,
+            height: 110,
             width: 15,
             // ----------------- 柱状图分布 -------------------
             child: Stack(

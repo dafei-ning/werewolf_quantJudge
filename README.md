@@ -78,8 +78,10 @@ Row (
 ```
 
 让chart在mainAxis里保持间距一致
+```flex```后面的数字表示该区域所占分数，默认1
 ```Dart
 return Flexible(
+  flex: 5,
   fit: FlexFit.tight,
   child: ChartBar(
     individualRecord.player,
