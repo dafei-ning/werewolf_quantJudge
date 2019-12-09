@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       behaviors.add(newBehavior);
       mappedBehaviors = bhCtrl.mapAndAdd(mappedBehaviors, newBehavior);
-      mappedBehaviors.sort((mb1, mb2) {
+      mappedBehaviors.sort((mb2, mb1) {
         return mb1.turn.compareTo(mb2.turn);
       });
       individualRecords = bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
