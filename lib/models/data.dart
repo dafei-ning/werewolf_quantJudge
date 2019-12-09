@@ -1,3 +1,5 @@
+import 'package:werewolf_quantjudge/models/individual.dart';
+
 import './behavior.dart';
 import './mappedBehavior.dart';
 
@@ -140,4 +142,11 @@ class SimulateData {
     ];
     return behaviors;
   }
+
+  List<IndividualRecord> get individualRecords {
+    List<IndividualRecord> individualRecords = [
+      
+    ];
+  }
+
 }
