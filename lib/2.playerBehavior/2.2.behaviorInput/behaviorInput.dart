@@ -41,6 +41,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
+            // 玩家号码
             Container(
               child: TextField(
                 decoration: InputDecoration(
@@ -49,6 +50,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.number,
               ),
             ),
+            // 天数轮次
             Container(
               child: TextField(
                 decoration: InputDecoration(labelText: '天数轮次'),
@@ -56,6 +58,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.number,
               ),
             ),
+            // 行为标签
             Container(
               child: TextField(
                 decoration:
@@ -64,7 +67,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.text,
               ),
             ),
-            // TODO: 输入的分数将与其他玩家同样标签的分数值做比较
+            // 行为分数
             Container(
               child: TextField(
                 decoration: InputDecoration(
@@ -73,25 +76,31 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
               ),
             ),
+            // 行为标签新
             Container(
               child: Row(
                 children: <Widget>[
                   Text('请选择行为标签!'),
                   FlatButton(
                     textColor: Theme.of(context).primaryColor,
-                    child: Text('选择标签'),
+                    child: Text(
+                      '选择标签',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     onPressed: () {},
                   ),
                 ],
               ),
             ),
+            // 提交按钮
             Container(
-              child: FlatButton(
+              child: RaisedButton(
                 onPressed: _submitData,
+                color: Theme.of(context).textTheme.button.color,
                 child: Text(
                   '添加玩家行为评估',
                   style: TextStyle(
-                    color: Colors.red[400],
+                    color: Colors.black87,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
