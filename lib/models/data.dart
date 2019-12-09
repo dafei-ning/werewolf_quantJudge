@@ -180,11 +180,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 30,
           ),
@@ -222,11 +222,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 40,
           ),
@@ -267,11 +267,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 100,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 50,
           ),
@@ -312,11 +312,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 30,
           ),
@@ -354,11 +354,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 40,
           ),
@@ -399,11 +399,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 100,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 50,
           ),
@@ -444,11 +444,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 30,
           ),
@@ -486,11 +486,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 40,
           ),
@@ -531,11 +531,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 100,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 50,
           ),
@@ -576,11 +576,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 30,
           ),
@@ -618,11 +618,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 40,
           ),
@@ -663,11 +663,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 100,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 50,
           ),
@@ -708,11 +708,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 30,
           ),
@@ -750,11 +750,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 40,
           ),
@@ -795,11 +795,11 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 100,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 50,
           ),
@@ -837,17 +837,17 @@ class SimulateData {
           ),
         ],
         behaviorRecords: [
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '坐姿表情',
             behaviorQuantity: 110,
           ),
-          BehaviorRecord (
+          BehaviorRecord(
             behaviorTag: '发言逻辑',
             behaviorQuantity: 40,
           ),
         ],
       ),
-      
     ];
+    return individualRecords;
   }
 }
