@@ -5,10 +5,13 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/1.behaviorChart/chartBar.dart';
 import '../models/individual.dart';
+import '../models/data.dart';
 
 class BehaviorChart extends StatelessWidget {
   /* Properties */
-  final List<IndividualRecord> individualRecords;
+  //final List<IndividualRecord> individualRecords;
+
+  List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
   /* Constructor */
   BehaviorChart(this.individualRecords);

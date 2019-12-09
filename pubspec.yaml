@@ -33,7 +33,7 @@ dev_dependencies:
   
 
 flutter_icons:
-  image_path: "assets/images/IconWerewolf.png" 
+  image_path: "assets/images/Iconwolf.png" 
   android: "launcher_icon"
   ios: true
 
@@ -53,6 +53,7 @@ flutter:
   assets:
    - assets/images/waiting.png
    - assets/images/IconWerewolf.png
+   - assets/images/Iconwolf.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

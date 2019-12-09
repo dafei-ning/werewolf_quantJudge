@@ -15,7 +15,7 @@ class TurnInfoGroup extends StatelessWidget {
           ? Column(
               children: <Widget>[
                 Text(
-                  '还没有添加用户行为',
+                  '还没有添加用户行为哈哈',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
