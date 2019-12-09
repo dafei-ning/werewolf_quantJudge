@@ -142,11 +142,4 @@ class SimulateData {
     ];
     return behaviors;
   }
-
-  List<IndividualRecord> get individualRecords {
-    List<IndividualRecord> individualRecords = [
-      
-    ];
-  }
-
 }

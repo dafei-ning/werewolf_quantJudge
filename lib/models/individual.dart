@@ -31,8 +31,8 @@ class TurnRecord {
 class BehaviorRecord {
   String behaviorTag;
   double behaviorQuantity;
-  BehaviorRecord(
+  BehaviorRecord({
     this.behaviorTag,
     this.behaviorQuantity,
-  );
+  });
 }

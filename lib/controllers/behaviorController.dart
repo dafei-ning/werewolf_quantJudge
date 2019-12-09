@@ -80,7 +80,7 @@ class BehaviorController {
     }
     if (noBhTag) {
       currentIndividualRecord.behaviorRecords
-          .add(BehaviorRecord(bh.describeTab, bh.quantity));
+          .add(BehaviorRecord(behaviorTag: bh.describeTab, behaviorQuantity: bh.quantity));
     }
     currentIndividualRecord.indBehaviorTotal += bh.quantity;
     // maxTotalBehaviorQuantity
