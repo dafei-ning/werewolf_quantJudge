@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.scoreSlider.dart';
 
 class BehaviorInput extends StatefulWidget {
-  final Function inputFunction;
-  /* User input properties. */
-
   BehaviorInput(this.inputFunction);
-
+  final Function inputFunction;
   @override
   _BehaviorInputState createState() => _BehaviorInputState();
 }
@@ -30,7 +28,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
 
     // If inputs correct, calling inputting behavior.
     widget.inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
-
     Navigator.of(context).pop();
   }
 
@@ -84,30 +81,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             ),
 
             // 分数slider
-            Row(
-              children: <Widget>[
-                Text(
-                  '分数: ${_sliderScore.toInt()}',
-                  style: TextStyle(fontSize: 15),
-                ),
-                Container(
-                  child: Slider(
-                    value: _sliderScore,
-                    onChanged: (value) {
-                      setState(() {
-                        _sliderScore = value;
-                      });
-                    },
-                    activeColor: Colors.blue,
-                    inactiveColor: Colors.blue.withOpacity(0.3),
-                    min: 0.0,
-                    max: 50,
-                    divisions: 10000,
-                    label: '${_sliderScore.toDouble().toStringAsFixed(2)}',
-                  ),
-                ),
-              ],
-            ),
+            Container(child: ScoreSlider(_sliderScore)),
 
             // 行为分数
             Container(
