@@ -12,12 +12,17 @@ class _ScoreSlider extends State<ScoreSlider> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      //mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        Text(
-          '分数: ${widget.sliderScore.toInt()}',
-          style: TextStyle(fontSize: 15),
+        Container(
+          width: 80,
+          child: Text(
+            '分数: ${widget.sliderScore.toDouble().toStringAsFixed(2)}',
+            style: TextStyle(fontSize: 15),
+          ),
         ),
         Container(
+          width: 300,
           child: Slider(
             value: widget.sliderScore,
             onChanged: (value) {
