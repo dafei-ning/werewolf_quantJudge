@@ -12,15 +12,15 @@ class _BehaviorInputState extends State<BehaviorInput> {
   final turnInputController = TextEditingController();
   final describeInputController = TextEditingController();
   final playerInputController = TextEditingController();
-  final scoreInputController = TextEditingController();
+  //final scoreInputController = TextEditingController();
 
-  double _sliderScore = 0.0;
+  double _sliderScore = 20.5;
 
   void _submitData() {
     final inputTurn = int.parse(turnInputController.text);
     final inputPlayer = int.parse(playerInputController.text);
     final inputDescribe = describeInputController.text;
-    final inputScore = _sliderScore.toDouble().toStringAsFixed(2);
+    final inputScore = double.parse(_sliderScore.toStringAsFixed(2));
 
     // Error protection.
     if (inputTurn < 1 || inputPlayer < 1) return;
@@ -47,29 +47,29 @@ class _BehaviorInputState extends State<BehaviorInput> {
             Container(
               child: Row(
                 children: <Widget>[
-                  Container(child: Text('aaa')),
-                  Container(child: Text('bbb')),
+                  // Container(child: Text('aaa')),
+                  // Container(child: Text('bbb')),
                 ],
               ),
             ),
 
-            // // 玩家号码
-            // Container(
-            //   child: TextField(
-            //     decoration: InputDecoration(
-            //         labelText: '玩家号码', hintText: '输入某位玩家的号码, 例如: 1, 2...'),
-            //     controller: playerInputController,
-            //     keyboardType: TextInputType.number,
-            //   ),
-            // ),
-            // // 天数轮次
-            // Container(
-            //   child: TextField(
-            //     decoration: InputDecoration(labelText: '天数轮次'),
-            //     controller: turnInputController,
-            //     keyboardType: TextInputType.number,
-            //   ),
-            // ),
+            // 玩家号码
+            Container(
+              child: TextField(
+                decoration: InputDecoration(
+                    labelText: '玩家号码', hintText: '输入某位玩家的号码, 例如: 1, 2...'),
+                controller: playerInputController,
+                keyboardType: TextInputType.number,
+              ),
+            ),
+            // 天数轮次
+            Container(
+              child: TextField(
+                decoration: InputDecoration(labelText: '天数轮次'),
+                controller: turnInputController,
+                keyboardType: TextInputType.number,
+              ),
+            ),
             // 行为标签
             Container(
               child: TextField(
@@ -84,14 +84,14 @@ class _BehaviorInputState extends State<BehaviorInput> {
             Container(child: ScoreSlider(_sliderScore)),
 
             // 行为分数
-            Container(
-              child: TextField(
-                decoration: InputDecoration(
-                    labelText: '分数', hintText: '例如: 60.5, 99.0...'),
-                controller: scoreInputController,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-              ),
-            ),
+            // Container(
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //         labelText: '分数', hintText: '例如: 60.5, 99.0...'),
+            //     controller: scoreInputController,
+            //     keyboardType: TextInputType.numberWithOptions(decimal: true),
+            //   ),
+            // ),
             // 行为标签新
             Container(
               child: Row(
