@@ -16,16 +16,16 @@ class _BehaviorInputState extends State<BehaviorInput> {
   final playerInputController = TextEditingController();
   final scoreInputController = TextEditingController();
 
-  double _sliderItemA = 0.0;
+  double _sliderScore = 0.0;
 
   void _submitData() {
     final inputTurn = int.parse(turnInputController.text);
     final inputPlayer = int.parse(playerInputController.text);
     final inputDescribe = describeInputController.text;
-    final inputScore = double.parse(scoreInputController.text);
+    final inputScore = _sliderScore.toDouble().toStringAsFixed(2);
 
     // Error protection.
-    if (inputTurn < 1 || inputPlayer < 1 || inputScore.isNegative) return;
+    if (inputTurn < 1 || inputPlayer < 1) return;
     if (inputTurn.isNaN || inputPlayer.isNaN || inputDescribe.isEmpty) return;
 
     // If inputs correct, calling inputting behavior.
@@ -47,11 +47,13 @@ class _BehaviorInputState extends State<BehaviorInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(child: Text('aaa')),
-                Text('bbb'),
-              ],
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Container(child: Text('aaa')),
+                  Container(child: Text('bbb')),
+                ],
+              ),
             ),
 
             // // 玩家号码
@@ -82,21 +84,29 @@ class _BehaviorInputState extends State<BehaviorInput> {
             ),
 
             // 分数slider
-            Container(
-              child: Slider(
-                value: _sliderItemA,
-                onChanged: (value) {
-                  setState(() {
-                    _sliderItemA = value;
-                  });
-                },
-                activeColor: Colors.blue,
-                inactiveColor: Colors.blue.withOpacity(0.5),
-                min: 0.0,
-                max: 50,
-                divisions: 10000,
-                label: '${_sliderItemA.toDouble().toStringAsFixed(2)}',
-              ),
+            Row(
+              children: <Widget>[
+                Text(
+                  '分数: ${_sliderScore.toInt()}',
+                  style: TextStyle(fontSize: 15),
+                ),
+                Container(
+                  child: Slider(
+                    value: _sliderScore,
+                    onChanged: (value) {
+                      setState(() {
+                        _sliderScore = value;
+                      });
+                    },
+                    activeColor: Colors.blue,
+                    inactiveColor: Colors.blue.withOpacity(0.3),
+                    min: 0.0,
+                    max: 50,
+                    divisions: 10000,
+                    label: '${_sliderScore.toDouble().toStringAsFixed(2)}',
+                  ),
+                ),
+              ],
             ),
 
             // 行为分数
