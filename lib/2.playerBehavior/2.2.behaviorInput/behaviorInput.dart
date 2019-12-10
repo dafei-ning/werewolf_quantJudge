@@ -31,6 +31,12 @@ class _BehaviorInputState extends State<BehaviorInput> {
     Navigator.of(context).pop();
   }
 
+  void _updateSliderScore(double updatedslideScore) {
+    setState(() {
+      _sliderScore = updatedslideScore;
+    });
+  }
+
   void _describeTagPicker() {
     //showDatePicker();
   }
@@ -81,7 +87,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             ),
 
             // 分数slider
-            Container(child: ScoreSlider(_sliderScore)),
+            Container(child: ScoreSlider(_updateSliderScore)),
 
             // 行为分数
             // Container(

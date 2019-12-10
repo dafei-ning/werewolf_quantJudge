@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ScoreSlider extends StatefulWidget {
-  double sliderScore;
 
-  ScoreSlider(this.sliderScore);
+  double sliderScore = 0;
+  Function sliderScoreFunction;
+
+  ScoreSlider(this.sliderScoreFunction);
   @override
   _ScoreSlider createState() => _ScoreSlider();
 }
@@ -28,7 +30,8 @@ class _ScoreSlider extends State<ScoreSlider> {
             onChanged: (value) {
               setState(() {
                 widget.sliderScore = value;
-              });
+                widget.sliderScoreFunction(value);
+              });            
             },
             activeColor: Colors.blue,
             inactiveColor: Colors.blue.withOpacity(0.3),
