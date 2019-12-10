@@ -80,6 +80,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.text,
               ),
             ),
+
             // 分数slider
             Container(
               child: Slider(
@@ -93,8 +94,11 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 inactiveColor: Colors.blue.withOpacity(0.5),
                 min: 0.0,
                 max: 50,
+                divisions: 10000,
+                label: '${_sliderItemA.toDouble().toStringAsFixed(2)}',
               ),
             ),
+
             // 行为分数
             Container(
               child: TextField(
