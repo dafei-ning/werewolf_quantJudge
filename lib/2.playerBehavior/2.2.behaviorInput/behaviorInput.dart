@@ -3,6 +3,7 @@ import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.sco
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
+  
   final Function inputFunction;
   @override
   _BehaviorInputState createState() => _BehaviorInputState();
@@ -14,7 +15,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
   final playerInputController = TextEditingController();
   //final scoreInputController = TextEditingController();
 
-  double _sliderScore = 20.5;
+  double _sliderScore = 0;
 
   void _submitData() {
     final inputTurn = int.parse(turnInputController.text);
@@ -87,7 +88,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             ),
 
             // 分数slider
-            Container(child: ScoreSlider(_updateSliderScore)),
+            Container(child: ScoreSlider(_sliderScore, _updateSliderScore)),
 
             // 行为分数
             // Container(

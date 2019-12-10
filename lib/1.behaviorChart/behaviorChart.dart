@@ -28,7 +28,7 @@ class BehaviorChart extends StatelessWidget {
           margin: EdgeInsets.all(6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: individualRecords.map((individualRecord) {
+            children: individualRecords2.map((individualRecord) {
               return Flexible(
                 fit: FlexFit.tight,
                 child: ChartBar(

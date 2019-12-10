@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class ScoreSlider extends StatefulWidget {
 
+  ScoreSlider(this.sliderScore, this.sliderScoreFunction);
+
   double sliderScore = 0;
   Function sliderScoreFunction;
 
-  ScoreSlider(this.sliderScoreFunction);
   @override
   _ScoreSlider createState() => _ScoreSlider();
 }
