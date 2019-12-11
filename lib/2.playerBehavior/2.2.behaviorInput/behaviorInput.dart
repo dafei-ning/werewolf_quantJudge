@@ -25,9 +25,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
     final _inputPlayer = int.parse(_playerInputController.text);
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
     if (_inputTurn < 1 || _inputPlayer < 1) return;
-    if (_inputTurn.isNaN ||
-        _inputPlayer.isNaN ||
-        _pickedDate == null) {
+    if (_inputTurn.isNaN || _inputPlayer.isNaN || _pickedDate == null) {
       return;
     }
     // If inputs correct, calling inputting behavior.
@@ -44,16 +42,16 @@ class _BehaviorInputState extends State<BehaviorInput> {
    * Private functions for updating player's behaviors
    */
 
-  void _updateSliderScore(double updatedslideScore) {
-    setState(() {
-      _sliderScore = updatedslideScore;
-    });
-  }
-
   void _updatePlayerAndTurn(int player, int turn) {
     setState(() {
       _player = player;
       _turn = turn;
+    });
+  }
+
+  void _updateSliderScore(double updatedslideScore) {
+    setState(() {
+      _sliderScore = updatedslideScore;
     });
   }
 
@@ -82,17 +80,8 @@ class _BehaviorInputState extends State<BehaviorInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Container(
-              child: Row(
-                children: <Widget>[
-                  // Container(child: Text('aaa')),
-                  // Container(child: Text('bbb')),
-                ],
-              ),
-            ),
-
             // 玩家号码 & 轮数
-            Container(child: PlayerAndTurn()),
+            //Container(child: PlayerAndTurn()),
 
             // 玩家号码
             Container(
@@ -111,16 +100,8 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.number,
               ),
             ),
-            // 行为标签
-            // Container(
-            //   child: TextField(
-            //     decoration:
-            //         InputDecoration(labelText: '行为标签', hintText: '例如: 发言逻辑断层'),
-            //     controller: _describeInputController,
-            //     keyboardType: TextInputType.text,
-            //   ),
-            // ),
-            // 行为标签新
+            
+            // 新行为标签
             Container(
               child: Row(
                 children: <Widget>[
@@ -145,16 +126,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
 
             // 分数slider
             Container(child: ScoreSlider(_sliderScore, _updateSliderScore)),
-
-            // 行为分数
-            // Container(
-            //   child: TextField(
-            //     decoration: InputDecoration(
-            //         labelText: '分数', hintText: '例如: 60.5, 99.0...'),
-            //     controller: scoreInputController,
-            //     keyboardType: TextInputType.numberWithOptions(decimal: true),
-            //   ),
-            // ),
 
             // 提交按钮
             Container(
