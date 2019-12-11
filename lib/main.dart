@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     int inTurn,
     int inPlayer,
     double inputScore,
-    DateTime date,
+    String describeTag,
   ) {
     final newBehavior = Behavior(
       // TODO: id to be iterated automatically.
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       turn: inTurn,
       player: inPlayer,
       quantity: inputScore,
-      describeTab: date.toString(),
+      describeTab: describeTag,
       date: DateTime.now(),
     );
     setState(() {

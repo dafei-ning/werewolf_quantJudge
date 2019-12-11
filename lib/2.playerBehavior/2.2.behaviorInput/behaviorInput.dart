@@ -27,7 +27,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
 
   int _player;
   int _turn;
-  DateTime _pickedDate; // describeTag
+  String _describeTag; // describeTag
   double _sliderScore = 0;
 
   void _submitData() {
@@ -35,7 +35,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
     final _inputPlayer = int.parse(_playerInputController.text);
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
     if (_inputTurn < 1 || _inputPlayer < 1) return;
-    if (_inputTurn.isNaN || _inputPlayer.isNaN || _pickedDate == null) {
+    if (_inputTurn.isNaN || _inputPlayer.isNaN || _describeTag == null) {
       return;
     }
     // If inputs correct, calling inputting behavior.
@@ -43,7 +43,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
       _inputTurn,
       _inputPlayer,
       _inputScore,
-      _pickedDate,
+      _describeTag,
     );
     Navigator.of(context).pop();
   }
@@ -65,19 +65,9 @@ class _BehaviorInputState extends State<BehaviorInput> {
     });
   }
 
-  void _describeTagPicker() {
-    showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2019),
-      lastDate: DateTime.now(),
-    ).then((pickedTag) {
-      if (pickedTag == null) {
-        return;
-      }
-      setState(() {
-        _pickedDate = pickedTag;
-      });
+  void _describeTagPicker(pickedTag) {
+    setState(() {
+      _describeTag = pickedTag;
     });
   }
 
@@ -111,7 +101,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
               ),
             ),
 
-            Container(child: DescribeTagPicker(describeTagList)),
+            Container(child: DescribeTagPicker(describeTagList, _describeTagPicker)),
 
             // 新行为标签
             // Container(

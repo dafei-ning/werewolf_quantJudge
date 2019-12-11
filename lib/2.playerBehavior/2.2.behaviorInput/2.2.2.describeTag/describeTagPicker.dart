@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import './describeTag.dart';
 
 class DescribeTagPicker extends StatefulWidget {
-  DescribeTagPicker(this.describeTagList);
+  DescribeTagPicker(this.describeTagList, this.pickTagFunction);
+  final Function pickTagFunction;
   final List<String> describeTagList;
-  String selectedTag;
   @override
   _DescribeTagPicker createState() => _DescribeTagPicker();
 }
 
 class _DescribeTagPicker extends State<DescribeTagPicker> {
+  String _selectedTag;
+
   void _describeTagDialog() {
     showDialog(
       context: context,
@@ -17,14 +19,13 @@ class _DescribeTagPicker extends State<DescribeTagPicker> {
         return AlertDialog(
           title: Text('选择某个/组行为标签'),
           content: Container(
-            child: DescribeTag(
-              widget.describeTagList,
-              onSelectionChanged: (selectedChip) {
-                setState(() {
-                  widget.selectedTag = selectedChip;
-                });
-              } 
-            ),
+            child: DescribeTag(widget.describeTagList,
+                onSelectionChanged: (selectedChip) {
+              setState(() {
+                _selectedTag = selectedChip;
+                widget.pickTagFunction(selectedChip);
+              });
+            }),
           ),
           actions: <Widget>[
             FlatButton(
@@ -42,7 +43,9 @@ class _DescribeTagPicker extends State<DescribeTagPicker> {
     return Row(
       children: <Widget>[
         Expanded(
-          child: Text('请选择行为标签!'),
+          child: Text(
+            _selectedTag == null ? '请选择行为标签!' : '标签:    ${_selectedTag}',
+          ),
         ),
         FlatButton(
           textColor: Theme.of(context).primaryColor,
