@@ -3,7 +3,7 @@ import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.sco
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
-  
+
   final Function inputFunction;
   @override
   _BehaviorInputState createState() => _BehaviorInputState();
@@ -39,7 +39,13 @@ class _BehaviorInputState extends State<BehaviorInput> {
   }
 
   void _describeTagPicker() {
-    //showDatePicker();
+    // showDatePicker(
+    //   context: context,
+    //   initialDate: DateTime.now(),
+    //   firstDate: DateTime(2019),
+    //   lastDate: DateTime.now(),
+    // );
+    showTimePicker(context: context, initialTime: TimeOfDay.now(),);
   }
 
   @override
@@ -110,7 +116,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
                       '选择标签',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    onPressed: () {},
+                    onPressed: _describeTagPicker,
                   ),
                 ],
               ),
@@ -121,7 +127,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 onPressed: _submitData,
                 color: Theme.of(context).textTheme.button.color,
                 child: Text(
-                  '添加玩家行为评估',
+                  '添加玩家行为',
                   style: TextStyle(
                     color: Colors.black87,
                     fontWeight: FontWeight.bold,
