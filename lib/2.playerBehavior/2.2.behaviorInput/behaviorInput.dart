@@ -26,7 +26,8 @@ class _BehaviorInputState extends State<BehaviorInput> {
 
     // Error protection.
     if (_inputTurn < 1 || _inputPlayer < 1) return;
-    if (_inputTurn.isNaN || _inputPlayer.isNaN || _inputDescribe.isEmpty) return;
+    if (_inputTurn.isNaN || _inputPlayer.isNaN || _inputDescribe.isEmpty)
+      return;
 
     // If inputs correct, calling inputting behavior.
     widget.inputFunction(_inputTurn, _inputPlayer, _inputDescribe, _inputScore);
@@ -52,8 +53,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
       setState(() {
         _pickedDate = pickedTag;
       });
-      
-
     });
     //showTimePicker(context: context, initialTime: TimeOfDay.now(),);
   }
@@ -102,6 +101,28 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.text,
               ),
             ),
+            // 行为标签新
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      _pickedDate == null
+                          ? '请选择行为标签!'
+                          : '标签: ${DateFormat.yMd().format(_pickedDate)}',
+                    ),
+                  ),
+                  FlatButton(
+                    textColor: Theme.of(context).primaryColor,
+                    child: Text(
+                      '选择标签',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: _describeTagPicker,
+                  ),
+                ],
+              ),
+            ),
 
             // 分数slider
             Container(child: ScoreSlider(_sliderScore, _updateSliderScore)),
@@ -115,22 +136,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             //     keyboardType: TextInputType.numberWithOptions(decimal: true),
             //   ),
             // ),
-            // 行为标签新
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Text(_pickedDate == null? '请选择行为标签!' : DateFormat.yMd().format(_pickedDate)),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text(
-                      '选择标签',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: _describeTagPicker,
-                  ),
-                ],
-              ),
-            ),
+
             // 提交按钮
             Container(
               child: RaisedButton(

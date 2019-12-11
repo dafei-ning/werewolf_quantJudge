@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ScoreSlider extends StatefulWidget {
-
   ScoreSlider(this.sliderScore, this.sliderScoreFunction);
 
   double sliderScore = 0;
@@ -17,11 +16,9 @@ class _ScoreSlider extends State<ScoreSlider> {
     return Row(
       //mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        Container(
-          width: 80,
+        Expanded(
           child: Text(
             '分数: ${widget.sliderScore.toDouble().toStringAsFixed(2)}',
-            style: TextStyle(fontSize: 15),
           ),
         ),
         Container(
@@ -32,7 +29,7 @@ class _ScoreSlider extends State<ScoreSlider> {
               setState(() {
                 widget.sliderScore = value;
                 widget.sliderScoreFunction(value);
-              });            
+              });
             },
             activeColor: Colors.blue,
             inactiveColor: Colors.blue.withOpacity(0.3),
