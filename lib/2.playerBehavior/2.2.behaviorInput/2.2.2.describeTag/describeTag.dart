@@ -16,6 +16,7 @@ class _DescribeTag extends State<DescribeTag> {
     widget.tagList.forEach((describe) {
       chipsGroup.add(
         Container(
+          margin: EdgeInsets.all(3),
           child: ChoiceChip(
             label: Text(describe),
             shape: RoundedRectangleBorder(
