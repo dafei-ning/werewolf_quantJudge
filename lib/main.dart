@@ -21,13 +21,12 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
-              title: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontFamily: 'OpenSans',
-                fontSize: 13,
-              ),
-              button: TextStyle(color: Colors.yellow[600])
+            title: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontFamily: 'OpenSans',
+              fontSize: 13,
             ),
+            button: TextStyle(color: Colors.yellow[600])),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(
@@ -52,7 +51,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
 
   /*  Properties. */
@@ -63,14 +61,18 @@ class _MyHomePageState extends State<MyHomePage> {
   BehaviorController bhCtrl = new BehaviorController();
 
   void _addNewBehavior(
-      int inTurn, int inPlayer, String inDescribeTab, double inQuantity) {
+    int inTurn,
+    int inPlayer,
+    double inputScore,
+    DateTime date,
+  ) {
     final newBehavior = Behavior(
       // TODO: id to be iterated automatically.
       id: 888,
       turn: inTurn,
       player: inPlayer,
-      describeTab: inDescribeTab,
-      quantity: inQuantity,
+      quantity: inputScore,
+      describeTab: date.toString(),
       date: DateTime.now(),
     );
     setState(() {
@@ -79,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
       mappedBehaviors.sort((mb2, mb1) {
         return mb1.turn.compareTo(mb2.turn);
       });
-      individualRecords = bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
+      individualRecords =
+          bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
       individualRecords.sort((ir1, ir2) {
         return ir1.player.compareTo(ir2.player);
       });

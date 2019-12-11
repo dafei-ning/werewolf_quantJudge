@@ -21,16 +21,23 @@ class _BehaviorInputState extends State<BehaviorInput> {
   void _submitData() {
     final _inputTurn = int.parse(_turnInputController.text);
     final _inputPlayer = int.parse(_playerInputController.text);
-    final _inputDescribe = _describeInputController.text;
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
 
     // Error protection.
     if (_inputTurn < 1 || _inputPlayer < 1) return;
-    if (_inputTurn.isNaN || _inputPlayer.isNaN || _inputDescribe.isEmpty)
+    if (_inputTurn.isNaN ||
+        _inputPlayer.isNaN ||
+        _pickedDate == null) {
       return;
+    }
 
     // If inputs correct, calling inputting behavior.
-    widget.inputFunction(_inputTurn, _inputPlayer, _inputDescribe, _inputScore);
+    widget.inputFunction(
+      _inputTurn,
+      _inputPlayer,
+      _inputScore,
+      _pickedDate,
+    );
     Navigator.of(context).pop();
   }
 
@@ -54,7 +61,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
         _pickedDate = pickedTag;
       });
     });
-    //showTimePicker(context: context, initialTime: TimeOfDay.now(),);
   }
 
   @override
