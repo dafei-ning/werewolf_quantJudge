@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
-class DescribeTag extends StatefulWidget {
+class DescribeTagPicker extends StatefulWidget {
+  DescribeTagPicker(this.describeTagList);
+  final List<String> describeTagList;
   @override
-  _DescribeTag createState() => _DescribeTag();
+  _DescribeTagPicker createState() => _DescribeTagPicker();
 }
 
-class _DescribeTag extends State<DescribeTag> {
-
+class _DescribeTagPicker extends State<DescribeTagPicker> {
   void _describeTagDialog() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        
-      }
+        return AlertDialog(
+          
+        );
+      },
     );
   }
 
@@ -21,11 +24,7 @@ class _DescribeTag extends State<DescribeTag> {
     return Row(
       children: <Widget>[
         Expanded(
-          child: Text(
-            _pickedDate == null
-                ? '请选择行为标签!'
-                : '标签: ${DateFormat.yMd().format(_pickedDate)}',
-          ),
+          child: Text('请选择行为标签!'),
         ),
         FlatButton(
           textColor: Theme.of(context).primaryColor,

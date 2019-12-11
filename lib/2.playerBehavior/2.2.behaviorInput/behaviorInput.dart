@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 
 class BehaviorInput extends StatefulWidget {
@@ -71,6 +72,18 @@ class _BehaviorInputState extends State<BehaviorInput> {
     });
   }
 
+  void _describeTagDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          // title: Text('选择一个行为标签'),
+          // content: ,
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -100,29 +113,31 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 keyboardType: TextInputType.number,
               ),
             ),
+
+            Container(child: DescribeTagPicker(['hahahaa']),),
             
             // 新行为标签
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      _pickedDate == null
-                          ? '请选择行为标签!'
-                          : '标签: ${DateFormat.yMd().format(_pickedDate)}',
-                    ),
-                  ),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text(
-                      '选择标签',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: _describeTagPicker,
-                  ),
-                ],
-              ),
-            ),
+            // Container(
+            //   child: Row(
+            //     children: <Widget>[
+            //       Expanded(
+            //         child: Text(
+            //           _pickedDate == null
+            //               ? '请选择行为标签!'
+            //               : '标签: ${DateFormat.yMd().format(_pickedDate)}',
+            //         ),
+            //       ),
+            //       FlatButton(
+            //         textColor: Theme.of(context).primaryColor,
+            //         child: Text(
+            //           '选择标签',
+            //           style: TextStyle(fontWeight: FontWeight.bold),
+            //         ),
+            //         onPressed: _describeTagPicker,
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
             // 分数slider
             Container(child: ScoreSlider(_sliderScore, _updateSliderScore)),
