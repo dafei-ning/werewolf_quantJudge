@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './describeTag.dart';
 
 class DescribeTagPicker extends StatefulWidget {
   DescribeTagPicker(this.describeTagList);
@@ -13,7 +14,8 @@ class _DescribeTagPicker extends State<DescribeTagPicker> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          
+          title: Text('选择一个行为标签'),
+          content: DescribeTag(widget.describeTagList),
         );
       },
     );
