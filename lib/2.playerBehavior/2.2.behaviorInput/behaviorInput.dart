@@ -72,18 +72,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
     });
   }
 
-  void _describeTagDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          // title: Text('选择一个行为标签'),
-          // content: ,
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(

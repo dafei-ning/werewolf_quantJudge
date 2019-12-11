@@ -15,7 +15,7 @@ class _DescribeTag extends State<DescribeTag> {
     return ChoiceChip(
       label: Text('hahahahaaaa'),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(5),
       ),
       selected: isSelected,
       onSelected: (selected) {
