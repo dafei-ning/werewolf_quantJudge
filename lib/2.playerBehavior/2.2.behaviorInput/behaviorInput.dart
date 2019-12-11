@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 
 class BehaviorInput extends StatefulWidget {
@@ -12,25 +13,23 @@ class BehaviorInput extends StatefulWidget {
 
 class _BehaviorInputState extends State<BehaviorInput> {
   final _turnInputController = TextEditingController();
-  final _describeInputController = TextEditingController();
   final _playerInputController = TextEditingController();
-  DateTime _pickedDate;
 
+  int _player;
+  int _turn;
+  DateTime _pickedDate; // describeTag
   double _sliderScore = 0;
 
   void _submitData() {
     final _inputTurn = int.parse(_turnInputController.text);
     final _inputPlayer = int.parse(_playerInputController.text);
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
-
-    // Error protection.
     if (_inputTurn < 1 || _inputPlayer < 1) return;
     if (_inputTurn.isNaN ||
         _inputPlayer.isNaN ||
         _pickedDate == null) {
       return;
     }
-
     // If inputs correct, calling inputting behavior.
     widget.inputFunction(
       _inputTurn,
@@ -41,9 +40,20 @@ class _BehaviorInputState extends State<BehaviorInput> {
     Navigator.of(context).pop();
   }
 
+  /*
+   * Private functions for updating player's behaviors
+   */
+
   void _updateSliderScore(double updatedslideScore) {
     setState(() {
       _sliderScore = updatedslideScore;
+    });
+  }
+
+  void _updatePlayerAndTurn(int player, int turn) {
+    setState(() {
+      _player = player;
+      _turn = turn;
     });
   }
 
@@ -80,6 +90,9 @@ class _BehaviorInputState extends State<BehaviorInput> {
                 ],
               ),
             ),
+
+            // 玩家号码 & 轮数
+            Container(child: PlayerAndTurn()),
 
             // 玩家号码
             Container(
