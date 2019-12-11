@@ -61,14 +61,15 @@ class ChartBar extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  height: 10,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 1.5),
-                    color: Color.fromRGBO(100, 220, 220, 1),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
+
+                // Container(
+                //   height: 10,
+                //   decoration: BoxDecoration(
+                //     border: Border.all(color: Colors.grey, width: 1.5),
+                //     color: Color.fromRGBO(100, 220, 220, 1),
+                //     borderRadius: BorderRadius.circular(5),
+                //   ),
+                // ),
               ],
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.scoreSlider.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
@@ -99,14 +99,14 @@ class _BehaviorInputState extends State<BehaviorInput> {
               ),
             ),
             // 行为标签
-            Container(
-              child: TextField(
-                decoration:
-                    InputDecoration(labelText: '行为标签', hintText: '例如: 发言逻辑断层'),
-                controller: _describeInputController,
-                keyboardType: TextInputType.text,
-              ),
-            ),
+            // Container(
+            //   child: TextField(
+            //     decoration:
+            //         InputDecoration(labelText: '行为标签', hintText: '例如: 发言逻辑断层'),
+            //     controller: _describeInputController,
+            //     keyboardType: TextInputType.text,
+            //   ),
+            // ),
             // 行为标签新
             Container(
               child: Row(
