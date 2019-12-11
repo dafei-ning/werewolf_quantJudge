@@ -10,25 +10,25 @@ class BehaviorInput extends StatefulWidget {
 }
 
 class _BehaviorInputState extends State<BehaviorInput> {
-  final turnInputController = TextEditingController();
-  final describeInputController = TextEditingController();
-  final playerInputController = TextEditingController();
+  final _turnInputController = TextEditingController();
+  final _describeInputController = TextEditingController();
+  final _playerInputController = TextEditingController();
   //final scoreInputController = TextEditingController();
 
   double _sliderScore = 0;
 
   void _submitData() {
-    final inputTurn = int.parse(turnInputController.text);
-    final inputPlayer = int.parse(playerInputController.text);
-    final inputDescribe = describeInputController.text;
-    final inputScore = double.parse(_sliderScore.toStringAsFixed(2));
+    final _inputTurn = int.parse(_turnInputController.text);
+    final _inputPlayer = int.parse(_playerInputController.text);
+    final _inputDescribe = _describeInputController.text;
+    final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
 
     // Error protection.
-    if (inputTurn < 1 || inputPlayer < 1) return;
-    if (inputTurn.isNaN || inputPlayer.isNaN || inputDescribe.isEmpty) return;
+    if (_inputTurn < 1 || _inputPlayer < 1) return;
+    if (_inputTurn.isNaN || _inputPlayer.isNaN || _inputDescribe.isEmpty) return;
 
     // If inputs correct, calling inputting behavior.
-    widget.inputFunction(inputTurn, inputPlayer, inputDescribe, inputScore);
+    widget.inputFunction(_inputTurn, _inputPlayer, _inputDescribe, _inputScore);
     Navigator.of(context).pop();
   }
 
@@ -39,13 +39,18 @@ class _BehaviorInputState extends State<BehaviorInput> {
   }
 
   void _describeTagPicker() {
-    // showDatePicker(
-    //   context: context,
-    //   initialDate: DateTime.now(),
-    //   firstDate: DateTime(2019),
-    //   lastDate: DateTime.now(),
-    // );
-    showTimePicker(context: context, initialTime: TimeOfDay.now(),);
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2019),
+      lastDate: DateTime.now(),
+    ).then((pickedTag) {
+      if (pickedTag == null) {
+        return;
+      }
+
+    });
+    //showTimePicker(context: context, initialTime: TimeOfDay.now(),);
   }
 
   @override
