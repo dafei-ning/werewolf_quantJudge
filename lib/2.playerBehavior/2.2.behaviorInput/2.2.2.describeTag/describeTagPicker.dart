@@ -9,15 +9,15 @@ class DescribeTagPicker extends StatefulWidget {
 }
 
 class _DescribeTagPicker extends State<DescribeTagPicker> {
-
-
   void _describeTagDialog() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('选择某个/组行为标签'),
-          content: Container(child: DescribeTag(widget.describeTagList)),
+          content: Container(
+            child: DescribeTag(widget.describeTagList),
+          ),
           actions: <Widget>[
             FlatButton(
               child: Text('提交行为标签'),
