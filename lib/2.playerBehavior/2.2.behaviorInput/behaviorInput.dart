@@ -13,7 +13,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
   final _turnInputController = TextEditingController();
   final _describeInputController = TextEditingController();
   final _playerInputController = TextEditingController();
-  //final scoreInputController = TextEditingController();
+  DateTime _pickedDate;
 
   double _sliderScore = 0;
 
@@ -47,6 +47,8 @@ class _BehaviorInputState extends State<BehaviorInput> {
     ).then((pickedTag) {
       if (pickedTag == null) {
         return;
+      } else {
+        _pickedDate = pickedTag;
       }
 
     });
@@ -76,7 +78,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
               child: TextField(
                 decoration: InputDecoration(
                     labelText: '玩家号码', hintText: '输入某位玩家的号码, 例如: 1, 2...'),
-                controller: playerInputController,
+                controller: _playerInputController,
                 keyboardType: TextInputType.number,
               ),
             ),
@@ -84,7 +86,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             Container(
               child: TextField(
                 decoration: InputDecoration(labelText: '天数轮次'),
-                controller: turnInputController,
+                controller: _turnInputController,
                 keyboardType: TextInputType.number,
               ),
             ),
@@ -93,7 +95,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
               child: TextField(
                 decoration:
                     InputDecoration(labelText: '行为标签', hintText: '例如: 发言逻辑断层'),
-                controller: describeInputController,
+                controller: _describeInputController,
                 keyboardType: TextInputType.text,
               ),
             ),
@@ -114,7 +116,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             Container(
               child: Row(
                 children: <Widget>[
-                  Text('请选择行为标签!'),
+                  Text(_pickedDate == null? '请选择行为标签!' : _pickedDate.toString()),
                   FlatButton(
                     textColor: Theme.of(context).primaryColor,
                     child: Text(
