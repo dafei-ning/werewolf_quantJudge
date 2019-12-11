@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.scoreSlider.dart';
 
 class BehaviorInput extends StatefulWidget {
@@ -47,9 +48,11 @@ class _BehaviorInputState extends State<BehaviorInput> {
     ).then((pickedTag) {
       if (pickedTag == null) {
         return;
-      } else {
-        _pickedDate = pickedTag;
       }
+      setState(() {
+        _pickedDate = pickedTag;
+      });
+      
 
     });
     //showTimePicker(context: context, initialTime: TimeOfDay.now(),);
@@ -116,7 +119,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             Container(
               child: Row(
                 children: <Widget>[
-                  Text(_pickedDate == null? '请选择行为标签!' : _pickedDate.toString()),
+                  Text(_pickedDate == null? '请选择行为标签!' : DateFormat.yMd().format(_pickedDate)),
                   FlatButton(
                     textColor: Theme.of(context).primaryColor,
                     child: Text(
