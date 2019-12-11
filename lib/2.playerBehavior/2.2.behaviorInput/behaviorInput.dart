@@ -16,6 +16,15 @@ class _BehaviorInputState extends State<BehaviorInput> {
   final _turnInputController = TextEditingController();
   final _playerInputController = TextEditingController();
 
+  List<String> describeTagList = [
+    '站错预言家',
+    '疑似冲票行为',
+    '狼视角保好人',
+    '票型与身份相悖',
+    '发言与身份相悖',
+    '掰发言'
+  ];
+
   int _player;
   int _turn;
   DateTime _pickedDate; // describeTag
@@ -102,9 +111,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
               ),
             ),
 
-            Container(
-              child: DescribeTagPicker(['hahahaa', 'aoaoaoao', 'opopopop'])
-            ),
+            Container(child: DescribeTagPicker(describeTagList)),
 
             // 新行为标签
             // Container(
