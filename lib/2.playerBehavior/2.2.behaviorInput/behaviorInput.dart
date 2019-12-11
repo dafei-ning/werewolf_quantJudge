@@ -102,8 +102,10 @@ class _BehaviorInputState extends State<BehaviorInput> {
               ),
             ),
 
-            Container(child: DescribeTagPicker(['hahahaa']),),
-            
+            Container(
+              child: DescribeTagPicker(['hahahaa', 'aoaoaoao', 'opopopop'])
+            ),
+
             // 新行为标签
             // Container(
             //   child: Row(
