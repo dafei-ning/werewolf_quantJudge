@@ -4,6 +4,7 @@ import './describeTag.dart';
 class DescribeTagPicker extends StatefulWidget {
   DescribeTagPicker(this.describeTagList);
   final List<String> describeTagList;
+  String selectedTag;
   @override
   _DescribeTagPicker createState() => _DescribeTagPicker();
 }
@@ -16,7 +17,14 @@ class _DescribeTagPicker extends State<DescribeTagPicker> {
         return AlertDialog(
           title: Text('选择某个/组行为标签'),
           content: Container(
-            child: DescribeTag(widget.describeTagList),
+            child: DescribeTag(
+              widget.describeTagList,
+              onSelectionChanged: (selectedChip) {
+                setState(() {
+                  widget.selectedTag = selectedChip;
+                });
+              } 
+            ),
           ),
           actions: <Widget>[
             FlatButton(

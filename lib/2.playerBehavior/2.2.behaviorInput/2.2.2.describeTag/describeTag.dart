@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class DescribeTag extends StatefulWidget {
   final List<String> tagList;
-  DescribeTag(this.tagList);
+  final Function(String) onSelectionChanged;
+
+  DescribeTag(this.tagList, {this.onSelectionChanged});
   @override
   _DescribeTag createState() => _DescribeTag();
 }
@@ -26,6 +28,7 @@ class _DescribeTag extends State<DescribeTag> {
             onSelected: (selected) {
               setState(() {
                 selectedTag = describe;
+                widget.onSelectionChanged(selectedTag);
               });
             },
           ),
