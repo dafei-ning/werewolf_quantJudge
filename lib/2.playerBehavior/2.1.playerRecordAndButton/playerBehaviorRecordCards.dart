@@ -5,11 +5,9 @@ import '2.1.2.cardButton/cardButton.dart';
 
 class PlayerBehaviorRecordCardGroup extends StatelessWidget {
   final List<Behavior> turnBehaviors;
-  /*
-   * Constructor
-   */
+  /* Constructor */
   PlayerBehaviorRecordCardGroup(this.turnBehaviors);
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -22,7 +22,9 @@ class _BehaviorInputState extends State<BehaviorInput> {
     '狼视角保好人',
     '票型与身份相悖',
     '发言与身份相悖',
-    '掰发言'
+    '掰发言',
+    '忽视抗推位',
+    '狼视角爆刀口',
   ];
 
   int _player;
@@ -127,7 +129,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             // ),
 
             // 分数slider
-            Container(child: ScoreSlider(_sliderScore, _updateSliderScore)),
+            Container(child: ScoreSlider(_updateSliderScore)),
 
             // 提交按钮
             Container(

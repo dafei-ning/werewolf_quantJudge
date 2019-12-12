@@ -39,17 +39,21 @@ class TurnInfoGroup extends StatelessWidget {
                 return Container(
                   child: Card(
                     child: Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                      margin: EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 12,
+                      ),
                       child: Column(
                         children: <Widget>[
                           // 轮数
                           Container(
-                              child: TurnTitle(mappedBehaviors[index].turn)),
+                            child: TurnTitle(mappedBehaviors[index].turn),
+                          ),
                           // 每一轮的用户行为(组)
                           Container(
-                              child: PlayerBehaviorRecordCardGroup(
-                                  mappedBehaviors[index].turnBehaviors)),
+                            child: PlayerBehaviorRecordCardGroup(
+                                mappedBehaviors[index].turnBehaviors),
+                          ),
                         ],
                       ),
                     ),
