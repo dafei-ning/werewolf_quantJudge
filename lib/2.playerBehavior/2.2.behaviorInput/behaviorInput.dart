@@ -98,9 +98,12 @@ class _BehaviorInputState extends State<BehaviorInput> {
             ),
             // DescribeTag
             Container(
-                child: DescribeTagPicker(describeTagList, _describeTagPicker)),
+              child: DescribeTagPicker(describeTagList, _describeTagPicker),
+            ),
             // 分数slider
-            Container(child: ScoreSlider(_updateSliderScore)),
+            Container(
+              child: ScoreSlider(_updateSliderScore),
+            ),
             // 提交按钮
             Container(
               child: RaisedButton(

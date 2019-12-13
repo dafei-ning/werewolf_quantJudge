@@ -7,11 +7,6 @@ class PlayerBehaviorRecordCardGroup extends StatelessWidget {
   final List<Behavior> turnBehaviors;
   /* Constructor */
   PlayerBehaviorRecordCardGroup(this.turnBehaviors);
-
-  void _deleteRecord() {
-
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,7 +25,7 @@ class PlayerBehaviorRecordCardGroup extends StatelessWidget {
 
                   // 2.2 增删查改按钮
                   Expanded(
-                    child: CardButton(_deleteRecord),
+                    child: CardButton(),
                   ),
                 ],
               ),

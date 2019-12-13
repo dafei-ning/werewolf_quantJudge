@@ -84,12 +84,22 @@ class _MyHomePageState extends State<MyHomePage> {
       mappedBehaviors.sort((mb2, mb1) {
         return mb1.turn.compareTo(mb2.turn);
       });
-      individualRecords =
-          bhCtrl.groupedBehaviorValues(individualRecords, newBehavior);
+      individualRecords = bhCtrl.groupedBehaviorValues(
+        individualRecords,
+        newBehavior,
+      );
       individualRecords.sort((ir1, ir2) {
         return ir1.player.compareTo(ir2.player);
       });
       //print("P1 indi: ${individualRecords[0].indBehaviorTotal}, max: ${individualRecords[0].maxBehaviorTotal}");
+    });
+  }
+
+  void _deleteBehavior(int id) {
+    setState(() {
+      behaviors.removeWhere((bh) => bh.id == id);
+      mappedBehaviors = bhCtrl.deleteAndRemap(mappedBehaviors, id);
+      individualRecords = bhCtrl.regroupedBehaviorsAfterDelete(individualRecords, id);
     });
   }
 
