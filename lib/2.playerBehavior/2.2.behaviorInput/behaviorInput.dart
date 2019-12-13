@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 
@@ -78,40 +79,13 @@ class _BehaviorInputState extends State<BehaviorInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            // 玩家号码
             Container(
-              margin: EdgeInsets.only(top: 10, bottom: 5),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: '玩家号码',
-                  labelStyle: Theme.of(context).textTheme.title,
-                  hintText: '输入某位玩家的号码, 例如: 1, 2...',
-                  hintStyle: TextStyle(fontSize: 13),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                controller: _playerInputController,
-                keyboardType: TextInputType.number,
+              child: PlayerAndTurn(
+                _playerInputController,
+                _turnInputController,
               ),
             ),
-            // 天数轮次
-            Container(
-              margin: EdgeInsets.only(top: 10, bottom: 5),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: '天数轮次',
-                  hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\'',
-                  hintStyle: TextStyle(fontSize: 13),
-                  labelStyle: Theme.of(context).textTheme.title,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                controller: _turnInputController,
-                keyboardType: TextInputType.number,
-              ),
-            ),
+
             // DescribeTag
             Container(
               child: DescribeTagPicker(describeTagList, _describeTagPicker),

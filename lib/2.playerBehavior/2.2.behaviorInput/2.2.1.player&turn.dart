@@ -14,17 +14,34 @@ class _PlayerAndTurn extends State<PlayerAndTurn> {
     return Column(
       children: <Widget>[
         Container(
+          margin: EdgeInsets.only(top: 10, bottom: 5),
           child: TextField(
             decoration: InputDecoration(
-                labelText: '玩家号码', hintText: '输入某位玩家的号码, 例如: 1, 2...'),
+              labelText: '玩家号码',
+              labelStyle: Theme.of(context).textTheme.title,
+              hintText: '输入某位玩家的号码, 例如: 1, 2...',
+              hintStyle: TextStyle(fontSize: 13),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
             controller: widget.playerInput,
             keyboardType: TextInputType.number,
           ),
         ),
         // 天数轮次
         Container(
+          margin: EdgeInsets.only(top: 10, bottom: 5),
           child: TextField(
-            decoration: InputDecoration(labelText: '天数轮次'),
+            decoration: InputDecoration(
+              labelText: '天数轮次',
+              hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\'',
+              hintStyle: TextStyle(fontSize: 13),
+              labelStyle: Theme.of(context).textTheme.title,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
             controller: widget.turnInput,
             keyboardType: TextInputType.number,
           ),
