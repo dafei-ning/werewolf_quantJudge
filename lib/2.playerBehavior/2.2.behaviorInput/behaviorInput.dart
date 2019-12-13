@@ -5,15 +5,14 @@ import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.sco
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
-
   final Function inputFunction;
   @override
   _BehaviorInputState createState() => _BehaviorInputState();
 }
 
 class _BehaviorInputState extends State<BehaviorInput> {
-  final _turnInputController = TextEditingController();
-  final _playerInputController = TextEditingController();
+  final _turnInput = TextEditingController();
+  final _playerInput = TextEditingController();
 
   List<String> describeTagList = [
     '站错预言家',
@@ -25,15 +24,12 @@ class _BehaviorInputState extends State<BehaviorInput> {
     '忽视抗推位',
     '狼视角爆刀口',
   ];
-
-  int _player;
-  int _turn;
   String _describeTag; // describeTag
   double _sliderScore = 0;
 
   void _submitData() {
-    final _inputTurn = int.parse(_turnInputController.text);
-    final _inputPlayer = int.parse(_playerInputController.text);
+    final _inputTurn = int.parse(_turnInput.text);
+    final _inputPlayer = int.parse(_playerInput.text);
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
     if (_inputTurn < 0 || _inputPlayer < 1) return;
     if (_inputTurn.isNaN || _inputPlayer.isNaN || _describeTag == null) {
@@ -51,13 +47,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
   /*
    * Private functions for updating player's behaviors
    */
-  void _updatePlayerAndTurn(int player, int turn) {
-    setState(() {
-      _player = player;
-      _turn = turn;
-    });
-  }
-
   void _updateSliderScore(double updatedslideScore) {
     setState(() {
       _sliderScore = updatedslideScore;
@@ -79,13 +68,10 @@ class _BehaviorInputState extends State<BehaviorInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
+            // Player & Turn
             Container(
-              child: PlayerAndTurn(
-                _playerInputController,
-                _turnInputController,
-              ),
+              child: PlayerAndTurn(_playerInput, _turnInput),
             ),
-
             // DescribeTag
             Container(
               child: DescribeTagPicker(describeTagList, _describeTagPicker),
