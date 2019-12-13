@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TurnTitle extends StatelessWidget {
   final int turnNumber;
-  
+
   /*
    * Constructor
    */
@@ -14,7 +14,7 @@ class TurnTitle extends StatelessWidget {
       width: 80,
       alignment: Alignment.center,
       child: Text(
-        "第 ${turnNumber} 天",
+        turnNumber == 0 ? "警上发言" : "第 ${turnNumber} 天",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 12,

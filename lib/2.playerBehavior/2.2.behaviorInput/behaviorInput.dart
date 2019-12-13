@@ -36,7 +36,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
     final _inputTurn = int.parse(_turnInputController.text);
     final _inputPlayer = int.parse(_playerInputController.text);
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
-    if (_inputTurn < 1 || _inputPlayer < 1) return;
+    if (_inputTurn < 0 || _inputPlayer < 1) return;
     if (_inputTurn.isNaN || _inputPlayer.isNaN || _describeTag == null) {
       return;
     }
@@ -97,7 +97,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
             // 天数轮次
             Container(
               child: TextField(
-                decoration: InputDecoration(labelText: '天数轮次'),
+                decoration: InputDecoration(labelText: '天数轮次', hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\''),
                 controller: _turnInputController,
                 keyboardType: TextInputType.number,
               ),
