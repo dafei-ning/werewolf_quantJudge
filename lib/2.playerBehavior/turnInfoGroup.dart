@@ -40,8 +40,8 @@ class TurnInfoGroup extends StatelessWidget {
                   child: Card(
                     child: Container(
                       margin: EdgeInsets.symmetric(
-                        vertical: 12,
-                        horizontal: 12,
+                        vertical: 6,
+                        horizontal: 8,
                       ),
                       child: Column(
                         children: <Widget>[

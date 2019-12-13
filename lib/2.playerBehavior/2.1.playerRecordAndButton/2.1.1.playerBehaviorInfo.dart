@@ -42,7 +42,7 @@ class PlayerBehaviorInfo extends StatelessWidget {
         ),
         Container(
           child: Card(child: Text(DateFormat('Hms').format(behavior.date))),
-          width: 85,
+          width: 50,
         ),
         //Container(child: Card(child: Text(date.toString()))),
       ],
