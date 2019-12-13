@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 
@@ -39,8 +37,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
     if (_inputTurn < 0 || _inputPlayer < 1) return;
     if (_inputTurn.isNaN || _inputPlayer.isNaN || _describeTag == null) {
       return;
-    }
-    // If inputs correct, calling inputting behavior.
+    } // call inputbehavior if inputs correct
     widget.inputFunction(
       _inputTurn,
       _inputPlayer,
@@ -53,7 +50,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
   /*
    * Private functions for updating player's behaviors
    */
-
   void _updatePlayerAndTurn(int player, int turn) {
     setState(() {
       _player = player;
@@ -82,9 +78,6 @@ class _BehaviorInputState extends State<BehaviorInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            // 玩家号码 & 轮数
-            //Container(child: PlayerAndTurn()),
-
             // 玩家号码
             Container(
               child: TextField(
@@ -97,40 +90,17 @@ class _BehaviorInputState extends State<BehaviorInput> {
             // 天数轮次
             Container(
               child: TextField(
-                decoration: InputDecoration(labelText: '天数轮次', hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\''),
+                decoration: InputDecoration(
+                    labelText: '天数轮次', hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\''),
                 controller: _turnInputController,
                 keyboardType: TextInputType.number,
               ),
             ),
-
-            Container(child: DescribeTagPicker(describeTagList, _describeTagPicker)),
-
-            // 新行为标签
-            // Container(
-            //   child: Row(
-            //     children: <Widget>[
-            //       Expanded(
-            //         child: Text(
-            //           _pickedDate == null
-            //               ? '请选择行为标签!'
-            //               : '标签: ${DateFormat.yMd().format(_pickedDate)}',
-            //         ),
-            //       ),
-            //       FlatButton(
-            //         textColor: Theme.of(context).primaryColor,
-            //         child: Text(
-            //           '选择标签',
-            //           style: TextStyle(fontWeight: FontWeight.bold),
-            //         ),
-            //         onPressed: _describeTagPicker,
-            //       ),
-            //     ],
-            //   ),
-            // ),
-
+            // DescribeTag
+            Container(
+                child: DescribeTagPicker(describeTagList, _describeTagPicker)),
             // 分数slider
             Container(child: ScoreSlider(_updateSliderScore)),
-
             // 提交按钮
             Container(
               child: RaisedButton(
