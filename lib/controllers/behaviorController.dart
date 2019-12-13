@@ -16,6 +16,9 @@ class BehaviorController {
       if (eachMappedBehavior.turn == catchTurn) {
         noTurnInfo = false;
         eachMappedBehavior.turnBehaviors.add(behavior);
+        eachMappedBehavior.turnBehaviors.sort((bh1, bh2) {
+          return bh1.player.compareTo(bh2.player);
+        });
       }
     }
     if (noTurnInfo) {
