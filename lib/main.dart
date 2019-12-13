@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.amber,
         fontFamily: 'Quicksand',
+        //errorColor: Colors.red,
         textTheme: ThemeData.light().textTheme.copyWith(
             title: TextStyle(
               fontWeight: FontWeight.w400,
