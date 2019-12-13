@@ -8,25 +8,17 @@ class CardButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.delete),
-          color: Theme.of(context).errorColor,
-          iconSize: 16,
-          tooltip: '删除此条记录',
-          padding: EdgeInsets.all(10),
-          onPressed: () {},
+        Card(
+          child: IconButton(
+            icon: Icon(Icons.delete),
+            color: Theme.of(context).errorColor,
+            iconSize: 18,
+            tooltip: '删除此条记录',
+            padding: EdgeInsets.all(10),
+            onPressed: () {},
+          ),
         ),
       ],
     );
-
-    // return Container(
-    //   width: 40,
-    //   child: Row(
-    //     mainAxisAlignment: MainAxisAlignment.end,
-    //     children: <Widget>[
-    //       Card(child: Text("修改")),
-    //     ],
-    //   ),
-    // );
   }
 }

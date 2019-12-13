@@ -13,6 +13,7 @@ class PlayerBehaviorInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
+        // Player
         Container(
           alignment: Alignment.topLeft,
           child: Text(
@@ -20,31 +21,37 @@ class PlayerBehaviorInfo extends StatelessWidget {
             style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
-                color: Colors.black38),
+                color: Colors.black26),
           ),
           width: 55,
         ),
-        // 具体的行为标签描述。
+        // DescribeTag
         Container(
-          child: Card(
-            child: Text(
-              behavior.describeTab,
-              style: Theme.of(context).textTheme.title,
+          margin: EdgeInsets.only(left: 2),
+          child: Text(
+            behavior.describeTab,
+            style: Theme.of(context).textTheme.title,
+          ),
+          width: 140,
+        ),
+        // Score
+        Container(
+          margin: EdgeInsets.only(left: 5),
+          child: Text(behavior.quantity.toString()),
+          width: 48,
+        ),
+        // Time
+        Container(
+          margin: EdgeInsets.only(left: 2),
+          child: Text(
+            DateFormat('Hms').format(behavior.date),
+            style: TextStyle(
+              color: Colors.black38,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          width: 130,
-        ),
-        // 对于所选行为标签的狼面值。
-        Container(
-          child: Text(behavior.quantity.toString()),
-          //child: Card(child: Text(behavior.quantity.toString())),
-          width: 45,
-        ),
-        Container(
-          child: Card(child: Text(DateFormat('Hms').format(behavior.date))),
           width: 68,
         ),
-        //Container(child: Card(child: Text(date.toString()))),
       ],
     );
   }
