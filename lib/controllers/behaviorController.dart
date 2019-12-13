@@ -37,6 +37,9 @@ class BehaviorController {
         ],
       ));
     }
+    mappedBehaviors.sort((mb2, mb1) {
+      return mb1.turn.compareTo(mb2.turn);
+    });
     return mappedBehaviors;
   }
 
@@ -102,6 +105,9 @@ class BehaviorController {
     for (IndividualRecord ir in individualRecords) {
       ir.maxBehaviorTotal = curMaxBehaviorTotal;
     }
+    individualRecords.sort((ir1, ir2) {
+      return ir1.player.compareTo(ir2.player);
+    });
     return individualRecords;
   }
 

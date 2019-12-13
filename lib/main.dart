@@ -80,17 +80,14 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     setState(() {
       behaviors.add(newBehavior);
-      mappedBehaviors = bhCtrl.mapAndAdd(mappedBehaviors, newBehavior);
-      mappedBehaviors.sort((mb2, mb1) {
-        return mb1.turn.compareTo(mb2.turn);
-      });
+      mappedBehaviors = bhCtrl.mapAndAdd(
+        mappedBehaviors,
+        newBehavior,
+      );
       individualRecords = bhCtrl.groupedBehaviorValues(
         individualRecords,
         newBehavior,
       );
-      individualRecords.sort((ir1, ir2) {
-        return ir1.player.compareTo(ir2.player);
-      });
       //print("P1 indi: ${individualRecords[0].indBehaviorTotal}, max: ${individualRecords[0].maxBehaviorTotal}");
     });
   }
@@ -98,8 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void _deleteBehavior(int id) {
     setState(() {
       behaviors.removeWhere((bh) => bh.id == id);
-      mappedBehaviors = bhCtrl.deleteAndRemap(mappedBehaviors, id);
-      individualRecords = bhCtrl.regroupedBehaviorsAfterDelete(individualRecords, id);
+      mappedBehaviors = bhCtrl.deleteAndRemap(
+        mappedBehaviors,
+        id,
+      );
+      individualRecords = bhCtrl.regroupedBehaviorsAfterDelete(
+        individualRecords,
+        id,
+      );
     });
   }
 
