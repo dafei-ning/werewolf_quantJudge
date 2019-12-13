@@ -76,22 +76,31 @@ class _BehaviorInputState extends State<BehaviorInput> {
       child: Container(
         padding: EdgeInsets.all(8),
         child: Column(
+          
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             // 玩家号码
             Container(
+              margin: EdgeInsets.only(top: 10, bottom: 5),
               child: TextField(
                 decoration: InputDecoration(
-                    labelText: '玩家号码', hintText: '输入某位玩家的号码, 例如: 1, 2...'),
+                    labelText: '玩家号码',
+                    labelStyle: Theme.of(context).textTheme.title,
+                    hintText: '输入某位玩家的号码, 例如: 1, 2...',
+                    border: OutlineInputBorder()),
                 controller: _playerInputController,
                 keyboardType: TextInputType.number,
               ),
             ),
             // 天数轮次
             Container(
+              margin: EdgeInsets.only(top: 10, bottom: 5),
               child: TextField(
                 decoration: InputDecoration(
-                    labelText: '天数轮次', hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\''),
+                    labelText: '天数轮次',
+                    hintText: '输入发言轮次, 1, 2...或 0代表 \'警上\'',
+                    labelStyle: Theme.of(context).textTheme.title,
+                    border: OutlineInputBorder()),
                 controller: _turnInputController,
                 keyboardType: TextInputType.number,
               ),
