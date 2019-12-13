@@ -52,17 +52,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
-
   /*  Properties. */
   List<MappedBehavior> mappedBehaviors = [];
   List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
-
-  List<Behavior> behaviors2 = SimulateData().behaviors;
-  // TODO: 是不是有更好的方法归类这一系列function？
   BehaviorController bhCtrl = new BehaviorController();
-
+  //List<Behavior> behaviors2 = SimulateData().behaviors;
+  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  
   void _addNewBehavior(
     int inTurn,
     int inPlayer,
@@ -88,7 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
         individualRecords,
         newBehavior,
       );
-      //print("P1 indi: ${individualRecords[0].indBehaviorTotal}, max: ${individualRecords[0].maxBehaviorTotal}");
     });
   }
 
@@ -106,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void startInputNewBehavior(BuildContext ctx) {
+  void _startInputNewBehavior(BuildContext ctx) {
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
@@ -127,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add_box),
-            onPressed: () => startInputNewBehavior(context),
+            onPressed: () => _startInputNewBehavior(context),
           )
         ],
       ),
@@ -146,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () => startInputNewBehavior(context),
+        onPressed: () => _startInputNewBehavior(context),
       ),
     );
   }
