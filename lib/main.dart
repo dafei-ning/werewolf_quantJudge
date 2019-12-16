@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
 import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
-import 'models/data.dart';
 import 'models/mappedBehavior.dart';
 import 'models/behavior.dart';
 import 'models/individual.dart';
 import 'controllers/behaviorController.dart';
+import 'package:uuid/uuid.dart';
 
 void main() => runApp(MyApp());
 
@@ -57,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
   BehaviorController bhCtrl = new BehaviorController();
+  var uuid = Uuid();
   //List<Behavior> behaviors2 = SimulateData().behaviors;
   // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   
@@ -67,8 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
     String describeTag,
   ) {
     final newBehavior = Behavior(
-      // TODO: id to be iterated automatically.
-      id: 888,
+      id: uuid.v4(),
       turn: inTurn,
       player: inPlayer,
       quantity: inputScore,
@@ -85,6 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
         individualRecords,
         newBehavior,
       );
+      print(newBehavior.id);
     });
   }
 

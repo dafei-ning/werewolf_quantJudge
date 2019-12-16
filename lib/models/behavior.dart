@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Behavior {
-  int id;
+  String id;
   int turn;
   int player;
   String describeTab;
