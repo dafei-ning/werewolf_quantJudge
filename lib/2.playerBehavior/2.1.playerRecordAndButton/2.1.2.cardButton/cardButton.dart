@@ -9,6 +9,7 @@ class CardButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Card(
+          
           child: IconButton(
             icon: Icon(Icons.delete),
             color: Theme.of(context).errorColor,

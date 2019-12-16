@@ -26,15 +26,7 @@ class BehaviorController {
     if (noTurnInfo) {
       mappedBehaviors.add(MappedBehavior(
         turn: catchTurn,
-        turnBehaviors: [
-          Behavior(
-            id: 888,
-            player: behavior.player,
-            describeTab: behavior.describeTab,
-            quantity: behavior.quantity,
-            date: DateTime.now(),
-          ),
-        ],
+        turnBehaviors: [behavior],
       ));
     }
     mappedBehaviors.sort((mb2, mb1) {
