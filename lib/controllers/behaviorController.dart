@@ -109,14 +109,14 @@ class BehaviorController {
    */
   List<MappedBehavior> deleteAndRemap(
     List<MappedBehavior> mappedBehaviors,
-    int id,
+    String bhid,
   ) {}
 
   /* 
     * 从 IndividualRecords 中删除某个根据 Id选定的 Behavior 
     */
-  List<IndividualRecord> regroupedBehaviorsAfterDelete(
+  List<IndividualRecord> regroupedIndividualRecordsAfterDelete(
     List<IndividualRecord> individualRecords,
-    int id,
+    String bhid,
   ) {}
 }
