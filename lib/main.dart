@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'OpenSans',
               fontSize: 13,
             ),
-            button: TextStyle(color: Colors.yellow[600])),
+            button: TextStyle(color: Colors.amber)),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Behavior> behaviors = [];
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
-  //List<Behavior> behaviors2 = SimulateData().behaviors;
+  // List<Behavior> behaviors2 = SimulateData().behaviors;
   // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   
   void _addNewBehavior(
