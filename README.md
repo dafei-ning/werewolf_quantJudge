@@ -119,3 +119,33 @@ Terminal指令：
 flutter pub get
 flutter pub pub run flutter_launcher_icons:main
 ```
+
+### 没有解决的问题 ###
+
+```
+════════ Exception caught by gesture ═══════════════════════════════════════════
+The following ConcurrentModificationError was thrown while handling a gesture:
+Concurrent modification during iteration: Instance(length:1) of '_GrowableList'.
+
+When the exception was thrown, this was the stack
+#0      ListIterator.moveNext  (dart:_internal/iterable.dart:338:7)
+#1      BehaviorController.regroupedIndividualRecordsAfterDelete 
+package:werewolf_quantjudge/controllers/behaviorController.dart:134
+#2      _MyHomePageState._deleteBehavior.<anonymous closure> 
+#3      State.setState 
+package:flutter/…/widgets/framework.dart:1141
+#4      _MyHomePageState._deleteBehavior 
+package:werewolf_quantjudge/main.dart:93
+...
+Handler: "onTap"
+Recognizer: TapGestureRecognizer#fa6cc
+    debugOwner: GestureDetector
+    state: ready
+    won arena
+    finalPosition: Offset(374.7, 417.7)
+    finalLocalPosition: Offset(28.7, 27.7)
+    sent tap down
+════════════════════════════════════════════════════════════════════════════════
+
+git: 8a9b44fbc18bf0c7cb14ae1cc2bb13c96af4e22e
+```
