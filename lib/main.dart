@@ -81,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mappedBehaviors,
         newBehavior,
       );
+      print('mappedBehaviors:${mappedBehaviors}');
       individualRecords = bhCtrl.groupedBehaviorValues(
         individualRecords,
         newBehavior,
@@ -96,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mappedBehaviors,
         behavior,
       );
+      print('mappedBehaviors:${mappedBehaviors}');
       individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
         individualRecords,
         behavior,
@@ -133,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
-            Container(child: BehaviorChart(individualRecords)),
+            //Container(child: BehaviorChart(individualRecords)),
 
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
             Container(child: TurnInfoGroup(mappedBehaviors, _deleteBehavior))
