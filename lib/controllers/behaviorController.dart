@@ -136,14 +136,20 @@ class BehaviorController {
     List<MappedBehavior> mappedBehaviors,
     Behavior behavior,
   ) {
-    var filterList = List<MappedBehavior>.from(mappedBehaviors);
-    for (MappedBehavior mbh in filterList) {
+    //var filterList = List<MappedBehavior>.from(mappedBehaviors);
+    print('删完以前：${mappedBehaviors.length}');
+    for (MappedBehavior mbh in mappedBehaviors) {
       if (mbh.turn == behavior.turn) {
+        
+        print('22删完以前：${mbh.turnBehaviors.length}');
+        print('22删完以前列举：${mbh.turnBehaviors[0].describeTab} ${mbh.turnBehaviors[1].describeTab} ${mbh.turnBehaviors[2].describeTab}');
         mbh.turnBehaviors.removeWhere((bh) => bh.id == behavior.id);
+        print('22删完以后：${mbh.turnBehaviors.length}');
       }     
     }
-    filterList.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
-    return filterList;
+    mappedBehaviors.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
+    print('删完以后：${mappedBehaviors.length}');
+    return mappedBehaviors;
   }
 
   /* 
@@ -153,35 +159,35 @@ class BehaviorController {
     List<IndividualRecord> individualRecords,
     Behavior behavior,
   ) {
-    // var filterList = List<IndividualRecord>.from(individualRecords);
-    // for (IndividualRecord ir in filterList) {
-    //   if (ir.player == behavior.player) {
-    //     ir.indBehaviorTotal -= behavior.quantity;
+  //   var filterList = List<IndividualRecord>.from(individualRecords);
+  //   for (IndividualRecord ir in filterList) {
+  //     if (ir.player == behavior.player) {
+  //       ir.indBehaviorTotal -= behavior.quantity;
 
-    //     for (TurnRecord tr in ir.turnRecords) {
-    //       if (tr.turn == behavior.turn) {
-    //         tr.behaviors.removeWhere((bh) => bh.id == behavior.id);
-    //       }
-    //     }
-    //     for (BehaviorRecord br in ir.behaviorRecords) {
-    //       if (br.behaviorTag == behavior.describeTab) {
-    //         br.behaviorQuantity -= behavior.quantity;
-    //       }
-    //     }
-    //     if (ir.indBehaviorTotal == 0) {
-    //       filterList.remove(ir);
-    //     }
-    //   }
-    // }
-    // double curMaxBehaviorTotal = 0;
-    // for (IndividualRecord ir in individualRecords) {
-    //   curMaxBehaviorTotal = ir.indBehaviorTotal >= curMaxBehaviorTotal
-    //       ? ir.indBehaviorTotal
-    //       : curMaxBehaviorTotal;
-    // }
-    // for (IndividualRecord ir in individualRecords) {
-    //   ir.maxBehaviorTotal = curMaxBehaviorTotal;
-    // }
-    // return filterList;
+  //       for (TurnRecord tr in ir.turnRecords) {
+  //         if (tr.turn == behavior.turn) {
+  //           tr.behaviors.removeWhere((bh) => bh.id == behavior.id);
+  //         }
+  //       }
+  //       for (BehaviorRecord br in ir.behaviorRecords) {
+  //         if (br.behaviorTag == behavior.describeTab) {
+  //           br.behaviorQuantity -= behavior.quantity;
+  //         }
+  //       }
+  //       if (ir.indBehaviorTotal == 0) {
+  //         filterList.remove(ir);
+  //       }
+  //     }
+  //   }
+  //   double curMaxBehaviorTotal = 0;
+  //   for (IndividualRecord ir in individualRecords) {
+  //     curMaxBehaviorTotal = ir.indBehaviorTotal >= curMaxBehaviorTotal
+  //         ? ir.indBehaviorTotal
+  //         : curMaxBehaviorTotal;
+  //   }
+  //   for (IndividualRecord ir in individualRecords) {
+  //     ir.maxBehaviorTotal = curMaxBehaviorTotal;
+  //   }
+  //   return filterList;
   }
 }

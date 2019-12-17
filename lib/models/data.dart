@@ -48,7 +48,7 @@ class SimulateData {
         turnBehaviors: [
           Behavior(
             turn: 1,
-            id: '1',
+            id: '5',
             player: 1,
             describeTab: "坐姿表情2",
             quantity: 50,
@@ -56,7 +56,7 @@ class SimulateData {
           ),
           Behavior(
             turn: 1,
-            id: '3',
+            id: '6',
             player: 2,
             describeTab: "站边举票2",
             quantity: 50,
@@ -64,7 +64,7 @@ class SimulateData {
           ),
           Behavior(
             turn: 1,
-            id: '4',
+            id: '7',
             player: 3,
             describeTab: "站边举票行为2",
             quantity: 40,
@@ -77,7 +77,7 @@ class SimulateData {
         turnBehaviors: [
           Behavior(
             turn: 1,
-            id: '1',
+            id: '8',
             player: 1,
             describeTab: "坐姿表情3",
             quantity: 50,
@@ -85,7 +85,7 @@ class SimulateData {
           ),
           Behavior(
             turn: 1,
-            id: '3',
+            id: '9',
             player: 2,
             describeTab: "站边举票3",
             quantity: 50,

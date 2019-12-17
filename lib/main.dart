@@ -7,6 +7,7 @@ import 'models/behavior.dart';
 import 'models/individual.dart';
 import 'controllers/behaviorController.dart';
 import 'package:uuid/uuid.dart';
+import './models/data.dart';
 
 void main() => runApp(MyApp());
 
@@ -53,13 +54,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /*  Properties. */
-  List<MappedBehavior> mappedBehaviors = [];
+  //List<MappedBehavior> mappedBehaviors = [];
   List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
   // List<Behavior> behaviors2 = SimulateData().behaviors;
-  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  // List<MappedBehavior> mappedBehaviors = []
   
   void _addNewBehavior(
     int inTurn,
@@ -81,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mappedBehaviors,
         newBehavior,
       );
-      print('mappedBehaviors:${mappedBehaviors}');
+      print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
       individualRecords = bhCtrl.groupedBehaviorValues(
         individualRecords,
         newBehavior,
@@ -97,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mappedBehaviors,
         behavior,
       );
-      print('mappedBehaviors:${mappedBehaviors}');
+      print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
       individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
         individualRecords,
         behavior,
