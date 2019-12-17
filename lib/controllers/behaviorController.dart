@@ -110,7 +110,18 @@ class BehaviorController {
   List<MappedBehavior> deleteAndRemap(
     List<MappedBehavior> mappedBehaviors,
     Behavior behavior,
-  ) {}
+  ) {
+    //List<MappedBehavior> filterList = List<MappedBehavior>.from(mappedBehaviors);
+    for (MappedBehavior mbh in mappedBehaviors) {
+      if (mbh.turn == behavior.turn) {
+        mbh.turnBehaviors.removeWhere((bh) => bh.id == behavior.id);
+      }
+      if (mbh.turnBehaviors.length == 0) {
+        mappedBehaviors.remove(mbh);
+      }
+    }
+    return mappedBehaviors;
+  }
 
   /* 
     * 从 IndividualRecords 中删除某个根据 Id选定的 Behavior 
