@@ -109,7 +109,7 @@ class BehaviorController {
    */
   List<MappedBehavior> deleteAndRemap(
     List<MappedBehavior> mappedBehaviors,
-    String bhid,
+    Behavior behavior,
   ) {}
 
   /* 
@@ -117,6 +117,6 @@ class BehaviorController {
     */
   List<IndividualRecord> regroupedIndividualRecordsAfterDelete(
     List<IndividualRecord> individualRecords,
-    String bhid,
+    Behavior behavior,
   ) {}
 }

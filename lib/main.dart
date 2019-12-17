@@ -89,16 +89,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _deleteBehavior(String bhid) {
+  void _deleteBehavior(Behavior behavior) {
     setState(() {
-      behaviors.removeWhere((bh) => bh.id == bhid);
+      behaviors.removeWhere((bh) => bh.id == behavior.id);
       mappedBehaviors = bhCtrl.deleteAndRemap(
         mappedBehaviors,
-        bhid,
+        behavior,
       );
       individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
         individualRecords,
-        bhid,
+        behavior,
       );
     });
   }
