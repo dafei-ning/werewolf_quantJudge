@@ -5,7 +5,12 @@ import '2.0.turnTitle.dart';
 
 class TurnInfoGroup extends StatelessWidget {
   final List<MappedBehavior> mappedBehaviors;
-  TurnInfoGroup(this.mappedBehaviors);
+  final Function deleteBehaviorFunction;
+
+  TurnInfoGroup(
+    this.mappedBehaviors,
+    this.deleteBehaviorFunction,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +57,9 @@ class TurnInfoGroup extends StatelessWidget {
                           // 每一轮的用户行为(组)
                           Container(
                             child: PlayerBehaviorRecordCardGroup(
-                                mappedBehaviors[index].turnBehaviors),
+                              mappedBehaviors[index].turnBehaviors,
+                              deleteBehaviorFunction,
+                            ),
                           ),
                         ],
                       ),

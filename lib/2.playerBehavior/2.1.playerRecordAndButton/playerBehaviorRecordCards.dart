@@ -5,8 +5,12 @@ import '2.1.2.cardButton/cardButton.dart';
 
 class PlayerBehaviorRecordCardGroup extends StatelessWidget {
   final List<Behavior> turnBehaviors;
+  final Function deleteBehaviorFunction;
   /* Constructor */
-  PlayerBehaviorRecordCardGroup(this.turnBehaviors);
+  PlayerBehaviorRecordCardGroup(
+    this.turnBehaviors,
+    this.deleteBehaviorFunction,
+  );
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,10 +26,9 @@ class PlayerBehaviorRecordCardGroup extends StatelessWidget {
                     padding: EdgeInsets.all(0.5),
                     child: PlayerBehaviorInfo(behavior),
                   ),
-
                   // 2.2 增删查改按钮
                   Expanded(
-                    child: CardButton(),
+                    child: CardButton(deleteBehaviorFunction),
                   ),
                 ],
               ),

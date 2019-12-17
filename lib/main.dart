@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(child: BehaviorChart(individualRecords)),
 
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
-            Container(child: TurnInfoGroup(mappedBehaviors))
+            Container(child: TurnInfoGroup(mappedBehaviors, _deleteBehavior))
           ],
         ),
       ),
