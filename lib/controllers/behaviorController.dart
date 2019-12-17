@@ -111,16 +111,16 @@ class BehaviorController {
     List<MappedBehavior> mappedBehaviors,
     Behavior behavior,
   ) {
-    //List<MappedBehavior> filterList = List<MappedBehavior>.from(mappedBehaviors);
-    for (MappedBehavior mbh in mappedBehaviors) {
+    var filterList = List<MappedBehavior>.from(mappedBehaviors);
+    for (MappedBehavior mbh in filterList) {
       if (mbh.turn == behavior.turn) {
         mbh.turnBehaviors.removeWhere((bh) => bh.id == behavior.id);
       }
       if (mbh.turnBehaviors.length == 0) {
-        mappedBehaviors.remove(mbh);
+        filterList.remove(mbh);
       }
     }
-    return mappedBehaviors;
+    return filterList;
   }
 
   /* 
@@ -129,5 +129,36 @@ class BehaviorController {
   List<IndividualRecord> regroupedIndividualRecordsAfterDelete(
     List<IndividualRecord> individualRecords,
     Behavior behavior,
-  ) {}
+  ) {
+    var filterList = List<IndividualRecord>.from(individualRecords);
+    for (IndividualRecord ir in filterList) {
+      if (ir.player == behavior.player) {
+        ir.indBehaviorTotal -= behavior.quantity;
+        
+        for (TurnRecord tr in ir.turnRecords) {
+          if (tr.turn == behavior.turn) {
+            tr.behaviors.removeWhere((bh) => bh.id == behavior.id);
+          }
+        }
+        for (BehaviorRecord br in ir.behaviorRecords) {
+          if (br.behaviorTag == behavior.describeTab) {
+            br.behaviorQuantity -= behavior.quantity;
+          }
+        }
+        if (ir.indBehaviorTotal == 0) {
+           filterList.remove(ir);
+        }
+      }
+    }
+    double curMaxBehaviorTotal = 0;
+    for (IndividualRecord ir in individualRecords) {
+      curMaxBehaviorTotal = ir.indBehaviorTotal >= curMaxBehaviorTotal
+          ? ir.indBehaviorTotal
+          : curMaxBehaviorTotal;
+    }
+    for (IndividualRecord ir in individualRecords) {
+      ir.maxBehaviorTotal = curMaxBehaviorTotal;
+    }
+    return filterList;
+  }
 }
