@@ -18,11 +18,6 @@ class CardButton extends StatelessWidget {
             tooltip: '删除此条记录',
             padding: EdgeInsets.all(10),
             onPressed: () {
-              // print('+++++++++++++++++++++');
-              // print('behavior情况 ${behavior}');
-              // print('behavior情况 behavior.id ${behavior.id}');
-              // print('behavior情况 behavior.turn ${behavior.turn}');
-              // print('+++++++++++++++++++++');
               deleteFunction(behavior);
             }
           ),

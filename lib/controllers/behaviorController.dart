@@ -13,7 +13,6 @@ class BehaviorController {
   ) {
     bool noTurnInfo = true;
     int catchTurn = behavior.turn;
-    //behavior.turn = null;
     for (MappedBehavior eachMappedBehavior in mappedBehaviors) {
       if (eachMappedBehavior.turn == catchTurn) {
         noTurnInfo = false;
@@ -71,8 +70,10 @@ class BehaviorController {
       }
     }
     if (noTurnInfo) {
-      currentIndividualRecord.turnRecords
-          .add(TurnRecord(turn: bh.turn, behaviors: [bh])); //暂时不知道会不会出现问题
+      currentIndividualRecord.turnRecords.add(TurnRecord(
+        turn: bh.turn,
+        behaviors: [bh],
+      ));
     }
     // behaviorRecords
     bool noBhTag = true;
