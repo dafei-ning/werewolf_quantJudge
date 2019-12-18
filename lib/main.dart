@@ -93,9 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _deleteBehavior(Behavior behavior) {
-    print('behavior情况 ${behavior}');
-    print('behavior情况 behavior.id ${behavior.id}');
-    print('behavior情况 behavior.turn ${behavior.turn}');
+    // print('behavior情况 ${behavior}');
+    // print('behavior情况 behavior.id ${behavior.id}');
+    // print('behavior情况 behavior.turn ${behavior.turn}');
 
     String id = behavior.id;
     int player = behavior.player;

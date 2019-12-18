@@ -17,6 +17,4 @@ class Behavior {
     this.date,
     this.turn,
   });
-
-  Behavior.clone(Behavior behavior): super();
 }

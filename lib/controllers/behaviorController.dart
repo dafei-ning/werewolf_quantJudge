@@ -13,7 +13,7 @@ class BehaviorController {
   ) {
     bool noTurnInfo = true;
     int catchTurn = behavior.turn;
-    behavior.turn = null;
+    //behavior.turn = null;
     for (MappedBehavior eachMappedBehavior in mappedBehaviors) {
       if (eachMappedBehavior.turn == catchTurn) {
         noTurnInfo = false;
@@ -138,20 +138,20 @@ class BehaviorController {
     String behaviorId,
   ) {
     //var filterList = List<MappedBehavior>.from(mappedBehaviors);
-    print('删完以前的 mappedBehaviors.length：${mappedBehaviors.length}');
+    //print('删完以前的 mappedBehaviors.length：${mappedBehaviors.length}');
     for (MappedBehavior mbh in mappedBehaviors) {
-      print('扫描每一个mbh时的 mbh.turn：${mbh.turn}');
-      print('扫描每一个mbh时的 behavior.turn：${behaviorTurn}');
+      // print('扫描每一个mbh时的 mbh.turn：${mbh.turn}');
+      // print('扫描每一个mbh时的 behavior.turn：${behaviorTurn}');
       if (mbh.turn == behaviorTurn) {
-        print('当找到该mbh时的mbh.turnBehaviors.length：${mbh.turnBehaviors.length}');
+        // print('当找到该mbh时的mbh.turnBehaviors.length：${mbh.turnBehaviors.length}');
         //print('22删完以前列举：${mbh.turnBehaviors[0].describeTab} ${mbh.turnBehaviors[1].describeTab} ${mbh.turnBehaviors[2].describeTab}');
         mbh.turnBehaviors.removeWhere((bh) => bh.id == behaviorId);
-        print('当找到该mbh时的mbh.turnBehaviors.length：${mbh.turnBehaviors.length}');
+        // print('当找到该mbh时的mbh.turnBehaviors.length：${mbh.turnBehaviors.length}');
       }     
     }
     mappedBehaviors.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
-    print('删完以后的mappedBehaviors.length：${mappedBehaviors.length}');
-    print('-------------------------------');
+    // print('删完以后的mappedBehaviors.length：${mappedBehaviors.length}');
+    // print('-------------------------------');
     return mappedBehaviors;
   }
 

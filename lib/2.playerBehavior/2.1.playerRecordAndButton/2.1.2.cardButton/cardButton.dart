@@ -4,7 +4,6 @@ import 'package:werewolf_quantjudge/models/behavior.dart';
 class CardButton extends StatelessWidget {
   final Function deleteFunction;
   final Behavior behavior;
-
   CardButton(this.deleteFunction, this.behavior);
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,14 @@ class CardButton extends StatelessWidget {
             iconSize: 18,
             tooltip: '删除此条记录',
             padding: EdgeInsets.all(10),
-            onPressed: () => deleteFunction(behavior),
+            onPressed: () {
+              // print('+++++++++++++++++++++');
+              // print('behavior情况 ${behavior}');
+              // print('behavior情况 behavior.id ${behavior.id}');
+              // print('behavior情况 behavior.turn ${behavior.turn}');
+              // print('+++++++++++++++++++++');
+              deleteFunction(behavior);
+            }
           ),
         ),
       ],
