@@ -93,20 +93,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _deleteBehavior(Behavior behavior) {
-    // print('behavior情况 ${behavior}');
-    // print('behavior情况 behavior.id ${behavior.id}');
-    // print('behavior情况 behavior.turn ${behavior.turn}');
-
-    String id = behavior.id;
-    int player = behavior.player;
-    double quantity = behavior.quantity;
-    int turn = behavior.turn;
     setState(() {
-      behaviors.removeWhere((bh) => bh.id == id);
+      behaviors.removeWhere((bh) => bh.id == behavior.id);
       mappedBehaviors = bhCtrl.deleteAndRemap(
         mappedBehaviors,
-        turn,
-        id,
+        behavior,
       );
       //print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
       // individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(

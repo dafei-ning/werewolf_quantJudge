@@ -25,18 +25,6 @@ class PlayerBehaviorInfo extends StatelessWidget {
           ),
           width: 55,
         ),
-        // test turn
-        // Container(
-        //   alignment: Alignment.topLeft,
-        //   child: Text(
-        //     behavior.turn.toString() + "号玩家",
-        //     style: TextStyle(
-        //         fontSize: 13,
-        //         fontWeight: FontWeight.bold,
-        //         color: Colors.black26),
-        //   ),
-        //   width: 5,
-        // ),
         // DescribeTag
         Container(
           margin: EdgeInsets.only(left: 2),
