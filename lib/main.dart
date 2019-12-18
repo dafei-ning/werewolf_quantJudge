@@ -59,9 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Behavior> behaviors = [];
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
-  // List<Behavior> behaviors2 = SimulateData().behaviors;
-  //List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
-  // List<MappedBehavior> mappedBehaviors = []
+  // List<Behavior> behaviors = SimulateData().behaviors;
+  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  // List<IndividualRecord> individualRecords2 = SimulateData().individualRecords;
   
   void _addNewBehavior(
     int inTurn,
