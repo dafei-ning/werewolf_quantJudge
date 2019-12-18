@@ -137,7 +137,6 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
             Container(child: BehaviorChart(individualRecords)),
-
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
             Container(child: TurnInfoGroup(mappedBehaviors, _deleteBehavior))
           ],
