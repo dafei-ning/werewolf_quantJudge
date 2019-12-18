@@ -99,11 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
         mappedBehaviors,
         behavior,
       );
-      print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
-      individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
-        individualRecords,
-        behavior,
-      );
+      //print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
+      // individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
+      //   individualRecords,
+      //   behavior,
+      // );
     });
   }
 

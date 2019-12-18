@@ -139,16 +139,19 @@ class BehaviorController {
     //var filterList = List<MappedBehavior>.from(mappedBehaviors);
     print('删完以前：${mappedBehaviors.length}');
     for (MappedBehavior mbh in mappedBehaviors) {
+      print('扫描每一个mbh时的 mbh.turn：${mbh.turn}');
+      print('扫描每一个mbh时的：behavior.turn ${behavior.turn}');
       if (mbh.turn == behavior.turn) {
-        
-        print('22删完以前：${mbh.turnBehaviors.length}');
-        print('22删完以前列举：${mbh.turnBehaviors[0].describeTab} ${mbh.turnBehaviors[1].describeTab} ${mbh.turnBehaviors[2].describeTab}');
+        print('当找到该mbh时的mbh.turnBehaviors.length：${mbh.turnBehaviors.length}');
+        //print('22删完以前列举：${mbh.turnBehaviors[0].describeTab} ${mbh.turnBehaviors[1].describeTab} ${mbh.turnBehaviors[2].describeTab}');
         mbh.turnBehaviors.removeWhere((bh) => bh.id == behavior.id);
-        print('22删完以后：${mbh.turnBehaviors.length}');
-      }     
+        print('当找到该mbh时的mbh.turnBehaviors.length：${mbh.turnBehaviors.length}');
+      }  
+      break;   
     }
     mappedBehaviors.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
     print('删完以后：${mappedBehaviors.length}');
+    print('-------------------------------');
     return mappedBehaviors;
   }
 
