@@ -6,10 +6,9 @@ class Behavior {
   int player;
   String describeTab;
   double quantity;
-  // Turns selector, use date widget to simulate.
   DateTime date;
   List<String> side;
-  
+
   Behavior({
     this.id,
     this.player,
@@ -18,4 +17,6 @@ class Behavior {
     this.date,
     this.turn,
   });
+
+  Behavior.clone(Behavior behavior): super();
 }

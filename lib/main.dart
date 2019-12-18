@@ -54,13 +54,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /*  Properties. */
-  //List<MappedBehavior> mappedBehaviors = [];
+  List<MappedBehavior> mappedBehaviors = [];
   List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
   // List<Behavior> behaviors2 = SimulateData().behaviors;
-  List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  //List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   // List<MappedBehavior> mappedBehaviors = []
   
   void _addNewBehavior(
@@ -93,11 +93,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _deleteBehavior(Behavior behavior) {
+    print('behavior情况 ${behavior}');
+    print('behavior情况 behavior.id ${behavior.id}');
+    print('behavior情况 behavior.turn ${behavior.turn}');
+
+    String id = behavior.id;
+    int player = behavior.player;
+    double quantity = behavior.quantity;
+    int turn = behavior.turn;
     setState(() {
-      behaviors.removeWhere((bh) => bh.id == behavior.id);
+      behaviors.removeWhere((bh) => bh.id == id);
       mappedBehaviors = bhCtrl.deleteAndRemap(
         mappedBehaviors,
-        behavior,
+        turn,
+        id,
       );
       //print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
       // individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
