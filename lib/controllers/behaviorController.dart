@@ -105,9 +105,9 @@ class BehaviorController {
 
   /* 
    * 从 mappedBehavior 中删除某个根据 Id 选定的 Behavior 
-   * 然后 Remap
+   * 不需要根据现有的 behaviors 重新 map
    */
-  List<MappedBehavior> deleteAndRemap(
+  List<MappedBehavior> deleteFromMappedBH(
     List<MappedBehavior> mappedBehaviors,
     Behavior behavior,
   ) {
@@ -115,48 +115,53 @@ class BehaviorController {
     for (MappedBehavior mbh in filterList) {
       if (mbh.turn == behavior.turn) {
         mbh.turnBehaviors.removeWhere((bh) => bh.id == behavior.id);
-      }     
+        break;
+      }
     }
     filterList.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
     return filterList;
   }
 
   /* 
-    * 从 IndividualRecords 中删除某个根据 Id选定的 Behavior 
-    */
+   * 从 IndividualRecords 中删除某个根据 Id 选定的 Behavior 
+   * 其中需要删除 turnRecords，behaviorRecords 中的数据
+   * 改变 indBehaviorTotal，maxBehaviorTotal 的记录
+   * 而不需要根据现有的 behaviors 重新做 IndividualRecords
+   */
   List<IndividualRecord> regroupedIndividualRecordsAfterDelete(
     List<IndividualRecord> individualRecords,
     Behavior behavior,
   ) {
-  //   var filterList = List<IndividualRecord>.from(individualRecords);
-  //   for (IndividualRecord ir in filterList) {
-  //     if (ir.player == behavior.player) {
-  //       ir.indBehaviorTotal -= behavior.quantity;
-
-  //       for (TurnRecord tr in ir.turnRecords) {
-  //         if (tr.turn == behavior.turn) {
-  //           tr.behaviors.removeWhere((bh) => bh.id == behavior.id);
-  //         }
-  //       }
-  //       for (BehaviorRecord br in ir.behaviorRecords) {
-  //         if (br.behaviorTag == behavior.describeTab) {
-  //           br.behaviorQuantity -= behavior.quantity;
-  //         }
-  //       }
-  //       if (ir.indBehaviorTotal == 0) {
-  //         filterList.remove(ir);
-  //       }
-  //     }
-  //   }
-  //   double curMaxBehaviorTotal = 0;
-  //   for (IndividualRecord ir in individualRecords) {
-  //     curMaxBehaviorTotal = ir.indBehaviorTotal >= curMaxBehaviorTotal
-  //         ? ir.indBehaviorTotal
-  //         : curMaxBehaviorTotal;
-  //   }
-  //   for (IndividualRecord ir in individualRecords) {
-  //     ir.maxBehaviorTotal = curMaxBehaviorTotal;
-  //   }
-  //   return filterList;
+    var filterList = List<IndividualRecord>.from(individualRecords);
+    for (IndividualRecord ir in filterList) {
+      if (ir.player == behavior.player) {
+        ir.indBehaviorTotal -= behavior.quantity;
+        for (TurnRecord tr in ir.turnRecords) {
+          if (tr.turn == behavior.turn) {
+            tr.behaviors.removeWhere((bh) => bh.id == behavior.id);
+            break;
+          }
+        }
+        for (BehaviorRecord br in ir.behaviorRecords) {
+          if (br.behaviorTag == behavior.describeTab) {
+            br.behaviorQuantity -= behavior.quantity;
+          }
+        }
+        if (ir.indBehaviorTotal == 0) {
+          filterList.remove(ir);
+          break;
+        }
+      }
+    }
+    double curMaxBehaviorTotal = 0;
+    for (IndividualRecord ir in individualRecords) {
+      curMaxBehaviorTotal = ir.indBehaviorTotal >= curMaxBehaviorTotal
+          ? ir.indBehaviorTotal
+          : curMaxBehaviorTotal;
+    }
+    for (IndividualRecord ir in individualRecords) {
+      ir.maxBehaviorTotal = curMaxBehaviorTotal;
+    }
+    return filterList;
   }
 }

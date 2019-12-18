@@ -95,15 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void _deleteBehavior(Behavior behavior) {
     setState(() {
       behaviors.removeWhere((bh) => bh.id == behavior.id);
-      mappedBehaviors = bhCtrl.deleteAndRemap(
+      mappedBehaviors = bhCtrl.deleteFromMappedBH(
         mappedBehaviors,
         behavior,
       );
-      //print('mappedBehaviors:${mappedBehaviors[0].turnBehaviors.length}');
-      // individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
-      //   individualRecords,
-      //   behavior,
-      // );
+      individualRecords = bhCtrl.regroupedIndividualRecordsAfterDelete(
+        individualRecords,
+        behavior,
+      );
     });
   }
 
