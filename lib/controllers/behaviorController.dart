@@ -35,31 +35,6 @@ class BehaviorController {
     return mappedBehaviors;
   }
 
-  // List<MappedBehavior> mapBehaviorsToMBHs(List<MappedBehavior> behaviors) {
-  //   bool noTurnInfo = true;
-  //   int catchTurn = behavior.turn;
-  //   behavior.turn = null;
-  //   for (MappedBehavior eachMappedBehavior in mappedBehaviors) {
-  //     if (eachMappedBehavior.turn == catchTurn) {
-  //       noTurnInfo = false;
-  //       eachMappedBehavior.turnBehaviors.add(behavior);
-  //       eachMappedBehavior.turnBehaviors.sort((bh1, bh2) {
-  //         return bh1.player.compareTo(bh2.player);
-  //       });
-  //     }
-  //   }
-  //   if (noTurnInfo) {
-  //     mappedBehaviors.add(MappedBehavior(
-  //       turn: catchTurn,
-  //       turnBehaviors: [behavior],
-  //     ));
-  //   }
-  //   mappedBehaviors.sort((mb2, mb1) {
-  //     return mb1.turn.compareTo(mb2.turn);
-  //   });
-  //   return mappedBehaviors;
-  // }
-
   /* 
    * 将每一次记录的玩家Behavior map成以玩家号码为主导的behavior集合
    * 并将结果加入到 turnRecords 和 behaviorRecords 中。
@@ -136,13 +111,14 @@ class BehaviorController {
     List<MappedBehavior> mappedBehaviors,
     Behavior behavior,
   ) {
-    for (MappedBehavior mbh in mappedBehaviors) {
+    var filterList = List<MappedBehavior>.from(mappedBehaviors);
+    for (MappedBehavior mbh in filterList) {
       if (mbh.turn == behavior.turn) {
         mbh.turnBehaviors.removeWhere((bh) => bh.id == behavior.id);
       }     
     }
-    mappedBehaviors.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
-    return mappedBehaviors;
+    filterList.removeWhere((mbh) => mbh.turnBehaviors.length == 0);
+    return filterList;
   }
 
   /* 
