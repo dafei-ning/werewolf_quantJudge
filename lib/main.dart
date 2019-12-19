@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:uuid/uuid.dart';
+
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
 import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
 import 'models/mappedBehavior.dart';
 import 'models/behavior.dart';
 import 'models/individual.dart';
+import 'models/data.dart';
 import 'controllers/behaviorController.dart';
-import 'package:uuid/uuid.dart';
-import './models/data.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -56,10 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
   /*  Properties. */
   // List<MappedBehavior> mappedBehaviors = [];
   //List<IndividualRecord> individualRecords = [];
-  List<Behavior> behaviors = [];
+  //List<Behavior> behaviors = [];
+
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
-  // List<Behavior> behaviors = SimulateData().behaviors;
+
+  List<Behavior> behaviors = SimulateData().behaviors;
   List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
