@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
+import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.4.addBehaviorButton.dart';
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
@@ -29,7 +30,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
   String _describeTag; // describeTag
   double _sliderScore = 0;
 
-  void _submitData() {
+  void _submitBehavior() {
     final _inputTurn = int.parse(_turnInput.text);
     final _inputPlayer = int.parse(_playerInput.text);
     final _inputScore = double.parse(_sliderScore.toStringAsFixed(2));
@@ -93,30 +94,7 @@ class _BehaviorInputState extends State<BehaviorInput> {
               ),
               // 提交按钮
               Container(
-                child: Platform.isIOS
-                    ? CupertinoButton(
-                        onPressed: _submitData,
-                        color: Theme.of(context).textTheme.button.color,
-                        child: Text(
-                          '添加玩家行为',
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
-                      )
-                    : RaisedButton(
-                        onPressed: _submitData,
-                        color: Theme.of(context).textTheme.button.color,
-                        child: Text(
-                          '添加玩家行为',
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                child: AddBehaviorButton(_submitBehavior),
               )
             ],
           ),
