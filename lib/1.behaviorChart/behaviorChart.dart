@@ -24,7 +24,7 @@ class BehaviorChart extends StatelessWidget {
       margin: EdgeInsets.all(8),
       child: Container(
           width: double.infinity,
-          height: 150,
+          //height: MediaQuery.of(context).size.height * 0.2,
           margin: EdgeInsets.all(6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

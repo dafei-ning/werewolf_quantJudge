@@ -54,15 +54,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /*  Properties. */
-  List<MappedBehavior> mappedBehaviors = [];
-  List<IndividualRecord> individualRecords = [];
+  // List<MappedBehavior> mappedBehaviors = [];
+  //List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
   // List<Behavior> behaviors = SimulateData().behaviors;
-  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
-  // List<IndividualRecord> individualRecords2 = SimulateData().individualRecords;
-  
+  List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  List<IndividualRecord> individualRecords = SimulateData().individualRecords;
+
   void _addNewBehavior(
     int inTurn,
     int inPlayer,
@@ -121,24 +121,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var appBar = AppBar(
+      title: Text(widget.title),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.add_box),
+          onPressed: () => _startInputNewBehavior(context),
+        )
+      ],
+    );
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add_box),
-            onPressed: () => _startInputNewBehavior(context),
-          )
-        ],
-      ),
+      appBar: appBar,
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
-            Container(child: BehaviorChart(individualRecords)),
+            Container(
+              height: (MediaQuery.of(context).size.height -
+                      appBar.preferredSize.height) *
+                  0.4,
+              child: BehaviorChart(individualRecords),
+            ),
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
-            Container(child: TurnInfoGroup(mappedBehaviors, _deleteBehavior))
+            Container(
+              height: (MediaQuery.of(context).size.height -
+                      appBar.preferredSize.height) *
+                  0.6,
+              child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
+            )
           ],
         ),
       ),
