@@ -130,6 +130,9 @@ class _MyHomePageState extends State<MyHomePage> {
         )
       ],
     );
+    var avaliableHeight = MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
     return Scaffold(
       appBar: appBar,
       body: Container(
@@ -138,16 +141,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             // 1 最上面的显示玩家行为记录的chart
             Container(
-              height: (MediaQuery.of(context).size.height -
-                      appBar.preferredSize.height) *
-                  0.4,
+              height: avaliableHeight * 0.4,
               child: BehaviorChart(individualRecords),
             ),
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
             Container(
-              height: (MediaQuery.of(context).size.height -
-                      appBar.preferredSize.height) *
-                  0.6,
+              height: avaliableHeight * 0.6,
               child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
             )
           ],
