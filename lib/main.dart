@@ -1,4 +1,6 @@
 import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uuid/uuid.dart';
@@ -129,46 +131,59 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var appBar = AppBar(
-      title: Text(widget.title),
-      actions: <Widget>[
-        IconButton(
-          iconSize: 28,
-          icon: Icon(Icons.add_box),
-          onPressed: () => _startInputNewBehavior(context),
+    // 最上面的 app bar
+    PreferredSizeWidget appBar = Platform.isIOS
+        ? CupertinoNavigationBar(
+          middle: Text(widget.title),
         )
-      ],
-    );
+        : AppBar(
+            title: Text(widget.title),
+            actions: <Widget>[
+              IconButton(
+                iconSize: 28,
+                icon: Icon(Icons.add_box),
+                onPressed: () => _startInputNewBehavior(context),
+              )
+            ],
+          );
     var avaliableHeight = MediaQuery.of(context).size.height -
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    return Scaffold(
-      appBar: appBar,
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            // 1 最上面的显示玩家行为记录的chart
-            Container(
-              height: avaliableHeight * 0.25,
-              child: BehaviorChart(individualRecords),
-            ),
-            // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
-            Container(
-              height: avaliableHeight * 0.75,
-              child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
-            )
-          ],
-        ),
+    var appBody = Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          // 1 最上面的显示玩家行为记录的chart
+          Container(
+            height: avaliableHeight * 0.25,
+            child: BehaviorChart(individualRecords),
+          ),
+          // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
+          Container(
+            height: avaliableHeight * 0.75,
+            child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
+          )
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Platform.isIOS
-          ? Container()
-          : FloatingActionButton(
-              child: Icon(Icons.add),
-              onPressed: () => _startInputNewBehavior(context),
-            ),
     );
+
+    return Platform.isIOS
+        ? CupertinoPageScaffold(
+            navigationBar: appBar,
+            child: appBody,
+          )
+        : Scaffold(
+            appBar: appBar,
+            body: appBody,
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerFloat,
+            floatingActionButton: Platform.isIOS
+                ? Container()
+                : FloatingActionButton(
+                    child: Icon(Icons.add),
+                    onPressed: () => _startInputNewBehavior(context),
+                  ),
+          );
   }
 }
