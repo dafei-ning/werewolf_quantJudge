@@ -61,16 +61,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /*  Properties. */
-  // List<MappedBehavior> mappedBehaviors = [];
-  //List<IndividualRecord> individualRecords = [];
-  //List<Behavior> behaviors = [];
+  List<MappedBehavior> mappedBehaviors = [];
+  List<IndividualRecord> individualRecords = [];
+  List<Behavior> behaviors = [];
 
   BehaviorController bhCtrl = new BehaviorController();
   var uuid = Uuid();
 
-  List<Behavior> behaviors = SimulateData().behaviors;
-  List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
-  List<IndividualRecord> individualRecords = SimulateData().individualRecords;
+  // List<Behavior> behaviors = SimulateData().behaviors;
+  // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
+  // List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
   void _addNewBehavior(
     int inTurn,

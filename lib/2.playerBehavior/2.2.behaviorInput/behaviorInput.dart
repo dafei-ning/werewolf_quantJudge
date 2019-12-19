@@ -61,40 +61,47 @@ class _BehaviorInputState extends State<BehaviorInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 10,
-      child: Container(
-        padding: EdgeInsets.all(8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            // Player & Turn
-            Container(
-              child: PlayerAndTurn(_playerInput, _turnInput),
-            ),
-            // DescribeTag
-            Container(
-              child: DescribeTagPicker(describeTagList, _describeTagPicker),
-            ),
-            // 分数slider
-            Container(
-              child: ScoreSlider(_updateSliderScore),
-            ),
-            // 提交按钮
-            Container(
-              child: RaisedButton(
-                onPressed: _submitData,
-                color: Theme.of(context).textTheme.button.color,
-                child: Text(
-                  '添加玩家行为',
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 10,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 8,
+            left: 8,
+            right: 8,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 200,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              // Player & Turn
+              Container(
+                child: PlayerAndTurn(_playerInput, _turnInput),
+              ),
+              // DescribeTag
+              Container(
+                child: DescribeTagPicker(describeTagList, _describeTagPicker),
+              ),
+              // 分数slider
+              Container(
+                child: ScoreSlider(_updateSliderScore),
+              ),
+              // 提交按钮
+              Container(
+                child: RaisedButton(
+                  onPressed: _submitData,
+                  color: Theme.of(context).textTheme.button.color,
+                  child: Text(
+                    '添加玩家行为',
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
