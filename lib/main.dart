@@ -134,8 +134,17 @@ class _MyHomePageState extends State<MyHomePage> {
     // 最上面的 app bar
     PreferredSizeWidget appBar = Platform.isIOS
         ? CupertinoNavigationBar(
-          middle: Text(widget.title),
-        )
+            middle: Text(widget.title),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                GestureDetector(
+                  child: Icon(CupertinoIcons.add),
+                  onTap: () => _startInputNewBehavior(context),
+                ),
+              ],
+            ),
+          )
         : AppBar(
             title: Text(widget.title),
             actions: <Widget>[
