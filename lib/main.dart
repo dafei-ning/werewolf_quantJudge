@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uuid/uuid.dart';
@@ -132,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
       title: Text(widget.title),
       actions: <Widget>[
         IconButton(
+          iconSize: 28,
           icon: Icon(Icons.add_box),
           onPressed: () => _startInputNewBehavior(context),
         )
@@ -161,10 +163,12 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => _startInputNewBehavior(context),
-      ),
+      floatingActionButton: Platform.isIOS
+          ? Container()
+          : FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () => _startInputNewBehavior(context),
+            ),
     );
   }
 }

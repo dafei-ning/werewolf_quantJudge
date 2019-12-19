@@ -28,7 +28,10 @@ class PlayerBehaviorRecordCardGroup extends StatelessWidget {
                   ),
                   // 2.2 增删查改按钮
                   Expanded(
-                    child: CardButton(deleteBehaviorFunction, behavior),
+                    child: CardButton(
+                      deleteBehaviorFunction,
+                      behavior,
+                    ),
                   ),
                 ],
               ),
