@@ -25,7 +25,7 @@ class ChartBar extends StatelessWidget {
         return Container(
           child: Column(
             children: <Widget>[
-              // behavior quantity
+              // 1. 显示于最上方的行为总分数
               Container(
                 height: constraints.maxHeight * 0.07,
                 child: FittedBox(
@@ -35,25 +35,17 @@ class ChartBar extends StatelessWidget {
                   ),
                 ),
               ),
+              // 2. 空距
               SizedBox(
                 height: constraints.maxHeight * 0.03,
               ),
-              // 柱状图
+              // 3. 对应显示分数的柱状图
               Container(
                 height: constraints.maxHeight * 0.7,
                 width: 15,
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: <Widget>[
-                    // Base
-                    // Container(
-                    //   decoration: BoxDecoration(
-                    //     border: Border.all(color: Colors.grey, width: 1.5),
-                    //     color: Color.fromRGBO(220, 220, 220, 1),
-                    //     borderRadius: BorderRadius.circular(5),
-                    //   ),
-                    // ),
-                    // 用fractionallySizedBox 按比例表现柱状图大小
                     FractionallySizedBox(
                       heightFactor: maxBehaviorTotal == 0
                           ? 0
@@ -62,11 +54,10 @@ class ChartBar extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey, width: 1.5),
                           color: Color.fromRGBO(100, 0, 220, 1),
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(3),
                         ),
                       ),
                     ),
-
                     // Container(
                     //   height: 10,
                     //   decoration: BoxDecoration(
@@ -78,9 +69,11 @@ class ChartBar extends StatelessWidget {
                   ],
                 ),
               ),
+              // 4. 空距
               SizedBox(
                 height: constraints.maxHeight * 0.05,
               ),
+              // 5. 玩家号码
               Container(
                 height: constraints.maxHeight * 0.07,
                 child: FittedBox(
