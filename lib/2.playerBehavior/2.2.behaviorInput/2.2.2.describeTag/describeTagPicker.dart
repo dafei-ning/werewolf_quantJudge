@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './describeTag.dart';
 
@@ -47,14 +49,23 @@ class _DescribeTagPicker extends State<DescribeTagPicker> {
             _selectedTag == null ? '请选择行为标签!' : '标签:    ${_selectedTag}',
           ),
         ),
-        FlatButton(
-          textColor: Theme.of(context).primaryColor,
-          child: Text(
-            '选择标签',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          onPressed: _describeTagDialog,
-        ),
+        Platform.isIOS
+            ? CupertinoButton(
+                //textColor: Theme.of(context).primaryColor,
+                child: Text(
+                  '选择标签',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                onPressed: _describeTagDialog,
+              )
+            : FlatButton(
+                textColor: Theme.of(context).primaryColor,
+                child: Text(
+                  '选择标签',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onPressed: _describeTagDialog,
+              ),
       ],
     );
   }
