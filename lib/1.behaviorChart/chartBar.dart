@@ -20,70 +20,80 @@ class ChartBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          // behavior quantity
-          FittedBox(
-            child: Text(
-              '${indBehaviorTotal.toStringAsFixed(0)}',
-              style: TextStyle(fontSize: 10),
-            ),
-          ),
-          SizedBox(
-            height: 4,
-          ),
-          Container(
-            height: 110,
-            width: 15,
-            // ----------------- 柱状图分布 -------------------
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: <Widget>[
-                // Base
-                // Container(
-                //   decoration: BoxDecoration(
-                //     border: Border.all(color: Colors.grey, width: 1.5),
-                //     color: Color.fromRGBO(220, 220, 220, 1),
-                //     borderRadius: BorderRadius.circular(5),
-                //   ),
-                // ),
-                // 用fractionallySizedBox 按比例表现柱状图大小
-                FractionallySizedBox(
-                  heightFactor: maxBehaviorTotal == 0
-                      ? 0
-                      : indBehaviorTotal / maxBehaviorTotal,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey, width: 1.5),
-                      color: Color.fromRGBO(100, 0, 220, 1),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Container(
+          child: Column(
+            children: <Widget>[
+              // behavior quantity
+              Container(
+                height: constraints.maxHeight * 0.07,
+                child: FittedBox(
+                  child: Text(
+                    '${indBehaviorTotal.toStringAsFixed(0)}',
+                    style: TextStyle(fontSize: 10),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: constraints.maxHeight * 0.03,
+              ),
+              // 柱状图
+              Container(
+                height: constraints.maxHeight * 0.7,
+                width: 15,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: <Widget>[
+                    // Base
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //     border: Border.all(color: Colors.grey, width: 1.5),
+                    //     color: Color.fromRGBO(220, 220, 220, 1),
+                    //     borderRadius: BorderRadius.circular(5),
+                    //   ),
+                    // ),
+                    // 用fractionallySizedBox 按比例表现柱状图大小
+                    FractionallySizedBox(
+                      heightFactor: maxBehaviorTotal == 0
+                          ? 0
+                          : indBehaviorTotal / maxBehaviorTotal,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey, width: 1.5),
+                          color: Color.fromRGBO(100, 0, 220, 1),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
+                    ),
 
-                // Container(
-                //   height: 10,
-                //   decoration: BoxDecoration(
-                //     border: Border.all(color: Colors.grey, width: 1.5),
-                //     color: Color.fromRGBO(100, 220, 220, 1),
-                //     borderRadius: BorderRadius.circular(5),
-                //   ),
-                // ),
-              ],
-            ),
+                    // Container(
+                    //   height: 10,
+                    //   decoration: BoxDecoration(
+                    //     border: Border.all(color: Colors.grey, width: 1.5),
+                    //     color: Color.fromRGBO(100, 220, 220, 1),
+                    //     borderRadius: BorderRadius.circular(5),
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: constraints.maxHeight * 0.05,
+              ),
+              Container(
+                height: constraints.maxHeight * 0.07,
+                child: FittedBox(
+                  child: Text(
+                    'P${player}',
+                    style: TextStyle(fontSize: 10),
+                  ),
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: 6,
-          ),
-          FittedBox(
-            child: Text(
-              'P${player}',
-              style: TextStyle(fontSize: 10),
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
