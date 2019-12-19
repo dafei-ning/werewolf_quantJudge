@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/1.behaviorChart/chartBar.dart';
 import '../models/individual.dart';
-import '../models/data.dart';
+import '../models/simulatedData.dart';
 
 class BehaviorChart extends StatelessWidget {
 

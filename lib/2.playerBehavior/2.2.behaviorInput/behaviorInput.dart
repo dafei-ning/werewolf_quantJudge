@@ -1,10 +1,10 @@
-import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.4.addBehaviorButton.dart';
+import '../../models/wolfDatabase.dart';
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
@@ -16,17 +16,7 @@ class BehaviorInput extends StatefulWidget {
 class _BehaviorInputState extends State<BehaviorInput> {
   final _turnInput = TextEditingController();
   final _playerInput = TextEditingController();
-
-  List<String> describeTagList = [
-    '站错预言家',
-    '疑似冲票行为',
-    '狼视角保好人',
-    '票型与身份相悖',
-    '发言与身份相悖',
-    '掰发言',
-    '忽视抗推位',
-    '狼视角爆刀口',
-  ];
+  List<String> describeTagList = WolfDataBase().describeTagList;
   String _describeTag; // describeTag
   double _sliderScore = 0;
 

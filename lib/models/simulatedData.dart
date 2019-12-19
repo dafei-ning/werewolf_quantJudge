@@ -1,5 +1,4 @@
-import 'package:werewolf_quantjudge/models/individual.dart';
-
+import './individual.dart';
 import './behavior.dart';
 import './mappedBehavior.dart';
 

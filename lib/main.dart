@@ -11,8 +11,9 @@ import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
 import 'models/mappedBehavior.dart';
 import 'models/behavior.dart';
 import 'models/individual.dart';
-import 'models/data.dart';
 import 'controllers/behaviorController.dart';
+
+import 'models/simulatedData.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([
