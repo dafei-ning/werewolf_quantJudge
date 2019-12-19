@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
@@ -86,19 +88,35 @@ class _BehaviorInputState extends State<BehaviorInput> {
               Container(
                 child: ScoreSlider(_updateSliderScore),
               ),
+              SizedBox(
+                height: 10,
+              ),
               // 提交按钮
               Container(
-                child: RaisedButton(
-                  onPressed: _submitData,
-                  color: Theme.of(context).textTheme.button.color,
-                  child: Text(
-                    '添加玩家行为',
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                child: Platform.isIOS
+                    ? CupertinoButton(
+                        onPressed: _submitData,
+                        color: Theme.of(context).textTheme.button.color,
+                        child: Text(
+                          '添加玩家行为',
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      )
+                    : RaisedButton(
+                        onPressed: _submitData,
+                        color: Theme.of(context).textTheme.button.color,
+                        child: Text(
+                          '添加玩家行为',
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
               )
             ],
           ),

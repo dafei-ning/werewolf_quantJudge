@@ -19,7 +19,10 @@ class TurnInfoGroup extends StatelessWidget {
       child: mappedBehaviors.isEmpty
           ? Column(
               children: <Widget>[
-                Text('还没有添加用户行为哈哈', style: Theme.of(context).textTheme.subhead),
+                Text(
+                  '还没有添加用户行为哈哈',
+                  style: Theme.of(context).textTheme.subhead,
+                ),
                 SizedBox(
                   height: 40,
                 ),
