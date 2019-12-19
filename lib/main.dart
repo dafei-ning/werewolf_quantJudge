@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 GestureDetector(
-                  child: Icon(CupertinoIcons.add),
+                  child: Icon(CupertinoIcons.add_circled),
                   onTap: () => _startInputNewBehavior(context),
                 ),
               ],
@@ -159,21 +159,23 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    var appBody = Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          // 1 最上面的显示玩家行为记录的chart
-          Container(
-            height: avaliableHeight * 0.25,
-            child: BehaviorChart(individualRecords),
-          ),
-          // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
-          Container(
-            height: avaliableHeight * 0.75,
-            child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
-          )
-        ],
+    var appBody = SafeArea(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            // 1 最上面的显示玩家行为记录的chart
+            Container(
+              height: avaliableHeight * 0.25,
+              child: BehaviorChart(individualRecords),
+            ),
+            // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
+            Container(
+              height: avaliableHeight * 0.75,
+              child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
+            )
+          ],
+        ),
       ),
     );
 
