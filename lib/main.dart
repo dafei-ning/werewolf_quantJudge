@@ -8,6 +8,7 @@ import 'package:uuid/uuid.dart';
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
 import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
+import '3.switchToRound/switchButton.dart';
 import 'models/mappedBehavior.dart';
 import 'models/behavior.dart';
 import 'models/individual.dart';
@@ -130,6 +131,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _switchTheChart(bool currentShow) {
+    
+  }
+  
+
   @override
   Widget build(BuildContext context) {
     // 最上面的 app bar
@@ -178,15 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               height: avaliableHeight * 0.05,
-              child: Switch.adaptive(
-                activeColor: Theme.of(context).accentColor,
-                value: _showRoundTable,
-                onChanged: (val) {
-                  setState(() {
-                    _showRoundTable = val;
-                  });
-                },
-              ),
+              child: SwitchButton(_switchTheChart, _showRoundTable),
             ),
           ],
         ),
