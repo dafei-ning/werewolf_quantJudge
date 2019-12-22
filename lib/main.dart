@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
 import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
@@ -17,6 +16,7 @@ import 'controllers/behaviorController.dart';
 import 'models/simulatedData.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
@@ -69,9 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<MappedBehavior> mappedBehaviors = [];
   List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
-
   BehaviorController bhCtrl = new BehaviorController();
-  
+  bool _showRoundTable = false;
 
   // List<Behavior> behaviors = SimulateData().behaviors;
   // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
@@ -118,7 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _switchTheChart(bool currentShow) {}
+  void _switchTheChart(bool currentShow) {
+    setState(() {
+      _showRoundTable = currentShow;
+      print('current _showRoundTable is: ${_showRoundTable}');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    var _showRoundTable = true;
+    
     var appBody = SafeArea(
       child: Container(
         child: Column(

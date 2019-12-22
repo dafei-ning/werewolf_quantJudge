@@ -10,7 +10,7 @@ class SwitchButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          '显示身份定义',
+          '显示身份圆桌',
           style: Theme.of(context).textTheme.title,
         ),
         SizedBox(width: 5),
