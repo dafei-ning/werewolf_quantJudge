@@ -10,16 +10,16 @@ import '../models/simulatedData.dart';
 class BehaviorChart extends StatelessWidget {
 
   /* Constructor */
-  BehaviorChart(this.individualRecords2);
+  BehaviorChart(this.individualRecords);
 
   /* Properties */
-  final List<IndividualRecord> individualRecords2;
-  final List<IndividualRecord> individualRecords = SimulateData().individualRecords;
+  final List<IndividualRecord> individualRecords;
+  // final List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.blueGrey,
+      color: Colors.grey[200],
       elevation: 10,
       margin: EdgeInsets.all(8),
       child: Container(
@@ -28,7 +28,7 @@ class BehaviorChart extends StatelessWidget {
           margin: EdgeInsets.all(6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: individualRecords2.map((individualRecord) {
+            children: individualRecords.map((individualRecord) {
               return Flexible(
                 fit: FlexFit.tight,
                 child: ChartBar(

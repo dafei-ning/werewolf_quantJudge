@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class AddBehaviorButton extends StatelessWidget {
-  Function submitBehavior;
+  final Function submitBehavior;
   AddBehaviorButton(this.submitBehavior);
   @override
   Widget build(BuildContext context) {

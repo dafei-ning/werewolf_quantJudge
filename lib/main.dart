@@ -160,6 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
+    var _showRoundTable = true;
     var appBody = SafeArea(
       child: Container(
         child: Column(
@@ -172,9 +173,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             // 2 显示每一轮玩家的行为汇总(组) ListView必须规定需要render的范围 -> 设置ListView高度
             Container(
-              height: avaliableHeight * 0.75,
+              height: avaliableHeight * 0.70,
               child: TurnInfoGroup(mappedBehaviors, _deleteBehavior),
-            )
+            ),
+            Container(
+              height: avaliableHeight * 0.05,
+              child: Switch.adaptive(
+                activeColor: Theme.of(context).accentColor,
+                value: _showRoundTable,
+                onChanged: (val) {
+                  setState(() {
+                    _showRoundTable = val;
+                  });
+                },
+              ),
+            ),
           ],
         ),
       ),
