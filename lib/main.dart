@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:uuid/uuid.dart';
+
 
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
@@ -71,26 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Behavior> behaviors = [];
 
   BehaviorController bhCtrl = new BehaviorController();
-  var uuid = Uuid();
+  
 
   // List<Behavior> behaviors = SimulateData().behaviors;
   // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
   // List<IndividualRecord> individualRecords = SimulateData().individualRecords;
 
-  void _addNewBehavior(
-    int inTurn,
-    int inPlayer,
-    double inputScore,
-    String describeTag,
-  ) {
-    final newBehavior = Behavior(
-      id: uuid.v4(),
-      turn: inTurn,
-      player: inPlayer,
-      quantity: inputScore,
-      describeTab: describeTag,
-      date: DateTime.now(),
-    );
+  void _addNewBehavior(Behavior newBehavior) {
     setState(() {
       behaviors.add(newBehavior);
       mappedBehaviors = bhCtrl.mapAndAdd(
@@ -131,10 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _switchTheChart(bool currentShow) {
-    
-  }
-  
+  void _switchTheChart(bool currentShow) {}
 
   @override
   Widget build(BuildContext context) {

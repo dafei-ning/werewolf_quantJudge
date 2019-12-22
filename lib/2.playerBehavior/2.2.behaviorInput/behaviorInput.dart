@@ -5,6 +5,8 @@ import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.des
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.4.addBehaviorButton.dart';
 import '../../models/wolfDatabase.dart';
+import 'package:uuid/uuid.dart';
+import '../../models/behavior.dart';
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
@@ -20,6 +22,9 @@ class _BehaviorInputState extends State<BehaviorInput> {
   String _describeTag; // describeTag
   double _sliderScore = 0;
 
+  /*
+   * Private functions for updating player's behaviors
+   */
   void _submitBehavior() {
     final _inputTurn = int.parse(_turnInput.text);
     final _inputPlayer = int.parse(_playerInput.text);
@@ -27,19 +32,21 @@ class _BehaviorInputState extends State<BehaviorInput> {
     if (_inputTurn < 0 || _inputPlayer < 1) return;
     if (_inputTurn.isNaN || _inputPlayer.isNaN || _describeTag == null) {
       return;
-    } // call inputbehavior if inputs correct
-    widget.inputFunction(
-      _inputTurn,
-      _inputPlayer,
-      _inputScore,
-      _describeTag,
+    } 
+    var uuid = Uuid();
+    final newBehavior = Behavior(
+      id: uuid.v4(),
+      turn: _inputTurn,
+      player: _inputPlayer,
+      quantity: _inputScore,
+      describeTab: _describeTag,
+      date: DateTime.now(),
     );
+    // call inputbehavior if inputs correct
+    widget.inputFunction(newBehavior);
     Navigator.of(context).pop();
   }
 
-  /*
-   * Private functions for updating player's behaviors
-   */
   void _updateSliderScore(double updatedslideScore) {
     setState(() {
       _sliderScore = updatedslideScore;

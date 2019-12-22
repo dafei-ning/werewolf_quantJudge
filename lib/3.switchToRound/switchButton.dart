@@ -13,6 +13,7 @@ class SwitchButton extends StatelessWidget {
           '显示身份定义',
           style: Theme.of(context).textTheme.title,
         ),
+        SizedBox(width: 5),
         Switch.adaptive(
           activeColor: Theme.of(context).accentColor,
           value: showRoundTable,
