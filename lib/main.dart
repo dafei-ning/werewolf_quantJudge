@@ -154,8 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    
-    var appBody = SafeArea(
+    var playerBehaviors = SafeArea(
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -178,6 +177,26 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+
+    var _roundTable = SafeArea(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: avaliableHeight * 0.95,
+              child: Text('data'),
+            ),
+            Container(
+              height: avaliableHeight * 0.05,
+              child: SwitchButton(_switchTheChart, _showRoundTable),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    var appBody = _showRoundTable ? _roundTable : playerBehaviors;
 
     return Platform.isIOS
         ? CupertinoPageScaffold(
