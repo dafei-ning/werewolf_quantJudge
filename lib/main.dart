@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -154,6 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
+    var avaliableWidth = MediaQuery.of(context).size.width;
     var playerBehaviors = SafeArea(
       child: Container(
         child: Column(
@@ -181,11 +183,19 @@ class _MyHomePageState extends State<MyHomePage> {
     var _roundTable = SafeArea(
       child: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
+              //width: 400,
+              width: avaliableHeight * 0.95,
               height: avaliableHeight * 0.95,
-              child: Text('data'),
+            
+              child: Transform.rotate(
+                angle: pi / 2,
+                child: Container(
+                  child: Text('data'),
+                ),
+              ),
             ),
             Container(
               height: avaliableHeight * 0.05,
