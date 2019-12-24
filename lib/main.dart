@@ -186,14 +186,28 @@ class _MyHomePageState extends State<MyHomePage> {
           //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              //width: 400,
-              width: avaliableHeight * 0.95,
+              width: 500,
               height: avaliableHeight * 0.95,
-            
-              child: Transform.rotate(
-                angle: pi / 2,
+              color: Colors.blue[600],
+              child:
+                  // Container(
+                  //   margin: EdgeInsets.all(100),
+                  //   color: Colors.blue[100],
+                  //   alignment: Alignment.center,
+                  //   height: 300,
+                  //   child: Text(
+                  //     'datasss',
+                  //     style: TextStyle(color: Colors.grey),
+                  //   ),
+                  //   transform: Matrix4.rotationX(1),
+                  // ),
+                  Transform.rotate(
+                angle: pi / 2.0,
                 child: Container(
-                  child: Text('data'),
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(8.0),
+                  color: const Color(0xFFE8581C),
+                  child: const Text('Apartment for rent!'),
                 ),
               ),
             ),
