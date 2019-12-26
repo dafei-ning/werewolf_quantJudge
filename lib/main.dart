@@ -1,14 +1,14 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:werewolf_quantjudge/3.switchToRound/roundTable.dart';
 
 import '1.behaviorChart/behaviorChart.dart';
 import '2.playerBehavior/turnInfoGroup.dart';
 import '2.playerBehavior/2.2.behaviorInput/behaviorInput.dart';
-import '3.switchToRound/switchButton.dart';
+import 'switchButton.dart';
 import 'models/mappedBehavior.dart';
 import 'models/behavior.dart';
 import 'models/individual.dart';
@@ -155,8 +155,10 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    var avaliableWidth = MediaQuery.of(context).size.width;
-    var playerBehaviors = SafeArea(
+    var _switchButtonBottom = SwitchButton(_switchTheChart, _showRoundTable);
+
+
+    var _playerBehaviors = SafeArea(
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -173,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               height: avaliableHeight * 0.05,
-              child: SwitchButton(_switchTheChart, _showRoundTable),
+              child: _switchButtonBottom,
             ),
           ],
         ),
@@ -181,32 +183,10 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     var _roundTable = SafeArea(
-      child: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: avaliableHeight * 0.95,
-              color: Colors.blue[600],
-              alignment: Alignment.center,
-              child: Container(
-                //width: 700,
-                //height: avaliable * 0.,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(15.0),
-                color: const Color(0xFFE8581C),
-                child: const Text('Apartment for rent!'),
-              ),
-            ),
-            Container(
-              height: avaliableHeight * 0.05,
-              child: SwitchButton(_switchTheChart, _showRoundTable),
-            ),
-          ],
-        ),
-      ),
+      child: RoundTable(avaliableHeight, _switchButtonBottom),
     );
 
-    var appBody = _showRoundTable ? _roundTable : playerBehaviors;
+    var appBody = _showRoundTable ? _roundTable : _playerBehaviors;
 
     return Platform.isIOS
         ? CupertinoPageScaffold(
