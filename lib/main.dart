@@ -90,7 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     });
   }
-
   void _deleteBehavior(Behavior behavior) {
     setState(() {
       behaviors.removeWhere((bh) => bh.id == behavior.id);
@@ -104,7 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     });
   }
-
   void _startInputNewBehavior(BuildContext ctx) {
     showModalBottomSheet(
       context: ctx,
@@ -117,7 +115,6 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     );
   }
-
   void _switchTheChart(bool currentShow) {
     setState(() {
       _showRoundTable = currentShow;
@@ -127,7 +124,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // 最上面的 app bar
+    /*
+     * Variables. 用来助于显示界面的var.
+     */
     PreferredSizeWidget appBar = Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text(widget.title),
@@ -157,7 +156,9 @@ class _MyHomePageState extends State<MyHomePage> {
         MediaQuery.of(context).padding.bottom;
     var _switchButtonBottom = SwitchButton(_switchTheChart, _showRoundTable);
 
-
+    /*
+     * 根据底部的 switchButton 用来选择 behaviors/RoundTable.
+     */
     var _playerBehaviors = SafeArea(
       child: Container(
         child: Column(
