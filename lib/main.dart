@@ -183,32 +183,18 @@ class _MyHomePageState extends State<MyHomePage> {
     var _roundTable = SafeArea(
       child: Container(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: 500,
               height: avaliableHeight * 0.95,
               color: Colors.blue[600],
-              child:
-                  // Container(
-                  //   margin: EdgeInsets.all(100),
-                  //   color: Colors.blue[100],
-                  //   alignment: Alignment.center,
-                  //   height: 300,
-                  //   child: Text(
-                  //     'datasss',
-                  //     style: TextStyle(color: Colors.grey),
-                  //   ),
-                  //   transform: Matrix4.rotationX(1),
-                  // ),
-                  Transform.rotate(
-                angle: pi / 2.0,
-                child: Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(8.0),
-                  color: const Color(0xFFE8581C),
-                  child: const Text('Apartment for rent!'),
-                ),
+              alignment: Alignment.center,
+              child: Container(
+                //width: 700,
+                //height: avaliable * 0.,
+                alignment: Alignment.center,
+                padding: const EdgeInsets.all(15.0),
+                color: const Color(0xFFE8581C),
+                child: const Text('Apartment for rent!'),
               ),
             ),
             Container(
