@@ -182,13 +182,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
-
     var _roundTable = SafeArea(
       child: RoundTable(avaliableHeight, _switchButtonBottom),
     );
-
     var appBody = _showRoundTable ? _roundTable : _playerBehaviors;
 
+    /*
+     * 最终显示于手机中的
+     */
     return Platform.isIOS
         ? CupertinoPageScaffold(
             navigationBar: appBar,
