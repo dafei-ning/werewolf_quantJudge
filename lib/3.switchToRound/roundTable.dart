@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../switchButton.dart';
+import '3.1.table/tableArea.dart';
 
 class RoundTable extends StatefulWidget {
   final double avaliableHeight;
@@ -13,20 +14,24 @@ class _RoundTable extends State<RoundTable> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-          children: <Widget>[
-            Container(
+      child: Column(
+        children: <Widget>[
+          Container(
               height: widget.avaliableHeight * 0.95,
               color: Colors.blue[600],
               alignment: Alignment.center,
-              child: Text('Apartment for rent!'),
-            ),
-            Container(
-              height: widget.avaliableHeight * 0.05,
-              child: widget.switchButtonBottom,
-            ),
-          ],
-        ),
-      );
+              child: Column(
+                children: <Widget>[
+                  Container(child: TableArea()),
+                
+                ],
+              )),
+          Container(
+            height: widget.avaliableHeight * 0.05,
+            child: widget.switchButtonBottom,
+          ),
+        ],
+      ),
+    );
   }
 }
