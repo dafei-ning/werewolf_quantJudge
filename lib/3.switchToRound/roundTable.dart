@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '3.2.illustration.dart';
 import '../switchButton.dart';
 import '3.1.table/tableArea.dart';
 
@@ -23,7 +24,7 @@ class _RoundTable extends State<RoundTable> {
               child: Column(
                 children: <Widget>[
                   Container(child: TableArea()),
-                
+                  Container(child: Illutstration()),
                 ],
               )),
           Container(
