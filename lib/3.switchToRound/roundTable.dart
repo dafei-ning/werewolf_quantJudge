@@ -18,15 +18,17 @@ class _RoundTable extends State<RoundTable> {
       child: Column(
         children: <Widget>[
           Container(
-              height: widget.avaliableHeight * 0.95,
-              color: Colors.blue[600],
-              alignment: Alignment.center,
-              child: Column(
-                children: <Widget>[
-                  Container(child: TableArea()),
-                  Container(child: Illutstration()),
-                ],
-              )),
+            color: Colors.grey,
+            height: widget.avaliableHeight * 0.75,
+            alignment: Alignment.center,
+            child: TableArea(),
+          ),
+          Container(
+            color: Colors.indigo,
+            height: widget.avaliableHeight * 0.20,
+            alignment: Alignment.center,
+            child: TableArea(),
+          ),
           Container(
             height: widget.avaliableHeight * 0.05,
             child: widget.switchButtonBottom,
