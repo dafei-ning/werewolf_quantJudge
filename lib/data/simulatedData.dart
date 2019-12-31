@@ -1,6 +1,6 @@
-import './individual.dart';
-import './behavior.dart';
-import './mappedBehavior.dart';
+import '../models/individual.dart';
+import '../models/behavior.dart';
+import '../models/mappedBehavior.dart';
 
 class SimulateData {
   List<MappedBehavior> get mappedBehaviors {

@@ -4,7 +4,7 @@ import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.pla
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
 import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.4.addBehaviorButton.dart';
-import '../../models/wolfDatabase.dart';
+import '../../data/wolfDatabase.dart';
 import 'package:uuid/uuid.dart';
 import '../../models/behavior.dart';
 

@@ -14,7 +14,7 @@ import 'models/behavior.dart';
 import 'models/individual.dart';
 import 'controllers/behaviorController.dart';
 
-import 'models/simulatedData.dart';
+import 'data/simulatedData.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
