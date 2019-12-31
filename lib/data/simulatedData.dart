@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
 import '../models/individual.dart';
 import '../models/behavior.dart';
 import '../models/mappedBehavior.dart';
+import '../models/category.dart';
 
 class SimulateData {
   List<MappedBehavior> get mappedBehaviors {
@@ -849,4 +851,27 @@ class SimulateData {
     ];
     return individualRecords;
   }
+
+  List<Category> categories = [
+    Category(
+      id: 'c1',
+      title: '组局',
+      color: Colors.purple,
+    ),
+    Category(
+      id: 'c2',
+      title: '记录行为',
+      color: Colors.pink,
+    ),
+    Category(
+      id: 'c3',
+      title: '个人资料',
+      color: Colors.red,
+    ),
+    Category(
+      id: 'c4',
+      title: '湾区狼杀榜',
+      color: Colors.yellow,
+    ),
+  ];
 }
