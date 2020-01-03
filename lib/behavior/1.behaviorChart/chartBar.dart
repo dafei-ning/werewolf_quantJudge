@@ -3,7 +3,7 @@
  */
 
 import 'package:flutter/material.dart';
-import '../models/individual.dart';
+import '../../models/individual.dart';
 
 class ChartBar extends StatelessWidget {
   final int player;
