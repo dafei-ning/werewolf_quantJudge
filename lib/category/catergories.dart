@@ -8,30 +8,32 @@ import '../data/simulatedData.dart';
 
 class CatergoriesScreen extends StatelessWidget {
   List<Category> categories = SimulateData().categories;
+  String title;
+  CatergoriesScreen(this.title);
 
   @override
   Widget build(BuildContext context) {
-     PreferredSizeWidget categoryBar = Platform.isIOS
+    PreferredSizeWidget categoryBar = Platform.isIOS
         ? CupertinoNavigationBar(
-            middle: Text(widget.title),
+            middle: Text(title),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                GestureDetector(
-                  child: Icon(CupertinoIcons.add_circled),
-                  onTap: () => _startInputNewBehavior(context),
-                ),
+                // GestureDetector(
+                //   child: Icon(CupertinoIcons.add_circled),
+                //   onTap: () => _startInputNewBehavior(context),
+                // ),
               ],
             ),
           )
         : AppBar(
-            title: Text(widget.title),
+            title: Text(title),
             actions: <Widget>[
-              IconButton(
-                iconSize: 28,
-                icon: Icon(Icons.add_box),
-                onPressed: () => _startInputNewBehavior(context),
-              )
+              // IconButton(
+              //   iconSize: 28,
+              //   icon: Icon(Icons.add_box),
+              //   onPressed: () => _startInputNewBehavior(context),
+              // )
             ],
           );
     var categorybody = GridView(
@@ -50,7 +52,7 @@ class CatergoriesScreen extends StatelessWidget {
     );
 
     return Scaffold(
-
+      appBar: categoryBar,
       body: categorybody,
     );
   }

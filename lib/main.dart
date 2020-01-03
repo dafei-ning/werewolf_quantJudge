@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //home: BehaviorHomePage('狼人杀玩家行为量化记录'),
-      home: CatergoriesScreen(),
+      home: CatergoriesScreen('湾区狼人杀'),
     );
   }
 }
