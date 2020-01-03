@@ -16,25 +16,9 @@ class CatergoriesScreen extends StatelessWidget {
     PreferredSizeWidget categoryBar = Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text(title),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                // GestureDetector(
-                //   child: Icon(CupertinoIcons.add_circled),
-                //   onTap: () => _startInputNewBehavior(context),
-                // ),
-              ],
-            ),
           )
         : AppBar(
             title: Text(title),
-            actions: <Widget>[
-              // IconButton(
-              //   iconSize: 28,
-              //   icon: Icon(Icons.add_box),
-              //   onPressed: () => _startInputNewBehavior(context),
-              // )
-            ],
           );
     var categorybody = GridView(
       children: categories
@@ -51,9 +35,14 @@ class CatergoriesScreen extends StatelessWidget {
       ),
     );
 
-    return Scaffold(
-      appBar: categoryBar,
-      body: categorybody,
-    );
+    return Platform.isIOS
+        ? CupertinoPageScaffold(
+            navigationBar: categoryBar,
+            child: categorybody,
+          )
+        : Scaffold(
+            appBar: categoryBar,
+            body: categorybody,
+          );
   }
 }

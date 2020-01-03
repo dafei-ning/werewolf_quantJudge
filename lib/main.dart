@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'behavior/behaviorHomePage.dart';
+
 import 'category/catergories.dart';
+
+import 'behavior/behaviorHomePage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,4 +47,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
