@@ -20,18 +20,21 @@ class CatergoriesScreen extends StatelessWidget {
         : AppBar(
             title: Text(title),
           );
-    var categorybody = GridView(
-      children: categories
-          .map((catData) => CategoryItem(
-                catData.title,
-                catData.color,
-              ))
-          .toList(),
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
-        childAspectRatio: 3 / 2,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+    var categorybody = SafeArea(
+      child: GridView(
+        padding: const EdgeInsets.all(15),
+        children: categories
+            .map((catData) => CategoryItem(
+                  catData.title,
+                  catData.color,
+                ))
+            .toList(),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
       ),
     );
 
