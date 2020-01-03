@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/mappedBehavior.dart';
+import '../../models/mappedBehavior.dart';
 import '2.1.playerRecordAndButton/playerBehaviorRecordCards.dart';
 import '2.0.turnTitle.dart';
 

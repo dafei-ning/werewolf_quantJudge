@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.1.player&turn.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.3.scoreSlider.dart';
-import 'package:werewolf_quantjudge/2.playerBehavior/2.2.behaviorInput/2.2.4.addBehaviorButton.dart';
-import '../../data/wolfDatabase.dart';
+import '../2.2.behaviorInput/2.2.1.player&turn.dart';
+import '../2.2.behaviorInput/2.2.2.describeTag/describeTagPicker.dart';
+import '../2.2.behaviorInput/2.2.3.scoreSlider.dart';
+import '../2.2.behaviorInput/2.2.4.addBehaviorButton.dart';
+import '../../../data/wolfDatabase.dart';
 import 'package:uuid/uuid.dart';
-import '../../models/behavior.dart';
+import '../../../models/behavior.dart';
 
 class BehaviorInput extends StatefulWidget {
   BehaviorInput(this.inputFunction);
