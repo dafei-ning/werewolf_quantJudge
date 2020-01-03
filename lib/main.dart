@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'behavior/behaviorHomePage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
               ),
         ),
       ),
-      home: MyHomePage('狼人杀玩家行为量化记录'),
+      home: BehaviorHomePage('狼人杀玩家行为量化记录'),
+      //home: BehaviorHomePage('狼人杀玩家行为量化记录'),
     );
   }
 }
