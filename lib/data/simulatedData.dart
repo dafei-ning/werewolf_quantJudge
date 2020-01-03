@@ -873,10 +873,5 @@ class SimulateData {
       title: '湾区狼杀榜',
       color: Colors.yellow,
     ),
-    Category(
-      id: 'c4',
-      title: '湾区狼杀榜',
-      color: Colors.yellow,
-    ),
   ];
 }

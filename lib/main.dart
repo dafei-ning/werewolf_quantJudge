@@ -23,14 +23,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.amber,
+        canvasColor: Color.fromRGBO(255, 255, 255, 1),
         fontFamily: 'Quicksand',
-        //errorColor: Colors.red,
+        errorColor: Colors.red,
         textTheme: ThemeData.light().textTheme.copyWith(
             title: TextStyle(
               fontWeight: FontWeight.w400,
               fontFamily: 'OpenSans',
               fontSize: 13,
             ),
+            body1: TextStyle(),
+            body2: TextStyle(),
             button: TextStyle(color: Colors.amber)),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
