@@ -12,7 +12,7 @@ class CategoryItem extends StatelessWidget {
       padding: EdgeInsets.all(15),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.title,
+        style: Theme.of(context).textTheme.display1,
       ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
