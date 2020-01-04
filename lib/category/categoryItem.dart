@@ -32,15 +32,11 @@ class CategoryItem extends StatelessWidget {
     return Container(
       child: Platform.isIOS
           ? CupertinoButton(
-              onPressed: selectCategory(context),
-              color: Theme.of(context).textTheme.button.color,
+              onPressed: () => selectCategory(context),
+              color: color,
               child: Text(
-                '添加玩家行为',
-                style: TextStyle(
-                  color: Colors.black87,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
+                title,
+                style: Theme.of(context).textTheme.display1,
               ),
             )
           : InkWell(
