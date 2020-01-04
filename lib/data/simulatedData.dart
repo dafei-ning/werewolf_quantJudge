@@ -865,7 +865,7 @@ class SimulateData {
     ),
     Category(
       id: 'c3',
-      title: '个人资料',
+      title: '小法官',
       color: Colors.red,
     ),
     Category(
