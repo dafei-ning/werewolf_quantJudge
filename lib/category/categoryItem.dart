@@ -1,6 +1,9 @@
-import 'dart:js';
+import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../behavior/behaviorHomePage.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
@@ -9,7 +12,15 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push();
+    Navigator.of(ctx).push(
+      Platform.isIOS
+          ? CupertinoPageRoute(
+              builder: (_) {
+                return BehaviorHomePage(title);
+              },
+            )
+          : MaterialPageRoute(),
+    );
   }
 
   @override

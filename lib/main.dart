@@ -15,7 +15,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,23 +31,12 @@ class MyApp extends StatelessWidget {
               fontFamily: 'OpenSans',
               fontSize: 13,
             ),
-            // body1: TextStyle(
-            //   fontWeight: FontWeight.w400,
-            //   fontFamily: 'OpenSans',
-            //   fontSize: 13,
-            // ),
-            // body2: TextStyle(
-            //   fontWeight: FontWeight.w400,
-            //   fontFamily: 'OpenSans',
-            //   fontSize: 20,
-            // ),
             // 目前只应用在 Category
             display1: TextStyle(
               fontWeight: FontWeight.w400,
               fontFamily: 'OpenSans',
               fontSize: 20,
             ),
-
             button: TextStyle(color: Colors.amber)),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
