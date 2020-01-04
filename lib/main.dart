@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         accentColor: Colors.amber,
+        //canvasColor: Color.fromRGBO(0, 0, 0, 1),
         canvasColor: Color.fromRGBO(255, 255, 255, 1),
         fontFamily: 'Quicksand',
         errorColor: Colors.red,

@@ -19,31 +19,50 @@ class CategoryItem extends StatelessWidget {
                 return BehaviorHomePage(title);
               },
             )
-          : MaterialPageRoute(),
+          : MaterialPageRoute(
+              builder: (_) {
+                return BehaviorHomePage(title);
+              },
+            ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => selectCategory(context),
-      borderRadius: BorderRadius.circular(15),
-      splashColor: Theme.of(context).primaryColor,
-      child: Container(
-        padding: EdgeInsets.all(15),
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.display1,
-        ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [color.withOpacity(0.7), color],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(15),
-        ),
-      ),
+    return Container(
+      child: Platform.isIOS
+          ? CupertinoButton(
+              onPressed: selectCategory(context),
+              color: Theme.of(context).textTheme.button.color,
+              child: Text(
+                '添加玩家行为',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+              ),
+            )
+          : InkWell(
+              onTap: () => selectCategory(context),
+              splashColor: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.circular(15),
+              child: Container(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.display1,
+                ),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [color.withOpacity(0.7), color],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+            ),
     );
   }
 }
