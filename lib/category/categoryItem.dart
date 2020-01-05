@@ -6,14 +6,15 @@ import 'package:flutter/material.dart';
 import '../behavior/behaviorHomePage.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
 
-  CategoryItem(this.title, this.color);
+  CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
-      '/behavior-HomePage',
+      BehaviorHomePage.routeName,
       arguments: {
         'title': title,
       },

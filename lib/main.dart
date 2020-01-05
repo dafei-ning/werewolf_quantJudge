@@ -50,9 +50,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //home: BehaviorHomePage('狼人杀玩家行为量化记录'),
-      home: CatergoriesScreen('湾区狼人杀'),
+      //home: CatergoriesScreen('湾区狼人杀'),
+      initialRoute: '/',
       routes: {
-        '/behavior-HomePage': (ctx) => BehaviorHomePage('sss'),
+        '/': (ctx) => CatergoriesScreen('湾区狼人杀'),
+        BehaviorHomePage.routeName: (ctx) => BehaviorHomePage('狼人杀玩家行为记录'),
       },
     );
   }

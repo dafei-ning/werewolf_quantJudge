@@ -16,6 +16,9 @@ import '../controllers/behaviorController.dart';
 import '../data/simulatedData.dart';
 
 class BehaviorHomePage extends StatefulWidget {
+
+  static const routeName = '/behavior-HomePage';
+  
   final String title;
   BehaviorHomePage(this.title);
 

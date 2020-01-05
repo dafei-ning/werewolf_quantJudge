@@ -9,7 +9,7 @@ import '../data/simulatedData.dart';
 class CatergoriesScreen extends StatelessWidget {
   List<Category> categories = SimulateData().categories;
   String title;
-  
+
   CatergoriesScreen(this.title);
 
   @override
@@ -26,6 +26,7 @@ class CatergoriesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         children: categories
             .map((catData) => CategoryItem(
+                  catData.id,
                   catData.title,
                   catData.color,
                 ))
