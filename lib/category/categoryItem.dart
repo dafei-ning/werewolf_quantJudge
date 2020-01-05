@@ -12,18 +12,11 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      Platform.isIOS
-          ? CupertinoPageRoute(
-              builder: (_) {
-                return BehaviorHomePage(title);
-              },
-            )
-          : MaterialPageRoute(
-              builder: (_) {
-                return BehaviorHomePage(title);
-              },
-            ),
+    Navigator.of(ctx).pushNamed(
+      '/behavior-HomePage',
+      arguments: {
+        'title': title,
+      },
     );
   }
 

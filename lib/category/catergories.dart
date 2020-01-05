@@ -9,6 +9,7 @@ import '../data/simulatedData.dart';
 class CatergoriesScreen extends StatelessWidget {
   List<Category> categories = SimulateData().categories;
   String title;
+  
   CatergoriesScreen(this.title);
 
   @override
@@ -31,7 +32,7 @@ class CatergoriesScreen extends StatelessWidget {
             .toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
+          childAspectRatio: 2 / 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
         ),
