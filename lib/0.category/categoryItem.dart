@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../behavior/behaviorHomePage.dart';
+import '../1.behavior/behaviorHomePage.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'category/catergories.dart';
-import 'behavior/behaviorHomePage.dart';
+import '0.category/catergories.dart';
+import '1.behavior/behaviorHomePage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

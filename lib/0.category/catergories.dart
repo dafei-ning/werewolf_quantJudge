@@ -7,8 +7,8 @@ import 'dart:io';
 import '../data/simulatedData.dart';
 
 class CatergoriesScreen extends StatelessWidget {
-  List<Category> categories = SimulateData().categories;
-  String title;
+  final List<Category> categories = SimulateData().categories;
+  final String title;
 
   CatergoriesScreen(this.title);
 
