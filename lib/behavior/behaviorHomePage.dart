@@ -16,9 +16,8 @@ import '../controllers/behaviorController.dart';
 import '../data/simulatedData.dart';
 
 class BehaviorHomePage extends StatefulWidget {
-
   static const routeName = '/behavior-HomePage';
-  
+
   final String title;
   BehaviorHomePage(this.title);
 
@@ -51,6 +50,7 @@ class _BehaviorHomePageState extends State<BehaviorHomePage> {
       );
     });
   }
+
   void _deleteBehavior(Behavior behavior) {
     setState(() {
       behaviors.removeWhere((bh) => bh.id == behavior.id);
@@ -64,6 +64,7 @@ class _BehaviorHomePageState extends State<BehaviorHomePage> {
       );
     });
   }
+
   void _startInputNewBehavior(BuildContext ctx) {
     showModalBottomSheet(
       context: ctx,
@@ -76,6 +77,7 @@ class _BehaviorHomePageState extends State<BehaviorHomePage> {
       },
     );
   }
+
   void _switchTheChart(bool currentShow) {
     setState(() {
       _showRoundTable = currentShow;
@@ -85,6 +87,10 @@ class _BehaviorHomePageState extends State<BehaviorHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // final routeArgs =
+    //     ModalRoute.of(context).settings.arguments as Map<String, String>;
+    // final categoryTitle = routeArgs['title'];
+    // final categoryId = routeArgs['id'];
     /*
      * Variables. 用来助于显示界面的var.
      */

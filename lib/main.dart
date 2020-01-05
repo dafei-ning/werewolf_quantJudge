@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'category/catergories.dart';
-
 import 'behavior/behaviorHomePage.dart';
 
 void main() {
