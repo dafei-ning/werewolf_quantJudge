@@ -13,7 +13,9 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
+    print(ctx);
     Navigator.of(ctx).pushNamed(
+      
       BehaviorHomePage.routeName,
       arguments: {
         'title': title,

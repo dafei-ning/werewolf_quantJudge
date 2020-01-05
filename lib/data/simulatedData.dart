@@ -855,23 +855,27 @@ class SimulateData {
   List<Category> categories = [
     Category(
       id: 'c1',
-      title: '组局',
+      title: '湾区组局',
       color: Colors.purple,
+      routeName: '/meetup',
     ),
     Category(
       id: 'c2',
-      title: '记录行为',
+      title: '玩家记录行为',
       color: Colors.pink,
+      routeName: '/behavior-HomePage',
     ),
     Category(
       id: 'c3',
       title: '狼人杀小法官',
       color: Colors.red,
+      routeName: '/game-judge',
     ),
     Category(
       id: 'c4',
-      title: '湾区狼杀榜',
+      title: '狼人杀英雄榜',
       color: Colors.yellow,
+      routeName: '/meetup',
     ),
   ];
 }
