@@ -9,14 +9,14 @@ class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
   final Color color;
+  final String routeName;
 
-  CategoryItem(this.id, this.title, this.color);
+  CategoryItem(this.id, this.title, this.color, this.routeName);
 
   void selectCategory(BuildContext ctx) {
     print(ctx);
-    Navigator.of(ctx).pushNamed(
-      
-      BehaviorHomePage.routeName,
+    Navigator.of(ctx).pushNamed(    
+      routeName,
       arguments: {
         'title': title,
       },
