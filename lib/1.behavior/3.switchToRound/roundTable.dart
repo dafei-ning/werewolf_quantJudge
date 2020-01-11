@@ -20,7 +20,18 @@ class _RoundTable extends State<RoundTable> {
   Widget build(BuildContext context) {
     return Container(
       child: playerAmount < 9
-          ? Container()
+          ? Container(
+              child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  '人数未达到游戏标准',
+                  style: Theme.of(context).textTheme.subhead,
+                ),
+              ],
+            ))
           : Column(
               children: <Widget>[
                 // 这里放圆桌图
