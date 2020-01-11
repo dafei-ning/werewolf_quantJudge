@@ -7,11 +7,15 @@ class RoundTable extends StatefulWidget {
   final double avaliableHeight;
   final SwitchButton switchButtonBottom;
   RoundTable(this.avaliableHeight, this.switchButtonBottom);
+
   @override
   _RoundTable createState() => _RoundTable();
 }
 
 class _RoundTable extends State<RoundTable> {
+  // demo number
+  int playerAmount = 12;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +26,7 @@ class _RoundTable extends State<RoundTable> {
             color: Colors.grey,
             height: widget.avaliableHeight * 0.75,
             alignment: Alignment.center,
-            child: TableArea(),
+            child: TableArea(playerAmount),
           ),
           // 这里放圆桌图的注释
           Container(
