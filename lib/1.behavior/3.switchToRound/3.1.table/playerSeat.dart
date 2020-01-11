@@ -6,6 +6,8 @@ class PlayerSeat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 1, horizontal: 2),
+      padding: EdgeInsets.all(0.5),
       child: Card(
         child: Container(
           child: Row(
