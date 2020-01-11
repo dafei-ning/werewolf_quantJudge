@@ -3,8 +3,6 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../1.behavior/behaviorHomePage.dart';
-
 class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
@@ -15,11 +13,9 @@ class CategoryItem extends StatelessWidget {
 
   void selectCategory(BuildContext ctx) {
     print(ctx);
-    Navigator.of(ctx).pushNamed(    
+    Navigator.of(ctx).pushNamed(
       routeName,
-      arguments: {
-        'title': title,
-      },
+      arguments: {'title': title},
     );
   }
 
