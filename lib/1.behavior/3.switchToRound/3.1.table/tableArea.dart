@@ -7,11 +7,22 @@ class TableArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int playerAmountDemo = 1;
     return Container(
-      child: playerAmount < 9
-          ? Column()
+      child: playerAmountDemo < 9
+          ? Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  '人数没有达到游戏标准',
+                  style: Theme.of(context).textTheme.subhead,
+                ),
+              ],
+            )
           : ListView.builder(
-              itemCount: playerAmount,
+              itemCount: playerAmountDemo,
               itemBuilder: (ctx, index) {
                 return Container(
                   child: PlayerSeat(index + 1),
@@ -19,12 +30,5 @@ class TableArea extends StatelessWidget {
               },
             ),
     );
-    // return Container(
-    //   alignment: Alignment.center,
-    //   child: Text(
-    //     '这里是圆桌的区域，这个区域包含画的桌子和椅子',
-    //     style: TextStyle(fontSize: 20),
-    //   ),
-    // );
   }
 }
