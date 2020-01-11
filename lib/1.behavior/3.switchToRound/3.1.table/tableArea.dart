@@ -7,28 +7,16 @@ class TableArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int playerAmountDemo = 1;
+    int playerAmountDemo = 12;
     return Container(
-      child: playerAmountDemo < 9
-          ? Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 50,
-                ),
-                Text(
-                  '人数没有达到游戏标准',
-                  style: Theme.of(context).textTheme.subhead,
-                ),
-              ],
-            )
-          : ListView.builder(
-              itemCount: playerAmountDemo,
-              itemBuilder: (ctx, index) {
-                return Container(
-                  child: PlayerSeat(index + 1),
-                );
-              },
-            ),
+      child: ListView.builder(
+        itemCount: playerAmountDemo,
+        itemBuilder: (ctx, index) {
+          return Container(
+            child: PlayerSeat(index + 1),
+          );
+        },
+      ),
     );
   }
 }

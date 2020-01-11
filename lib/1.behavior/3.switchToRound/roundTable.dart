@@ -19,28 +19,30 @@ class _RoundTable extends State<RoundTable> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: <Widget>[
-          // 这里放圆桌图
-          Container(
-            color: Colors.grey,
-            height: widget.avaliableHeight * 0.75,
-            alignment: Alignment.center,
-            child: TableArea(playerAmount),
-          ),
-          // 这里放圆桌图的注释
-          Container(
-            color: Colors.indigo,
-            height: widget.avaliableHeight * 0.20,
-            alignment: Alignment.center,
-            child: Illutstration(),
-          ),
-          Container(
-            height: widget.avaliableHeight * 0.05,
-            child: widget.switchButtonBottom,
-          ),
-        ],
-      ),
+      child: playerAmount < 9
+          ? Container()
+          : Column(
+              children: <Widget>[
+                // 这里放圆桌图
+                Container(
+                  color: Colors.grey,
+                  height: widget.avaliableHeight * 0.75,
+                  alignment: Alignment.center,
+                  child: TableArea(playerAmount),
+                ),
+                // 这里放圆桌图的注释
+                Container(
+                  color: Colors.indigo,
+                  height: widget.avaliableHeight * 0.20,
+                  alignment: Alignment.center,
+                  child: Illutstration(),
+                ),
+                Container(
+                  height: widget.avaliableHeight * 0.05,
+                  child: widget.switchButtonBottom,
+                ),
+              ],
+            ),
     );
   }
 }
