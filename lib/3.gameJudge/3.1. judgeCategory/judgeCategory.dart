@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/models/category.dart';
 import 'judgeCateItem.dart';
+import '../../data/wolfDatabase.dart';
 
 class JudgeCategory extends StatelessWidget {
+  final List<Category> judgeCategories = WolfDataBase().judgeCategories;
   @override
   Widget build(BuildContext context) {
     var categoryBody = GridView(
@@ -12,11 +15,11 @@ class JudgeCategory extends StatelessWidget {
         crossAxisSpacing: 2,
         mainAxisSpacing: 2,
       ),
-      children: <Widget>[
-        JudgeCateItem("创建房间"),
-        JudgeCateItem("进入房间"),
-        JudgeCateItem("返回当前房间"),
-      ],
+      children: judgeCategories
+          .map((data) => JudgeCateItem(
+                data.title,
+              ))
+          .toList(),
     );
 
     return categoryBody;
