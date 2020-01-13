@@ -6,8 +6,8 @@ class RoundTableInfo {
 
 // 桌子的形状
 enum TableShape {
-  none, // z
-  circle,
+  none, 
+  circle, 
   square,
-  rectangle,
+  rectangle, 
 }

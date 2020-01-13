@@ -10,6 +10,7 @@ class JudgeHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     PreferredSizeWidget meetupBar = Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text(title),
