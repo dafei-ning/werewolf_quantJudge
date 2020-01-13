@@ -19,19 +19,19 @@ class JudgeHomePage extends StatelessWidget {
             middle: Text(title),
           )
         : AppBar(title: Text(title));
-
     var judgeCategory = SafeArea(
       child: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            CategoryNotice(),
-            JudgeCategory(),
-            GameIntroduction(),
-          ],
-        ),
-      ),
+          alignment: Alignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CategoryNotice(),
+              JudgeCategory(),
+              GameIntroduction(),
+            ],
+          )),
     );
+
     return Scaffold(
       appBar: meetupBar,
       body: judgeCategory,

@@ -39,4 +39,26 @@ class WolfDataBase {
       routeName: '/meetup',
     ),
   ];
+
+  List<Category> judgeCategories = [
+    Category(
+      id: 'jc1',
+      title: '创建房间',
+      color: Colors.purple,
+      routeName: '/create-room',
+    ),
+    Category(
+      id: 'jc2',
+      title: '进入房间',
+      color: Colors.pink,
+      routeName: '/enter-room',
+    ),
+    Category(
+      id: 'jc3',
+      title: '返回当前房间',
+      color: Colors.red,
+      routeName: '/return-to-room',
+    ),
+  ];
+
 }
