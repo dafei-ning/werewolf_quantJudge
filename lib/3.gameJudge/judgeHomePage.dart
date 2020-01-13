@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.1.%20judgeCategory/judgeCategory.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/gameIntroduction.dart';
 import 'dart:io';
+
+import 'categoryNotice.dart';
 
 class JudgeHomePage extends StatelessWidget {
   static const routeName = '/game-judge';
@@ -10,20 +14,27 @@ class JudgeHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     PreferredSizeWidget meetupBar = Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text(title),
           )
         : AppBar(title: Text(title));
 
-    return Scaffold(
-      appBar: meetupBar,
-      body: SafeArea(
-        child: Center(
-          child: Text('this is for Judge'),
+    var judgeCategory = SafeArea(
+      child: Container(
+        alignment: Alignment.center,
+        child: Column(
+          children: <Widget>[
+            CategoryNotice(),
+            JudgeCategory(),
+            GameIntroduction(),
+          ],
         ),
       ),
+    );
+    return Scaffold(
+      appBar: meetupBar,
+      body: judgeCategory,
     );
   }
 }
