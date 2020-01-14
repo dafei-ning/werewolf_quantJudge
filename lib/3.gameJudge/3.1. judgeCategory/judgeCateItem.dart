@@ -25,7 +25,6 @@ class JudgeCateItem extends StatelessWidget {
       color: color,
       child: Text(title),
     );
-
     var cateButtonAndroid = InkWell(
       onTap: () => selectJudgeCategory(context),
       splashColor: Theme.of(context).primaryColor,
