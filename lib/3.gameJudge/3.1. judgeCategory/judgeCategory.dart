@@ -13,6 +13,8 @@ class JudgeCategory extends StatelessWidget {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       crossAxisCount: 2,
+      shrinkWrap: false,
+      childAspectRatio: MediaQuery.of(context).size.height/600,
       children: judgeCategories
           .map((data) => JudgeCateItem(
                 data.title,
