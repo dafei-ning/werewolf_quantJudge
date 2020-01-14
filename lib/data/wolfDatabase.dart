@@ -59,6 +59,12 @@ class WolfDataBase {
       color: Colors.red,
       routeName: '/return-to-room',
     ),
+    Category(
+      id: 'jc4',
+      title: '查看游戏记录',
+      color: Colors.red,
+      routeName: '/check-game-info',
+    ),
   ];
 
 }

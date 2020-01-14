@@ -9,15 +9,17 @@ class JudgeCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     var categoryBody = GridView.count(
       primary: false,
-      padding: const EdgeInsets.all(20),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
+      padding: const EdgeInsets.all(25),
+      crossAxisSpacing: 15,
+      mainAxisSpacing: 15,
       crossAxisCount: 2,
+      // ?
       shrinkWrap: false,
-      childAspectRatio: MediaQuery.of(context).size.height/600,
+      childAspectRatio: MediaQuery.of(context).size.height / 600,
       children: judgeCategories
           .map((data) => JudgeCateItem(
                 data.title,
+                data.color,
               ))
           .toList(),
     );

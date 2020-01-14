@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class JudgeCateItem extends StatelessWidget {
   final String title;
-  JudgeCateItem(this.title);
+  final Color color;
+  JudgeCateItem(this.title, this.color);
   @override
   Widget build(BuildContext context) {
     return Container(
