@@ -20,6 +20,7 @@ class JudgeCategory extends StatelessWidget {
           .map((data) => JudgeCateItem(
                 data.title,
                 data.color,
+                data.routeName,
               ))
           .toList(),
     );

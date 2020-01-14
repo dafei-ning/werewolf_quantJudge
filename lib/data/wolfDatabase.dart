@@ -44,25 +44,25 @@ class WolfDataBase {
     Category(
       id: 'jc1',
       title: '创建房间',
-      color: Colors.purple,
+      color: Colors.teal[100],
       routeName: '/create-room',
     ),
     Category(
       id: 'jc2',
       title: '进入房间',
-      color: Colors.pink,
+      color: Colors.teal[200],
       routeName: '/enter-room',
     ),
     Category(
       id: 'jc3',
       title: '返回当前房间',
-      color: Colors.red,
+      color: Colors.teal[300],
       routeName: '/return-to-room',
     ),
     Category(
       id: 'jc4',
       title: '查看游戏记录',
-      color: Colors.red,
+      color: Colors.teal[400],
       routeName: '/check-game-info',
     ),
   ];

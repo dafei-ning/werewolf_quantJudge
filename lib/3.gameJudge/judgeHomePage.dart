@@ -20,10 +20,11 @@ class JudgeHomePage extends StatelessWidget {
           )
         : AppBar(title: Text(title));
     var judgeCategory = Container(
-      height: 550,
+      height: 700,
       alignment: Alignment.center,
       child: Flex(
         mainAxisAlignment: MainAxisAlignment.center,
+        //mainAxisSize: MainAxisSize.max, 设了height这个不需要
         direction: Axis.vertical,
         children: <Widget>[
           SizedBox(height: 100,),
