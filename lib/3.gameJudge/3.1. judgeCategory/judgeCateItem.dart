@@ -8,7 +8,9 @@ class JudgeCateItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      child: Text(title),
+      child: Center(
+        child: Text(title),
+      ),
       color: Colors.teal[100],
     );
   }
