@@ -60,6 +60,6 @@ class JudgeCategory extends StatelessWidget {
       ],
     );
 
-    return cate2;
+    return categoryBody;
   }
 }
