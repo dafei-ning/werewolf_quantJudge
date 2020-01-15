@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:werewolf_quantjudge/2.meetUp/meetUpHomePage.dart';
-import 'package:werewolf_quantjudge/3.gameJudge/3.2.%20createRoom/createRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/createRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/enterRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.4.returnToRoom/ReturnRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.5.checkHistory/checkHistory.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/judgeHomePage.dart';
 import 'package:werewolf_quantjudge/4.scoreList/scoreListHomePage.dart';
 
@@ -65,7 +68,10 @@ class MyApp extends StatelessWidget {
         /*
          * 狼人杀小法官
          */
-        CreateRoom.routeName: (ctx) => CreateRoom(),
+        CreateRoom.routeName: (ctx) => CreateRoom('配置房间'),
+        EnterRoom.routeName: (ctx) => EnterRoom('进入房间'),
+        ReturnRoom.routeName: (ctx) => CreateRoom('房间XXXXXXX'),
+        CheckHistory.routeName: (ctx) => CheckHistory('游戏记录'),
       },
     );
   }
