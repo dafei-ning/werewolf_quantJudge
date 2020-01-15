@@ -20,7 +20,7 @@ class JudgeCateItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cateButtonIOS = CupertinoButton(
+    var cateButtonIOS = FlatButton(
       onPressed: () => selectJudgeCategory(context),
       color: color,
       child: Text(title),
