@@ -70,8 +70,73 @@ class WolfDataBase {
 
   List<CharacterConfiguration> characterConfigurations = [
     CharacterConfiguration(
-      gameConfig: '狼美守卫',
-
-    )
+      gameConfigName: '狼美守卫',
+      charConfigs: {
+        12: CharacterSet(
+          wolves: {
+            Wolf.charmWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        13: CharacterSet(
+          wolves: {
+            Wolf.charmWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+            Villager.bastard: 1,
+          },
+        ),
+        15: CharacterSet(
+          wolves: {
+            Wolf.charmWolf: 1,
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+            Special.prohibiter: 1
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          }, 
+        ),
+        16: CharacterSet(
+          wolves: {
+            Wolf.charmWolf: 1,
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+            Special.prohibiter: 1
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+            Villager.bastard: 1,
+          },
+        ),
+      },
+    ),
   ];
 }

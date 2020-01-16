@@ -1,20 +1,21 @@
 class CharacterConfiguration {
-  String gameConfig; // lang mei shouwei
-  Map<int, CharacterSet> charConfig;
+  String gameConfigName; // lang mei shouwei
+  Map<int, CharacterSet> charConfigs;
 
   CharacterConfiguration({
-    this.gameConfig,
-    this.charConfig,
+    this.gameConfigName,
+    this.charConfigs,
   });
 }
 
 class CharacterSet {
-  Map<SpecialCharacter, int> specials;
-  Map<WolfCharacter, int> wolves;
-  Map<VillageCharacter, int> villagers;
+  Map<Special, int> specials;
+  Map<Wolf, int> wolves;
+  Map<Villager, int> villagers;
+  CharacterSet({this.wolves, this.specials, this.villagers});
 }
 
-enum SpecialCharacter {
+enum Special {
   seer, // 预言家
   witch, // 女巫
   hunter, // 猎人
@@ -22,10 +23,11 @@ enum SpecialCharacter {
   guard, // 守卫
   knight, // 骑士
   witcher, // 猎魔人
-  blackMarketer // 黑市商人
+  blackMarketer, // 黑市商人
+  prohibiter, // 禁票长老
 }
 
-enum WolfCharacter {
+enum Wolf {
   brotherOldWolf, // 狼兄
   brotherYoungWolf, // 狼弟
   bloodMoonWolf, // 血月
@@ -35,6 +37,7 @@ enum WolfCharacter {
   ordinWolf, // 普通狼
 }
 
-enum VillageCharacter {
-  ordinVillager,
+enum Villager {
+  ordinVillager, // 普通村民
+  bastard, // 混子
 }
