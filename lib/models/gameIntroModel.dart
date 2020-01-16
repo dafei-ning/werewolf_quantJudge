@@ -3,8 +3,6 @@ class CharacterConfiguration {
   Map<int, CharacterSet> charConfig;
 }
 
-
-
 class CharacterSet {
   Map<SpecialCharacter, int> specials;
   Map<WolfCharacter, int> wolves;
@@ -18,13 +16,17 @@ enum SpecialCharacter {
   idiot, // 白痴
   guard,  // 守卫
   knight, // 骑士
+  witcher, // 猎魔人
 }
 
 enum WolfCharacter {
-  ordinWolf,
-
-
-
+  brotherOldWolf,  // 狼兄
+  brotherYoungWolf, // 狼弟
+  bloodMoonWolf, // 血月
+  nightmareWolf, // 梦魇
+  gunWolf, // 白狼王
+  charmWolf, // 狼美人
+  ordinWolf, // 普通狼
 }
 
 enum VillageCharacter {
