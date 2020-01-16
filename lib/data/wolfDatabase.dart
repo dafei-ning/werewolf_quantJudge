@@ -69,6 +69,7 @@ class WolfDataBase {
   ];
 
   List<CharacterConfiguration> characterConfigurations = [
+    // 狼美守卫板子：12，13，15，16
     CharacterConfiguration(
       gameConfigName: '狼美守卫',
       charConfigs: {
@@ -117,7 +118,7 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 5,
-          }, 
+          },
         ),
         16: CharacterSet(
           wolves: {
@@ -136,6 +137,130 @@ class WolfDataBase {
             Villager.bastard: 1,
           },
         ),
+      },
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '预女黑白',
+      charConfigs: {
+        12: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 2,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        13: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 2,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+            Villager.bastard: 1,
+          },
+        ),
+        15: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+            Special.hunter: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          },
+        ),
+        16: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+            Special.hunter: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+            Villager.bastard: 1,
+          },
+        ),
+      },
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '梦魇守卫',
+      charConfigs: {
+        12: CharacterSet(),
+        13: CharacterSet(),
+        15: CharacterSet(),
+        16: CharacterSet(),
+      },
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '血月猎魔',
+      charConfigs: {
+        12: CharacterSet(),
+        13: CharacterSet(),
+        15: CharacterSet(),
+        16: CharacterSet(),
+      },
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '预女黑白',
+      charConfigs: {
+        12: CharacterSet(),
+        13: CharacterSet(),
+        15: CharacterSet(),
+        16: CharacterSet(),
+      },
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '丘比特盗贼',
+      charConfigs: {
+        12: CharacterSet(),
+        13: CharacterSet(),
+        15: CharacterSet(),
+        16: CharacterSet(),
+      },
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '影子复仇者',
+      charConfigs: {
+        12: CharacterSet(),
+        13: CharacterSet(),
+        15: CharacterSet(),
+        16: CharacterSet(),
       },
     ),
   ];
