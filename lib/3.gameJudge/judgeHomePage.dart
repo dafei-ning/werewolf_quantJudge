@@ -34,7 +34,7 @@ class JudgeHomePage extends StatelessWidget {
           Flexible(
             child: JudgeCategory(),
           ),
-          Align(child: GameIntroduction(),),
+          Align(child: GameIntroButton(),),
         ],
       ),
     );

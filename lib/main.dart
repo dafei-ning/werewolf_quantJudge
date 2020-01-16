@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
         JudgeHomePage.routeName: (ctx) => JudgeHomePage('狼人杀小法官'),
         ScoreListHomePage.routeName: (ctx) => ScoreListHomePage('湾区狼人杀英雄榜'),
         /*
-         * 狼人杀小法官
+         * 3. 狼人杀小法官
          */
         CreateRoom.routeName: (ctx) => CreateRoom('配置房间'),
         EnterRoom.routeName: (ctx) => EnterRoom('进入房间'),
