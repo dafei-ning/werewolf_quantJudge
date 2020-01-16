@@ -235,31 +235,24 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '预女黑白',
+      gameConfigName: '预女猎白',
       charConfigs: {
-        12: CharacterSet(),
-        13: CharacterSet(),
-        15: CharacterSet(),
-        16: CharacterSet(),
+        11: CharacterSet(),
       },
     ),
 
     CharacterConfiguration(
       gameConfigName: '丘比特盗贼',
       charConfigs: {
+        11: CharacterSet(),
         12: CharacterSet(),
-        13: CharacterSet(),
-        15: CharacterSet(),
-        16: CharacterSet(),
       },
     ),
 
     CharacterConfiguration(
       gameConfigName: '影子复仇者',
       charConfigs: {
-        12: CharacterSet(),
-        13: CharacterSet(),
-        15: CharacterSet(),
+        14: CharacterSet(),
         16: CharacterSet(),
       },
     ),
