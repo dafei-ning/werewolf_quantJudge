@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.1.judgeCategory/judgeCategory.dart';
-import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/gameIntroduction.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/gameIntroButton.dart';
 import 'dart:io';
 
 import 'categoryNotice.dart';

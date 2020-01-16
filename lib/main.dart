@@ -6,6 +6,7 @@ import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/createRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/enterRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.4.returnToRoom/ReturnRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.5.checkHistory/checkHistory.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/gameIntroduction.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/judgeHomePage.dart';
 import 'package:werewolf_quantjudge/4.scoreList/scoreListHomePage.dart';
 
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         EnterRoom.routeName: (ctx) => EnterRoom('进入房间'),
         ReturnRoom.routeName: (ctx) => CreateRoom('房间XXXXXXX'),
         CheckHistory.routeName: (ctx) => CheckHistory('游戏记录'),
+        GameIntroduction.routeName: (ctx) => GameIntroduction('狼人杀游戏介绍')
       },
     );
   }
