@@ -1,4 +1,5 @@
 import '../models/category.dart';
+import '../models/gameIntroModel.dart';
 import 'package:flutter/material.dart';
 
 class WolfDataBase {
@@ -67,4 +68,10 @@ class WolfDataBase {
     ),
   ];
 
+  List<CharacterConfiguration> characterConfigurations = [
+    CharacterConfiguration(
+      gameConfig: '狼美守卫',
+
+    )
+  ];
 }

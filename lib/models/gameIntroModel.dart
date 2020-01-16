@@ -1,6 +1,11 @@
 class CharacterConfiguration {
-  String gameConfig; // lang mei shouwei 
+  String gameConfig; // lang mei shouwei
   Map<int, CharacterSet> charConfig;
+
+  CharacterConfiguration({
+    this.gameConfig,
+    this.charConfig,
+  });
 }
 
 class CharacterSet {
@@ -14,13 +19,14 @@ enum SpecialCharacter {
   witch, // 女巫
   hunter, // 猎人
   idiot, // 白痴
-  guard,  // 守卫
+  guard, // 守卫
   knight, // 骑士
   witcher, // 猎魔人
+  blackMarketer // 黑市商人
 }
 
 enum WolfCharacter {
-  brotherOldWolf,  // 狼兄
+  brotherOldWolf, // 狼兄
   brotherYoungWolf, // 狼弟
   bloodMoonWolf, // 血月
   nightmareWolf, // 梦魇
@@ -32,4 +38,3 @@ enum WolfCharacter {
 enum VillageCharacter {
   ordinVillager,
 }
-
