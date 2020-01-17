@@ -12,7 +12,18 @@ class ConfigCardGroup extends StatelessWidget {
       itemCount: characterConfigurations.length,
       itemBuilder: (ctx, index) {
         return Container(
-          child: Card(),
+          child: Card(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  child: Text(characterConfigurations[index].gameConfigName),
+                )
+                Container(child: Row(children: <Widget>[
+                  
+                ],),)
+              ],
+            ),
+          ),
         );
       },
     );
