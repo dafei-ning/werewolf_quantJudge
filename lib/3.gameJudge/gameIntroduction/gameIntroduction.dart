@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import './configCardGroup/configCardGroup.dart';
 
 class GameIntroduction extends StatelessWidget {
   static const routeName = '/game-introduction';
   final String title;
-  
+
   GameIntroduction(this.title);
 
   @override
@@ -15,9 +16,8 @@ class GameIntroduction extends StatelessWidget {
     return Scaffold(
       appBar: createRoomBar,
       body: Container(
-        child: Center(
-          child: Text("this is for game introduction."),
-        ),
+        alignment: Alignment.center,
+        child: ConfigCardGroup(),
       ),
     );
   }
