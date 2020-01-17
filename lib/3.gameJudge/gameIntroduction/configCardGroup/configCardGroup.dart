@@ -24,8 +24,11 @@ class ConfigCardGroup extends StatelessWidget {
                 ),
                 Container(
                   child: Column(
-                    children:
-                        (charConfigs as List<Object>).map((f) {}).toList(),
+                    children: charConfigs.entries
+                        .map((charConfig) {
+                          return ConfigCard(charConfig.key, "config11111");
+                        })
+                        .toList(),
                   ),
                 ),
               ],
