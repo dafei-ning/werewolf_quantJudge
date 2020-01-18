@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/configCardGroup/configCard.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/configCardGroup/configCard/configCard.dart';
 import '../../../data/wolfDatabase.dart';
 import '../../../models/gameIntroModel.dart';
 
@@ -23,11 +23,16 @@ class ConfigCardGroup extends StatelessWidget {
                   child: Text(gameConfigName),
                 ),
                 Container(
-                    child: Column(
-                  children: charConfigs.entries.map((charConfig) {
-                    return ConfigCard(charConfig.key, charConfig.value);
-                  }).toList(),
-                )),
+                  child: ConfigCard(1, "11"),
+                ),
+
+                // Container(
+                //   child: Column(
+                //     children: charConfigs.entries.map((charConfig) {
+                //       return ConfigCard(charConfig.key, charConfig.value);
+                //     }).toList(),
+                //   ),
+                // ),
               ],
             ),
           ),
