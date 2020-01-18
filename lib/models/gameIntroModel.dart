@@ -1,10 +1,12 @@
 class CharacterConfiguration {
   String gameConfigName; // lang mei shouwei
   Map<int, CharacterSet> charConfigs;
+  List<Object> specialIntroPool;
 
   CharacterConfiguration({
     this.gameConfigName,
     this.charConfigs,
+    this.specialIntroPool,
   });
 }
 

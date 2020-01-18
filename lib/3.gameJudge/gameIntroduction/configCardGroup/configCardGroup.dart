@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/configCardGroup/configCard/configCard.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/configCardGroup/configCard/specialIntro.dart';
 import '../../../data/wolfDatabase.dart';
 import '../../../models/gameIntroModel.dart';
 
@@ -15,6 +16,7 @@ class ConfigCardGroup extends StatelessWidget {
         // 每个card有一个配置名称，一组按人数配置的牌板.
         var gameConfigName = configs[index].gameConfigName;
         var charConfigs = configs[index].charConfigs;
+        var specialChars = configs[index].specialIntroPool;
         return Container(
           child: Card(
             child: Column(
@@ -23,7 +25,7 @@ class ConfigCardGroup extends StatelessWidget {
                   child: Text(gameConfigName),
                 ),
                 Container(
-                  child: ConfigCard(gameConfigName, charConfigs),
+                  child: ConfigCard(gameConfigName, charConfigs, specialChars),
                 ),
 
                 // Container(

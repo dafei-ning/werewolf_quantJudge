@@ -138,6 +138,7 @@ class WolfDataBase {
           },
         ),
       },
+      specialIntroPool: [Special.guard, Wolf.charmWolf],
     ),
 
     CharacterConfiguration(

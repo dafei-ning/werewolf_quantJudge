@@ -6,7 +6,12 @@ import './amountConfigPad/amountConfigPad.dart';
 class ConfigCard extends StatelessWidget {
   final String gameConfigName;
   final Map<int, CharacterSet> charConfigs;
-  ConfigCard(this.gameConfigName, this.charConfigs);
+  final List<Object> specialChars;
+  ConfigCard(
+    this.gameConfigName,
+    this.charConfigs,
+    this.specialChars,
+  );
   @override
   Widget build(BuildContext context) {
     return Container(
