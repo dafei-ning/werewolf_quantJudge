@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/models/gameIntroModel.dart';
+import './specialIntro.dart';
+import './amountConfigPad/amountConfigPad.dart';
 
 class ConfigCard extends StatelessWidget {
-  final int playerAmount;
-  final CharacterSet characterSet;
-  ConfigCard(this.playerAmount, this.characterSet);
+  final String gameConfigName;
+  final Map<int, CharacterSet> charConfigs;
+  ConfigCard(this.gameConfigName, this.charConfigs);
   @override
   Widget build(BuildContext context) {
     return Container(

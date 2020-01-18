@@ -23,7 +23,7 @@ class ConfigCardGroup extends StatelessWidget {
                   child: Text(gameConfigName),
                 ),
                 Container(
-                  child: ConfigCard(1, "11"),
+                  child: ConfigCard(gameConfigName, charConfigs),
                 ),
 
                 // Container(
