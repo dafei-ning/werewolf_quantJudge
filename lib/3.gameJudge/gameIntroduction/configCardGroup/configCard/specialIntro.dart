@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../../../models/gameIntroModel.dart';
 
 class SpecialIntro extends StatelessWidget {
-  final Object special1;
-  final Object special2;
-  SpecialIntro(this.special1, this.special2);
+  final List<Object> specials;
+  SpecialIntro(this.specials);
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Text("special1, special2"),
+      child: Row(
+        children: specials.map((special) {
+          return Card(
+            margin: EdgeInsets.only(top:40, bottom: 40, left: 15, right: 15),
+            child: Text(special.toString()),);
+        }).toList(),
+      ),
     );
   }
 }

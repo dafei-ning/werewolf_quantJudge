@@ -18,13 +18,10 @@ class ConfigCard extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Container(
-            child: SpecialIntro(),
+            child: SpecialIntro(specialChars),
           ),
           Container(
-            child: SpecialIntro(),
-          ),
-          Container(
-            child: AmountConfigPad(),
+            child: AmountConfigPad(charConfigs),
           ),
           // // 人数
           // Container(
