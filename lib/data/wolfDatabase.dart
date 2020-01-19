@@ -213,16 +213,49 @@ class WolfDataBase {
           },
         ),
       },
+      specialIntroPool: [
+        Special.blackMarketer,
+        Wolf.brotherOldWolf,
+        Wolf.brotherYoungWolf
+      ],
     ),
 
     CharacterConfiguration(
       gameConfigName: '梦魇守卫',
       charConfigs: {
-        12: CharacterSet(),
-        13: CharacterSet(),
-        15: CharacterSet(),
-        16: CharacterSet(),
+        12: CharacterSet(
+          wolves: {
+            Wolf.nightmareWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        13: CharacterSet(
+          wolves: {
+            Wolf.nightmareWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+            Villager.bastard: 1,
+          },
+        ),
       },
+      specialIntroPool: [Special.guard, Wolf.nightmareWolf],
     ),
 
     CharacterConfiguration(
