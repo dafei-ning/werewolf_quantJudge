@@ -261,11 +261,39 @@ class WolfDataBase {
     CharacterConfiguration(
       gameConfigName: '血月猎魔',
       charConfigs: {
-        12: CharacterSet(),
-        13: CharacterSet(),
-        15: CharacterSet(),
-        16: CharacterSet(),
+        12: CharacterSet(
+          wolves: {
+            Wolf.bloodMoonWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.witcher: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        13: CharacterSet(
+          wolves: {
+            Wolf.bloodMoonWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.witcher: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+            Villager.bastard: 1,
+          },
+        ),
       },
+      specialIntroPool: [Special.witcher, Wolf.bloodMoonWolf],
     ),
 
     CharacterConfiguration(
@@ -273,6 +301,7 @@ class WolfDataBase {
       charConfigs: {
         11: CharacterSet(),
       },
+      specialIntroPool: [Special.idiot],
     ),
 
     CharacterConfiguration(
