@@ -310,6 +310,7 @@ class WolfDataBase {
         11: CharacterSet(),
         12: CharacterSet(),
       },
+      specialIntroPool: [Special.idiot],
     ),
 
     CharacterConfiguration(

@@ -43,3 +43,11 @@ enum Villager {
   ordinVillager, // 普通村民
   bastard, // 混子
 }
+
+enum ThirdParty {
+  cupid, // 丘比特
+  link1, // 链子1
+  link2, // 链子2
+  shadow, // 影子
+  avenger, // 复仇者
+}
