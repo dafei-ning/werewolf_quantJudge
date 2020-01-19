@@ -14,7 +14,13 @@ class CharacterSet {
   Map<Special, int> specials;
   Map<Wolf, int> wolves;
   Map<Villager, int> villagers;
-  CharacterSet({this.wolves, this.specials, this.villagers});
+  Map<ThirdParty, int> thirdParties;
+  CharacterSet({
+    this.wolves,
+    this.specials,
+    this.villagers,
+    this.thirdParties,
+  });
 }
 
 enum Special {
@@ -48,6 +54,7 @@ enum ThirdParty {
   cupid, // 丘比特
   link1, // 链子1
   link2, // 链子2
+  robber, // 盗贼
   shadow, // 影子
   avenger, // 复仇者
 }

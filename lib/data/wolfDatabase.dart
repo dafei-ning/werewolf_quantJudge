@@ -213,11 +213,7 @@ class WolfDataBase {
           },
         ),
       },
-      specialIntroPool: [
-        Special.blackMarketer,
-        Wolf.brotherOldWolf,
-        Wolf.brotherYoungWolf
-      ],
+      specialIntroPool: [Special.blackMarketer, Wolf.brotherOldWolf],
     ),
 
     CharacterConfiguration(
@@ -297,20 +293,12 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '预女猎白',
-      charConfigs: {
-        11: CharacterSet(),
-      },
-      specialIntroPool: [Special.idiot],
-    ),
-
-    CharacterConfiguration(
       gameConfigName: '丘比特盗贼',
       charConfigs: {
         11: CharacterSet(),
         12: CharacterSet(),
       },
-      specialIntroPool: [Special.idiot],
+      specialIntroPool: [ThirdParty.cupid, ThirdParty.robber],
     ),
 
     CharacterConfiguration(
@@ -319,6 +307,15 @@ class WolfDataBase {
         14: CharacterSet(),
         16: CharacterSet(),
       },
+      specialIntroPool: [ThirdParty.shadow, ThirdParty.avenger],
+    ),
+
+    CharacterConfiguration(
+      gameConfigName: '预女猎白',
+      charConfigs: {
+        11: CharacterSet(),
+      },
+      specialIntroPool: [Special.idiot],
     ),
   ];
 }

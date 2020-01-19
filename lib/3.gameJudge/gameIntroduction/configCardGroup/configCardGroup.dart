@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/configCardGroup/configCard/configCard.dart';
-import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/configCardGroup/configCard/specialIntro.dart';
 import '../../../data/wolfDatabase.dart';
 import '../../../models/gameIntroModel.dart';
 

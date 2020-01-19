@@ -10,7 +10,7 @@ class SpecialIntro extends StatelessWidget {
       child: Row(
         children: specials.map((special) {
           return Card(
-            margin: EdgeInsets.only(top:40, bottom: 40, left: 15, right: 15),
+            margin: EdgeInsets.only(top:40, bottom: 40, left: 5, right: 5),
             child: Text(special.toString()),);
         }).toList(),
       ),
