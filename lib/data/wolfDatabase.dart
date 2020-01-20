@@ -3,6 +3,7 @@ import '../models/gameIntroModel.dart';
 import 'package:flutter/material.dart';
 
 class WolfDataBase {
+  // 玩家行为的标签
   List<String> describeTagList = [
     '站错预言家',
     '疑似冲票行为',
@@ -14,6 +15,7 @@ class WolfDataBase {
     '狼视角爆刀口',
   ];
 
+  // App 主页面的选项
   List<Category> categories = [
     Category(
       id: 'c1',
@@ -41,6 +43,7 @@ class WolfDataBase {
     ),
   ];
 
+  // 小法官页面的选项
   List<Category> judgeCategories = [
     Category(
       id: 'jc1',
@@ -68,6 +71,7 @@ class WolfDataBase {
     ),
   ];
 
+  // 游戏根据玩家人数的角色配置
   List<CharacterConfiguration> characterConfigurations = [
     // 狼美守卫板子：12，13，15，16
     CharacterConfiguration(
@@ -413,4 +417,33 @@ class WolfDataBase {
       specialIntroPool: [Special.idiot],
     ),
   ];
+
+  // 角色配置对中文的map
+  Map<Object, String> characterMap = {
+    // 神队
+    Special.seer : "预言家",
+    Special.witch: "",
+    Special.hunter: "",
+    Special.idiot: "",
+    Special.guard: "",
+    Special.knight: "",
+    Special.witcher: "",
+    Special.blackMarketer: "",
+    Special.prohibiter: "",
+    // 狼队
+    Wolf.brotherOldWolf: "",
+    Wolf.brotherYoungWolf: "",
+    Wolf.bloodMoonWolf: "",
+    Wolf.nightmareWolf: "",
+    Wolf.gunWolf: "",
+    Wolf.charmWolf: "",
+    Wolf.ordinWolf: "",
+    // 民队
+    Villager.ordinVillager: "",
+    ThirdParty.cupid: "",
+    ThirdParty.robber: "",
+    ThirdParty.shadow: "",
+    ThirdParty.avenger: "",
+    ThirdParty.bastard: "",
+  };
 }
