@@ -14,8 +14,8 @@ class TeamDetail extends StatelessWidget {
     var title = Text(
       '${identity}',
       style: TextStyle(
-        fontSize: 13,
-        color: Colors.blueGrey,
+        fontSize: 14,
+        color: Colors.pink[800],
         fontWeight: FontWeight.bold,
       ),
     );
@@ -24,7 +24,26 @@ class TeamDetail extends StatelessWidget {
       eachSet.forEach((k, v) {
         var charMap = WolfDataBase().characterMap;
         wrapGroups.add(
-          Text('${charMap[k]} 身份有 ${v} 张牌'),
+          RichText(
+            text: TextSpan(
+              style: DefaultTextStyle.of(context).style,
+              children: <TextSpan>[
+                TextSpan(
+                    text: ' ${charMap[k]} ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.tealAccent[700],
+                    )),
+                TextSpan(text: ' 身份有'),
+                TextSpan(
+                    text: ' ${v} ',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(text: '张牌    '),
+              ],
+            ),
+          ),
+
+          //Text('${charMap[k]} 身份有 ${v} 张牌       '),
         );
       });
       return Column(
