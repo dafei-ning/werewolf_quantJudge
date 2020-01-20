@@ -21,7 +21,7 @@ class ConfigCard extends StatelessWidget {
             child: SpecialIntro(specialChars),
           ),
           Container(
-            child: AmountConfigPad(charConfigs),
+            child: AmountConfigPad(gameConfigName, charConfigs),
           ),
         ],
       ),

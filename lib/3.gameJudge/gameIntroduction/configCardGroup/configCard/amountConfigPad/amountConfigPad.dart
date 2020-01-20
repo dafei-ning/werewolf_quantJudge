@@ -2,20 +2,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../models/gameIntroModel.dart';
 
-class AmountConfigPad extends StatelessWidget {
+class AmountConfigPad extends StatefulWidget {
   final Map<int, CharacterSet> charConfigs;
-  AmountConfigPad(this.charConfigs);
+  final String gameConfigName;
+  AmountConfigPad(this.gameConfigName, this.charConfigs);
 
-  void _playerAmountSuggestion(context) {
+  @override
+  _AmountConfigPadState createState() => _AmountConfigPadState();
+}
+
+class _AmountConfigPadState extends State<AmountConfigPad> {
+  void _playerAmountSuggestion(int playerAmount) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("hahah"),
-          content: new Text("My alert message"),
+          title: Text('「${widget.gameConfigName}」${playerAmount}人局配置'),
+          content: Text("My alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy My alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy My alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy alert message"),
           actions: <Widget>[
-            FlatButton(
-              child: Text("sds"),
+            RaisedButton(
+              child: Text('关闭'),
               onPressed: () => Navigator.of(context).pop(),
             )
           ],
@@ -29,9 +35,9 @@ class AmountConfigPad extends StatelessWidget {
     return Container(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: charConfigs.keys.map((key) {
+        children: widget.charConfigs.keys.map((key) {
           return RaisedButton(
-            onPressed: () => _playerAmountSuggestion,
+            onPressed: () => _playerAmountSuggestion(key),
             child: Text(
               key.toString(),
             ),
