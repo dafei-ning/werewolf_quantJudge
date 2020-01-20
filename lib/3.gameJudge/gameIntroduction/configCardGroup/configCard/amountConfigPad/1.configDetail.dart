@@ -15,11 +15,11 @@ class ConfigDetail extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[   
-        TeamDetail('wolf', wolvesSet),
+        TeamDetail('狼队', wolvesSet),
         SizedBox(height: 10),
-        TeamDetail('good', goodMenSet),
+        TeamDetail('好人队', goodMenSet),
         SizedBox(height: 10),
-        TeamDetail('third', unknownSet),
+        TeamDetail('未知站边身份', unknownSet),
         SizedBox(height: 10),
       ],
     );
