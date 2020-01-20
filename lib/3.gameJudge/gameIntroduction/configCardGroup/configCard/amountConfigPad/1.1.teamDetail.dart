@@ -12,13 +12,20 @@ class TeamDetail extends StatelessWidget {
     }
     var title = Text('${identity}');
     var setList = identitySet.map((eachSet) {
-      return Text(eachSet.keys.toString());
+      return Column(children: <Widget>[
+        Text('${eachSet.keys.toString()} X '),
+        SizedBox(
+          height: 10,
+        )
+      ]);
     }).toList();
 
     return Column(
       children: <Widget>[
         title,
-        Column(children: setList,)
+        Column(
+          children: setList,
+        )
       ],
     );
   }
