@@ -101,8 +101,11 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 4,
-            Villager.bastard: 1,
+            
           },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          }
         ),
         15: CharacterSet(
           wolves: {
@@ -134,8 +137,10 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 5,
-            Villager.bastard: 1,
           },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          }
         ),
       },
       specialIntroPool: [Special.guard, Wolf.charmWolf],
@@ -174,8 +179,10 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 4,
-            Villager.bastard: 1,
           },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          }
         ),
         15: CharacterSet(
           wolves: {
@@ -209,8 +216,10 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 5,
-            Villager.bastard: 1,
           },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          }
         ),
       },
       specialIntroPool: [Special.blackMarketer, Wolf.brotherOldWolf],
@@ -247,8 +256,10 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 4,
-            Villager.bastard: 1,
           },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          }
         ),
       },
       specialIntroPool: [Special.guard, Wolf.nightmareWolf],
@@ -285,8 +296,10 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 4,
-            Villager.bastard: 1,
           },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          }
         ),
       },
       specialIntroPool: [Special.witcher, Wolf.bloodMoonWolf],

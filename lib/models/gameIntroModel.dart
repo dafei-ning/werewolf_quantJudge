@@ -47,7 +47,6 @@ enum Wolf {
 
 enum Villager {
   ordinVillager, // 普通村民
-  bastard, // 混子
 }
 
 enum ThirdParty {
@@ -57,4 +56,5 @@ enum ThirdParty {
   robber, // 盗贼
   shadow, // 影子
   avenger, // 复仇者
+  bastard, // 混子
 }
