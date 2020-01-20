@@ -14,17 +14,11 @@ class TeamDetail extends StatelessWidget {
     }
     var title = Text('${identity}');
     var setList = identitySet.map((eachSet) {
-      return Column(
-        children: <Widget>[
-          SizedBox(height: 10),
-          Container(
-              child: Column(
-            children: (eachSet as List<Entry>).map((entry) {
-              return Text(entry.toString());
-            }).toList(),
-          ))
-        ],
-      );
+      List<Widget> wrapGroups = [];
+      eachSet.forEach((k, v) {
+        wrapGroups.add(Text('${k}身份有${v}人'));
+      });
+      return Container(child: Wrap(children: wrapGroups));
     }).toList();
 
     return Column(
