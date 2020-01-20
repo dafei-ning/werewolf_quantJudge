@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../data/wolfDatabase.dart';
 
 class TeamDetail extends StatelessWidget {
   final String identity;
@@ -21,7 +22,10 @@ class TeamDetail extends StatelessWidget {
     var setList = identitySet.map((eachSet) {
       List<Widget> wrapGroups = [];
       eachSet.forEach((k, v) {
-        wrapGroups.add(Text('${k} 身份有 ${v} 张牌'));
+        var charMap = WolfDataBase().characterMap;
+        wrapGroups.add(
+          Text('${charMap[k]} 身份有 ${v} 张牌'),
+        );
       });
       return Column(
         children: <Widget>[
