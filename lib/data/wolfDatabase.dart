@@ -101,11 +101,10 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 4,
-            
           },
           thirdParties: {
             ThirdParty.bastard: 1,
-          }
+          },
         ),
         15: CharacterSet(
           wolves: {
@@ -140,7 +139,7 @@ class WolfDataBase {
           },
           thirdParties: {
             ThirdParty.bastard: 1,
-          }
+          },
         ),
       },
       specialIntroPool: [Special.guard, Wolf.charmWolf],
@@ -182,7 +181,7 @@ class WolfDataBase {
           },
           thirdParties: {
             ThirdParty.bastard: 1,
-          }
+          },
         ),
         15: CharacterSet(
           wolves: {
@@ -219,7 +218,7 @@ class WolfDataBase {
           },
           thirdParties: {
             ThirdParty.bastard: 1,
-          }
+          },
         ),
       },
       specialIntroPool: [Special.blackMarketer, Wolf.brotherOldWolf],
@@ -259,7 +258,7 @@ class WolfDataBase {
           },
           thirdParties: {
             ThirdParty.bastard: 1,
-          }
+          },
         ),
       },
       specialIntroPool: [Special.guard, Wolf.nightmareWolf],
@@ -299,7 +298,7 @@ class WolfDataBase {
           },
           thirdParties: {
             ThirdParty.bastard: 1,
-          }
+          },
         ),
       },
       specialIntroPool: [Special.witcher, Wolf.bloodMoonWolf],
@@ -308,8 +307,24 @@ class WolfDataBase {
     CharacterConfiguration(
       gameConfigName: '丘比特盗贼',
       charConfigs: {
-        11: CharacterSet(),
-        12: CharacterSet(),
+        12: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          },
+          thirdParties: {
+            ThirdParty.robber: 1,
+            ThirdParty.cupid: 1,
+          },
+        ),
       },
       specialIntroPool: [ThirdParty.cupid, ThirdParty.robber],
     ),
@@ -317,8 +332,62 @@ class WolfDataBase {
     CharacterConfiguration(
       gameConfigName: '影子复仇者',
       charConfigs: {
-        14: CharacterSet(),
-        16: CharacterSet(),
+        14: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.shadow: 1,
+            ThirdParty.avenger: 1,
+          },
+        ),
+        15: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.shadow: 1,
+            ThirdParty.avenger: 1,
+            ThirdParty.bastard: 1,
+          },
+        ),
+        16: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 5,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.shadow: 1,
+            ThirdParty.avenger: 1,
+          },
+        ),
       },
       specialIntroPool: [ThirdParty.shadow, ThirdParty.avenger],
     ),
@@ -326,7 +395,20 @@ class WolfDataBase {
     CharacterConfiguration(
       gameConfigName: '预女猎白',
       charConfigs: {
-        11: CharacterSet(),
+        11: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 3,
+          },
+        ),
       },
       specialIntroPool: [Special.idiot],
     ),
