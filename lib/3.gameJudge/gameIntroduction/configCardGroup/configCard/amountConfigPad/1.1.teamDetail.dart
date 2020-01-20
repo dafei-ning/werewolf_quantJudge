@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class TeamDetail extends StatelessWidget {
@@ -12,12 +14,17 @@ class TeamDetail extends StatelessWidget {
     }
     var title = Text('${identity}');
     var setList = identitySet.map((eachSet) {
-      eachSet.forEach((k, v) {
-
-      });
-      return Column(children: <Widget>[
-        Text('${eachSet.entries.toString()} X '),
-      ]);
+      return Column(
+        children: <Widget>[
+          SizedBox(height: 10),
+          Container(
+              child: Column(
+            children: (eachSet as List<Entry>).map((entry) {
+              return Text(entry.toString());
+            }).toList(),
+          ))
+        ],
+      );
     }).toList();
 
     return Column(
