@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/models/gameIntroModel.dart';
-import 'teamDetail.dart';
+import '1.1.teamDetail.dart';
 
 class ConfigDetail extends StatelessWidget {
   final CharacterSet characterSet;
@@ -10,19 +10,16 @@ class ConfigDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var wolvesSet = [characterSet.wolves];
     var goodMenSet = [characterSet.specials, characterSet.villagers];
-    var unknownSet = [];
+    var unknownSet =
+        characterSet.thirdParties == null ? null : [characterSet.thirdParties];
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
+      children: <Widget>[   
         TeamDetail('wolf', wolvesSet),
-        Container(
-          child: Text(''),
-        ),
         SizedBox(height: 10),
+        TeamDetail('good', goodMenSet),
         SizedBox(height: 10),
-        Container(
-          child: Text("未知身份"),
-        ),
+        TeamDetail('third', unknownSet),
         SizedBox(height: 10),
       ],
     );

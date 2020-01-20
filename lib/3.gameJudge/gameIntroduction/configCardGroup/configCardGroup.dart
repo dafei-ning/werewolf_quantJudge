@@ -20,20 +20,14 @@ class ConfigCardGroup extends StatelessWidget {
           child: Card(
             child: Column(
               children: <Widget>[
+                // 显示板子类型，比如 ”狼美守卫“
                 Container(
                   child: Text(gameConfigName),
                 ),
+                // 显示板子的配置信息，1. 特殊身份介绍 2. 人数配置
                 Container(
                   child: ConfigCard(gameConfigName, charConfigs, specialChars),
                 ),
-
-                // Container(
-                //   child: Column(
-                //     children: charConfigs.entries.map((charConfig) {
-                //       return ConfigCard(charConfig.key, charConfig.value);
-                //     }).toList(),
-                //   ),
-                // ),
               ],
             ),
           ),

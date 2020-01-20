@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../models/gameIntroModel.dart';
-import 'configDetail.dart';
+import '1.configDetail.dart';
 
 class AmountConfigPad extends StatefulWidget {
   final Map<int, CharacterSet> charConfigs;

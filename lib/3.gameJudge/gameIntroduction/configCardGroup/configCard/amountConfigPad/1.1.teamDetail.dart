@@ -7,6 +7,18 @@ class TeamDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    if (identitySet == null) {
+      return null;
+    }
+    var title = Text('${identity}');
+    var setList = identitySet.map((eachSet) {
+      return null;
+    }).toList();
+
+    return Column(
+      children: <Widget>[
+        title,
+      ],
+    );
   }
 }
