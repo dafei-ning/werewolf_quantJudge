@@ -11,8 +11,8 @@ class CharacterConfiguration {
 }
 
 class CharacterSet {
-  Map<Special, int> specials;
   Map<Wolf, int> wolves;
+  Map<Special, int> specials;
   Map<Villager, int> villagers;
   Map<ThirdParty, int> thirdParties;
   CharacterSet({
