@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class TeamDetail extends StatelessWidget {
@@ -18,7 +16,14 @@ class TeamDetail extends StatelessWidget {
       eachSet.forEach((k, v) {
         wrapGroups.add(Text('${k}身份有${v}人'));
       });
-      return Container(child: Wrap(children: wrapGroups));
+      return Column(
+        children: <Widget>[
+          Wrap(children: wrapGroups),
+          SizedBox(
+            height: 15,
+          ),
+        ],
+      );
     }).toList();
 
     return Column(
