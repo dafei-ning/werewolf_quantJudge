@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../models/gameIntroModel.dart';
+import 'configDetail.dart';
 
 class AmountConfigPad extends StatefulWidget {
   final Map<int, CharacterSet> charConfigs;
@@ -18,7 +19,9 @@ class _AmountConfigPadState extends State<AmountConfigPad> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('「${widget.gameConfigName}」${playerAmount}人局配置'),
-          content: Text("My alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy My alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy My alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy alert messageMy alert message"),
+          content: Container(
+            child: ConfigDetail(widget.charConfigs[playerAmount]),
+          ),
           actions: <Widget>[
             RaisedButton(
               child: Text('关闭'),
