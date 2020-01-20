@@ -34,7 +34,7 @@ class TeamDetail extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.tealAccent[700],
                     )),
-                TextSpan(text: ' 身份有'),
+                TextSpan(text: ' 有'),
                 TextSpan(
                     text: ' ${v} ',
                     style: TextStyle(fontWeight: FontWeight.bold)),
@@ -42,8 +42,6 @@ class TeamDetail extends StatelessWidget {
               ],
             ),
           ),
-
-          //Text('${charMap[k]} 身份有 ${v} 张牌       '),
         );
       });
       return Column(

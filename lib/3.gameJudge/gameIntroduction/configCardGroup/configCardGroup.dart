@@ -18,10 +18,14 @@ class ConfigCardGroup extends StatelessWidget {
         var specialChars = configs[index].specialIntroPool;
         return Container(
           child: Card(
+            margin: EdgeInsets.all(10),
+            
+            color: Colors.white10,
             child: Column(
               children: <Widget>[
                 // 显示板子类型，比如 ”狼美守卫“
                 Container(
+                  padding: EdgeInsets.all(10),
                   child: Text(gameConfigName),
                 ),
                 // 显示板子的配置信息，1. 特殊身份介绍 2. 人数配置
