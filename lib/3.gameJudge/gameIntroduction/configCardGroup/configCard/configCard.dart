@@ -23,45 +23,6 @@ class ConfigCard extends StatelessWidget {
           Container(
             child: AmountConfigPad(charConfigs),
           ),
-          // // 人数
-          // Container(
-          //   alignment: Alignment.topLeft,
-          //   child: Text(
-          //     playerAmount.toString() + "人板子: ",
-          //     style: TextStyle(
-          //         fontSize: 13,
-          //         fontWeight: FontWeight.bold,
-          //         color: Colors.black54),
-          //   ),
-          //   width: 70,
-          // ),
-          // // 狼队
-          // Container(
-          //   margin: EdgeInsets.only(left: 2),
-          //   child: Text(
-          //     "狼队配置",
-          //     style: Theme.of(context).textTheme.title,
-          //   ),
-          //   width: 90,
-          // ),
-          // // 神队
-          // Container(
-          //   margin: EdgeInsets.only(left: 2),
-          //   child: Text(
-          //     "神牌配置",
-          //     style: Theme.of(context).textTheme.title,
-          //   ),
-          //   width: 90,
-          // ),
-          // // 民队
-          // Container(
-          //   margin: EdgeInsets.only(left: 2),
-          //   child: Text(
-          //     "民牌配置",
-          //     style: Theme.of(context).textTheme.title,
-          //   ),
-          //   width: 90,
-          // ),
         ],
       ),
     );
