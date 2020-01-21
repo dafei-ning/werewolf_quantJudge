@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/0.playerAmountChoose/playerAmountChoose.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/1.choiceChipGroup.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/1.teamConfigChoose/teamConfigChoose.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/2.teamConfigDetail/teamConfigDetail.dart';
 import '../../data/wolfDatabase.dart';
 import '../../models/gameIntroModel.dart';
 
@@ -23,11 +26,11 @@ class CreateRoom extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Text('15人局'),
+          PlayerAmountChoose(),
           Container(
               child: Column(children: <Widget>[
-            Text('第一行，版型'),
-            Text('第二行，配置'),
+            TeamConfigChoose(),
+            TeamConfigDetail(),
           ])),
         ],
       ),
