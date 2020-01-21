@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/1.choiceChipGroup.dart';
 import '../../data/wolfDatabase.dart';
 import '../../models/gameIntroModel.dart';
 
@@ -17,7 +18,7 @@ class CreateRoom extends StatelessWidget {
       middle: Text(title),
     );
 
-    var gameConfigInteractionList = ListView.builder(
+    var choiceSheetList = ListView.builder(
       itemCount: configs.length,
       itemBuilder: (ctx, index) {
         // 所需要的var，每个card 一个标题，人数个配置按钮。
@@ -26,15 +27,27 @@ class CreateRoom extends StatelessWidget {
         var specialChars = configs[index].specialIntroPool;
         // 每个角色配置的选择框
         var choiceSheet = Container(
-          child: Card(),
+          child: Card(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text(gameConfigName),
+                ),
+                Container(
+                  child: ChoiceChipGroup(gameConfigName, charConfigs),
+                ),
+              ],
+            ),
+          ),
         );
         return choiceSheet;
       },
     );
-    
+
     return Scaffold(
       appBar: createRoomBar,
-      body: gameConfigInteractionList,
+      body: choiceSheetList,
     );
   }
 }
