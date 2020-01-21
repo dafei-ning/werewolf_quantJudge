@@ -7,9 +7,8 @@ class ChoiceConfigChip extends StatelessWidget {
   ChoiceConfigChip(this.charConfig);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // 一竖排的chips
-      
-    );
+    var chip = Container();
+    
+    return chip;
   }
 }

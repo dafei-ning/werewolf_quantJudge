@@ -18,6 +18,21 @@ class CreateRoom extends StatelessWidget {
       middle: Text(title),
     );
 
+    var choiceCard = Card(
+      
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text('15人局'),
+          Container(
+              child: Column(children: <Widget>[
+            Text('第一行，版型'),
+            Text('第二行，配置'),
+          ])),
+        ],
+      ),
+    );
+
     var choiceSheetList = ListView.builder(
       itemCount: configs.length,
       itemBuilder: (ctx, index) {
@@ -47,7 +62,7 @@ class CreateRoom extends StatelessWidget {
 
     return Scaffold(
       appBar: createRoomBar,
-      body: choiceSheetList,
+      body: choiceCard,
     );
   }
 }
