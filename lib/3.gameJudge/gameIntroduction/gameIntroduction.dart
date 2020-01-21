@@ -13,6 +13,7 @@ class GameIntroduction extends StatelessWidget {
     PreferredSizeWidget createRoomBar = CupertinoNavigationBar(
       middle: Text(title),
     );
+
     return Scaffold(
       appBar: createRoomBar,
       body: Container(

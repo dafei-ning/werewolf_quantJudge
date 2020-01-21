@@ -18,8 +18,7 @@ class ConfigCardGroup extends StatelessWidget {
         var specialChars = configs[index].specialIntroPool;
         return Container(
           child: Card(
-            margin: EdgeInsets.all(10),
-            
+            margin: EdgeInsets.all(10), 
             color: Colors.white10,
             child: Column(
               children: <Widget>[
