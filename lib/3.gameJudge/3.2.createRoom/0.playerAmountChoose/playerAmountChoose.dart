@@ -9,7 +9,8 @@ class PlayerAmountChoose extends StatefulWidget {
 class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
   @override
   Widget build(BuildContext context) {
-    int selectItem = 1;
+
+    String _selectedAmount;
 
     Future<String> _choosePlayerAmount() {
       return showCupertinoModalPopup(
@@ -18,9 +19,13 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
             return SizedBox(
               height: 300,
               child: CupertinoPicker(
+                looping: true,
                 itemExtent: 40,
-                onSelectedItemChanged: (int index) {
-                  selectItem = index;
+                onSelectedItemChanged: (value) {
+                  setState(() {
+                    _selectedAmount = value.toString();
+                    print(' print selected: ${_selectedAmount}');
+                  });
                 },
                 children: <Widget>[
                   Text("1"),
@@ -35,7 +40,9 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
 
     return RaisedButton(
       onPressed: _choosePlayerAmount,
-      child: Text('sss ${selectItem}'),
+      child: Text(
+        _selectedAmount == null ? '选择本局人数' : '人数: ${_selectedAmount}' 
+      ),
     );
   }
 }
