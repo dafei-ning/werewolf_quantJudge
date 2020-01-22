@@ -463,10 +463,10 @@ class WolfDataBase {
   List<String> playerAmounts = ['9', '10', '11', '12', '13', '14', '15', '16'];
 
   // 玩家人数 -> 根据角色配置的具体配置
-  List<AmountConfiguration> amountConfigurations = [
-    AmountConfiguration(
-      playerAmount: 9,
-      charConfigs
-    ),
-  ];
+  // List<AmountConfiguration> amountConfigurations = [
+  //   AmountConfiguration(
+  //     playerAmount: 9,
+  //     charConfigs
+  //   ),
+  // ];
 }

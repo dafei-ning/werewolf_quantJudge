@@ -6,19 +6,19 @@ import '../../../models/gameIntroModel.dart';
 class ConfigCardGroup extends StatelessWidget {
   final List<CharacterConfiguration> configs =
       WolfDataBase().characterConfigurations;
-
+  final Map<GamePattern, String> patternMap = WolfDataBase().patternMap;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: configs.length,
       itemBuilder: (ctx, index) {
         // 每个card有一个配置名称，一组按人数配置的牌板.
-        var gameConfigName = configs[index].gameConfigName;
+        var gameConfigName = patternMap[configs[index].gameConfigName];
         var charConfigs = configs[index].charConfigs;
         var specialChars = configs[index].specialIntroPool;
         return Container(
           child: Card(
-            margin: EdgeInsets.all(10), 
+            margin: EdgeInsets.all(10),
             color: Colors.white10,
             child: Column(
               children: <Widget>[
