@@ -1,6 +1,6 @@
 // 根据具体的板子类型选人数
 class CharacterConfiguration {
-  String gameConfigName;
+  GamePattern gameConfigName;
   Map<int, CharacterSet> charConfigs;
   List<Object> specialIntroPool;
 
@@ -14,8 +14,8 @@ class CharacterConfiguration {
 // 根据人数选板子类型
 class AmountConfiguration {
   int playerAmount;
-  Map<String, CharacterSet> charConfigs;
-  AmountConfiguration(this.playerAmount, this.charConfigs);
+  Map<GamePattern, CharacterSet> charConfigs;
+  AmountConfiguration({this.playerAmount, this.charConfigs});
 }
 
 class CharacterSet {
@@ -65,4 +65,14 @@ enum ThirdParty {
   shadow, // 影子
   avenger, // 复仇者
   bastard, // 混子
+}
+
+enum GamePattern {
+  charmWolf_guard,
+  s_w_h_i,
+  blackmarket_wBros,
+  blood_witcher,
+  cupid_robber,
+  shadow_avenger,
+  nightmare_guard,
 }

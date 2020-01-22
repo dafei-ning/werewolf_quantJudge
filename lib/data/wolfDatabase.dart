@@ -71,11 +71,41 @@ class WolfDataBase {
     ),
   ];
 
+  // 角色配置对中文的map
+  Map<Object, String> characterMap = {
+    // 神队
+    Special.seer: "预言家",
+    Special.witch: "女巫",
+    Special.hunter: "猎人",
+    Special.idiot: "白痴",
+    Special.guard: "守卫",
+    Special.knight: "骑士",
+    Special.witcher: "猎魔人",
+    Special.blackMarketer: "黑市商人",
+    Special.prohibiter: "禁票长老",
+    // 狼队
+    Wolf.brotherOldWolf: "狼兄弟（兄）",
+    Wolf.brotherYoungWolf: "狼兄弟（弟）",
+    Wolf.bloodMoonWolf: "血月使徒",
+    Wolf.nightmareWolf: "梦魇",
+    Wolf.gunWolf: "狼枪",
+    Wolf.charmWolf: "狼美人",
+    Wolf.ordinWolf: "狼人",
+    // 民队
+    Villager.ordinVillager: "普通村民",
+    // 第三方未知站队
+    ThirdParty.cupid: "丘比特",
+    ThirdParty.robber: "盗贼",
+    ThirdParty.shadow: "影子",
+    ThirdParty.avenger: "复仇者",
+    ThirdParty.bastard: "混子",
+  };
+
   // 角色配置 -> 根据玩家人数的具体配置
   List<CharacterConfiguration> characterConfigurations = [
     // 狼美守卫板子：12，13，15，16
     CharacterConfiguration(
-      gameConfigName: '狼美守卫',
+      gameConfigName: GamePattern.charmWolf_guard,
       charConfigs: {
         12: CharacterSet(
           wolves: {
@@ -150,7 +180,7 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '预女黑白',
+      gameConfigName: GamePattern.blackmarket_wBros,
       charConfigs: {
         12: CharacterSet(
           wolves: {
@@ -229,7 +259,7 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '梦魇守卫',
+      gameConfigName: GamePattern.nightmare_guard,
       charConfigs: {
         12: CharacterSet(
           wolves: {
@@ -269,7 +299,7 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '血月猎魔',
+      gameConfigName: GamePattern.blood_witcher,
       charConfigs: {
         12: CharacterSet(
           wolves: {
@@ -309,7 +339,7 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '丘比特盗贼',
+      gameConfigName: GamePattern.cupid_robber,
       charConfigs: {
         12: CharacterSet(
           wolves: {
@@ -334,7 +364,7 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '影子复仇者',
+      gameConfigName: GamePattern.shadow_avenger,
       charConfigs: {
         14: CharacterSet(
           wolves: {
@@ -397,7 +427,7 @@ class WolfDataBase {
     ),
 
     CharacterConfiguration(
-      gameConfigName: '预女猎白',
+      gameConfigName: GamePattern.s_w_h_i,
       charConfigs: {
         11: CharacterSet(
           wolves: {
@@ -418,39 +448,14 @@ class WolfDataBase {
     ),
   ];
 
-  // 角色配置对中文的map
-  Map<Object, String> characterMap = {
-    // 神队
-    Special.seer: "预言家",
-    Special.witch: "女巫",
-    Special.hunter: "猎人",
-    Special.idiot: "白痴",
-    Special.guard: "守卫",
-    Special.knight: "骑士",
-    Special.witcher: "猎魔人",
-    Special.blackMarketer: "黑市商人",
-    Special.prohibiter: "禁票长老",
-    // 狼队
-    Wolf.brotherOldWolf: "狼兄弟（兄）",
-    Wolf.brotherYoungWolf: "狼兄弟（弟）",
-    Wolf.bloodMoonWolf: "血月使徒",
-    Wolf.nightmareWolf: "梦魇",
-    Wolf.gunWolf: "狼枪",
-    Wolf.charmWolf: "狼美人",
-    Wolf.ordinWolf: "狼人",
-    // 民队
-    Villager.ordinVillager: "普通村民",
-    // 第三方未知站队
-    ThirdParty.cupid: "丘比特",
-    ThirdParty.robber: "盗贼",
-    ThirdParty.shadow: "影子",
-    ThirdParty.avenger: "复仇者",
-    ThirdParty.bastard: "混子",
-  };
-
   // 游戏人数限制选项
   List<String> playerAmounts = ['9', '10', '11', '12', '13', '14', '15', '16'];
 
   // 玩家人数 -> 根据角色配置的具体配置
-
+  List<AmountConfiguration> amountConfigurations = [
+    AmountConfiguration(
+      playerAmount: 9,
+      charConfigs
+    ),
+  ];
 }
