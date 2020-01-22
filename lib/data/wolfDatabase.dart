@@ -421,7 +421,7 @@ class WolfDataBase {
   // 角色配置对中文的map
   Map<Object, String> characterMap = {
     // 神队
-    Special.seer : "预言家",
+    Special.seer: "预言家",
     Special.witch: "女巫",
     Special.hunter: "猎人",
     Special.idiot: "白痴",
@@ -447,4 +447,7 @@ class WolfDataBase {
     ThirdParty.avenger: "复仇者",
     ThirdParty.bastard: "混子",
   };
+
+  // 游戏人数限制选项
+  List<String> playerAmounts = ['9', '10', '11', '12', '13', '14', '15', '16'];
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-const List<String> colors = ['9', '10', '11', '12', '13', '14', '15', '16'];
+import 'package:werewolf_quantjudge/data/wolfDatabase.dart';
 
 class PlayerAmountChoose extends StatefulWidget {
   @override
@@ -9,8 +8,8 @@ class PlayerAmountChoose extends StatefulWidget {
 }
 
 class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
+  List<String> playerAmounts = WolfDataBase().playerAmounts;
   int _selectedIndex = 0;
-
   void _choose() {
     showModalBottomSheet(
       context: context,
@@ -18,17 +17,21 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
         return Container(
           height: 300,
           child: CupertinoPicker(
-              itemExtent: 40,
-              onSelectedItemChanged: (int index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              children: new List<Widget>.generate(colors.length, (int index) {
+            itemExtent: 40,
+            onSelectedItemChanged: (int index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+            children: new List<Widget>.generate(
+              playerAmounts.length,
+              (int index) {
                 return new Center(
-                  child: new Text(colors[index]),
+                  child: new Text(playerAmounts[index]),
                 );
-              })),
+              },
+            ),
+          ),
         );
       },
     );
@@ -40,8 +43,11 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          SizedBox(width: 30),
           Text(
-            _selectedIndex == 0 ? '请选择人数' : '人数:    ${colors[_selectedIndex]}',
+            _selectedIndex == 0
+                ? '请选择人数'
+                : '人数:    ${playerAmounts[_selectedIndex]}',
           ),
           IconButton(
             icon: Icon(Icons.arrow_drop_down),
