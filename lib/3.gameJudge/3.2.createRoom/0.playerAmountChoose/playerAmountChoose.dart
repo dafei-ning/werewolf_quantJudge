@@ -1,18 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const List<String> colors = const <String>[
-  'Red',
-  'Yellow',
-  'Amber',
-  'Blue',
-  'Black',
-  'Pink',
-  'Purple',
-  'White',
-  'Grey',
-  'Green',
-];
+const List<String> colors = ['9', '10', '11', '12', '13', '14', '15', '16'];
 
 class PlayerAmountChoose extends StatefulWidget {
   @override
@@ -22,42 +11,41 @@ class PlayerAmountChoose extends StatefulWidget {
 class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
   int _selectedIndex = 0;
 
+  void _choose() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 300,
+          child: CupertinoPicker(
+              itemExtent: 40,
+              onSelectedItemChanged: (int index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              children: new List<Widget>.generate(colors.length, (int index) {
+                return new Center(
+                  child: new Text(colors[index]),
+                );
+              })),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-
     var playerAmountDialog = Container(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          CupertinoButton(
-              child: Text("Select Color :"),
-              onPressed: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return Container(
-                        height: 200.0,
-                        child: CupertinoPicker(
-                            itemExtent: 32.0,
-                            onSelectedItemChanged: (int index) {
-                              setState(() {
-                                _selectedIndex = index;
-                              });
-                            },
-                            children: new List<Widget>.generate(colors.length,
-                                (int index) {
-                              return new Center(
-                                child: new Text(colors[index]),
-                              );
-                            })),
-                      );
-                    });
-              }),
           Text(
-            colors[_selectedIndex],
-            style: TextStyle(fontSize: 18.0),
+            _selectedIndex == 0 ? '请选择人数' : '人数:    ${colors[_selectedIndex]}',
           ),
-          SizedBox(
-            height: 20.0,
+          IconButton(
+            icon: Icon(Icons.arrow_drop_down),
+            onPressed: _choose,
           ),
         ],
       ),
