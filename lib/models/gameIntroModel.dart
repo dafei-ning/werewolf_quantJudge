@@ -1,5 +1,6 @@
+// 根据具体的板子类型选人数
 class CharacterConfiguration {
-  String gameConfigName; // lang mei shouwei
+  String gameConfigName;
   Map<int, CharacterSet> charConfigs;
   List<Object> specialIntroPool;
 
@@ -8,6 +9,13 @@ class CharacterConfiguration {
     this.charConfigs,
     this.specialIntroPool,
   });
+}
+
+// 根据人数选板子类型
+class AmountConfiguration {
+  int playerAmount;
+  Map<String, CharacterSet> charConfigs;
+  AmountConfiguration(this.playerAmount, this.charConfigs);
 }
 
 class CharacterSet {

@@ -71,7 +71,7 @@ class WolfDataBase {
     ),
   ];
 
-  // 游戏根据玩家人数的角色配置
+  // 角色配置 -> 根据玩家人数的具体配置
   List<CharacterConfiguration> characterConfigurations = [
     // 狼美守卫板子：12，13，15，16
     CharacterConfiguration(
@@ -450,4 +450,7 @@ class WolfDataBase {
 
   // 游戏人数限制选项
   List<String> playerAmounts = ['9', '10', '11', '12', '13', '14', '15', '16'];
+
+  // 玩家人数 -> 根据角色配置的具体配置
+
 }
