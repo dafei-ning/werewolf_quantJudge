@@ -75,4 +75,5 @@ enum GamePattern {
   cupid_robber,
   shadow_avenger,
   nightmare_guard,
+  s_w_g_h_i3,
 }

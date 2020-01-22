@@ -110,6 +110,7 @@ class WolfDataBase {
     GamePattern.nightmare_guard: '梦魇守卫',
     GamePattern.shadow_avenger: '影子复仇者',
     GamePattern.s_w_h_i: '预女猎白(双边)',
+    GamePattern.s_w_g_h_i3: '预女守猎白(5选3)'
   };
 
   // 角色配置 -> 根据玩家人数的具体配置
@@ -457,6 +458,28 @@ class WolfDataBase {
       },
       specialIntroPool: [Special.idiot],
     ),
+
+    CharacterConfiguration(
+      gameConfigName: GamePattern.s_w_g_h_i3,
+      charConfigs: {
+        9: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.idiot: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 3,
+          },
+        ),
+      },
+      specialIntroPool: [Special.guard, Special.idiot],
+    ),
   ];
 
   // 游戏人数限制选项
@@ -474,6 +497,26 @@ class WolfDataBase {
 
   // 玩家人数 -> 根据角色配置的具体配置
   List<AmountConfiguration> amountConfigurations = [
+    AmountConfiguration(
+      playerAmount: 9,
+      charConfigs: {
+        GamePattern.s_w_g_h_i3: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.idiot: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 3,
+          },
+        ),
+      },
+    ),
     AmountConfiguration(
       playerAmount: 11,
       charConfigs: {
