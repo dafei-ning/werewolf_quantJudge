@@ -103,13 +103,13 @@ class WolfDataBase {
 
   // GamePattern -> 板子中文 map
   Map<GamePattern, String> patternMap = {
-    GamePattern.charmWolf_guard : '狼美守卫',
-    GamePattern.blackmarket_wBros : '狼兄弟黑商',
-    GamePattern.blood_witcher : '血月猎魔',
-    GamePattern.cupid_robber : '丘比特盗贼',
-    GamePattern.nightmare_guard : '梦魇守卫',
-    GamePattern.shadow_avenger : '影子复仇者',
-    GamePattern.s_w_h_i : '预女猎白(双边)',
+    GamePattern.charmWolf_guard: '狼美守卫',
+    GamePattern.blackmarket_wBros: '狼兄弟黑商',
+    GamePattern.blood_witcher: '血月猎魔',
+    GamePattern.cupid_robber: '丘比特盗贼',
+    GamePattern.nightmare_guard: '梦魇守卫',
+    GamePattern.shadow_avenger: '影子复仇者',
+    GamePattern.s_w_h_i: '预女猎白(双边)',
   };
 
   // 角色配置 -> 根据玩家人数的具体配置
@@ -463,10 +463,151 @@ class WolfDataBase {
   List<String> playerAmounts = ['9', '10', '11', '12', '13', '14', '15', '16'];
 
   // 玩家人数 -> 根据角色配置的具体配置
-  // List<AmountConfiguration> amountConfigurations = [
-  //   AmountConfiguration(
-  //     playerAmount: 9,
-  //     charConfigs
-  //   ),
-  // ];
+  List<AmountConfiguration> amountConfigurations = [
+    AmountConfiguration(
+      playerAmount: 11,
+      charConfigs: {
+        GamePattern.s_w_h_i: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+      },
+    ),
+    AmountConfiguration(
+      playerAmount: 12,
+      charConfigs: {
+        GamePattern.charmWolf_guard: CharacterSet(
+          wolves: {
+            Wolf.nightmareWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        GamePattern.blackmarket_wBros: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 2,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        GamePattern.blood_witcher: CharacterSet(
+          wolves: {
+            Wolf.bloodMoonWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.witcher: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        GamePattern.nightmare_guard: CharacterSet(
+          wolves: {
+            Wolf.nightmareWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+        ),
+        GamePattern.cupid_robber: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          },
+          thirdParties: {
+            ThirdParty.robber: 1,
+            ThirdParty.cupid: 1,
+          },
+        ),
+      },
+    ),
+    AmountConfiguration(
+      playerAmount: 13,
+      charConfigs: {
+        GamePattern.charmWolf_guard: CharacterSet(
+          wolves: {
+            Wolf.nightmareWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          },
+        ),
+        GamePattern.blackmarket_wBros: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 2,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          },
+        ),
+      },
+    ),
+  ];
 }
