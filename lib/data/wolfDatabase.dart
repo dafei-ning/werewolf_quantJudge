@@ -460,7 +460,17 @@ class WolfDataBase {
   ];
 
   // 游戏人数限制选项
-  List<String> playerAmounts = ['9', '10', '11', '12', '13', '14', '15', '16'];
+  List<String> playerAmounts = [
+    '',
+    '9',
+    '10',
+    '11',
+    '12',
+    '13',
+    '14',
+    '15',
+    '16'
+  ];
 
   // 玩家人数 -> 根据角色配置的具体配置
   List<AmountConfiguration> amountConfigurations = [
@@ -602,6 +612,149 @@ class WolfDataBase {
           },
           villagers: {
             Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          },
+        ),
+      },
+    ),
+    AmountConfiguration(
+      playerAmount: 14,
+      charConfigs: {
+        GamePattern.shadow_avenger: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.shadow: 1,
+            ThirdParty.avenger: 1,
+          },
+        ),
+      },
+    ),
+    AmountConfiguration(
+      playerAmount: 15,
+      charConfigs: {
+        GamePattern.shadow_avenger: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.shadow: 1,
+            ThirdParty.avenger: 1,
+            ThirdParty.bastard: 1,
+          },
+        ),
+        GamePattern.charmWolf_guard: CharacterSet(
+          wolves: {
+            Wolf.charmWolf: 1,
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+            Special.prohibiter: 1
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          },
+        ),
+        GamePattern.blackmarket_wBros: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+            Special.hunter: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          },
+        ),
+      },
+    ),
+    AmountConfiguration(
+      playerAmount: 16,
+      charConfigs: {
+        GamePattern.shadow_avenger: CharacterSet(
+          wolves: {
+            Wolf.ordinWolf: 5,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+            Special.idiot: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 4,
+          },
+          thirdParties: {
+            ThirdParty.shadow: 1,
+            ThirdParty.avenger: 1,
+          },
+        ),
+        GamePattern.charmWolf_guard: CharacterSet(
+          wolves: {
+            Wolf.charmWolf: 1,
+            Wolf.ordinWolf: 4,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.hunter: 1,
+            Special.guard: 1,
+            Special.prohibiter: 1
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
+          },
+          thirdParties: {
+            ThirdParty.bastard: 1,
+          },
+        ),
+        GamePattern.blackmarket_wBros: CharacterSet(
+          wolves: {
+            Wolf.brotherOldWolf: 1,
+            Wolf.brotherYoungWolf: 1,
+            Wolf.ordinWolf: 3,
+          },
+          specials: {
+            Special.seer: 1,
+            Special.witch: 1,
+            Special.blackMarketer: 1,
+            Special.idiot: 1,
+            Special.hunter: 1,
+          },
+          villagers: {
+            Villager.ordinVillager: 5,
           },
           thirdParties: {
             ThirdParty.bastard: 1,
