@@ -101,6 +101,17 @@ class WolfDataBase {
     ThirdParty.bastard: "混子",
   };
 
+  // GamePattern -> 板子中文 map
+  Map<GamePattern, String> patternMap = {
+    GamePattern.charmWolf_guard : '狼美守卫',
+    GamePattern.blackmarket_wBros : '狼兄弟黑商',
+    GamePattern.blood_witcher : '血月猎魔',
+    GamePattern.cupid_robber : '丘比特盗贼',
+    GamePattern.nightmare_guard : '梦魇守卫',
+    GamePattern.shadow_avenger : '影子复仇者',
+    GamePattern.s_w_h_i : '预女猎白(双边)',
+  };
+
   // 角色配置 -> 根据玩家人数的具体配置
   List<CharacterConfiguration> characterConfigurations = [
     // 狼美守卫板子：12，13，15，16
