@@ -47,7 +47,7 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
           Text(
             _selectedIndex == 0
                 ? '请选择人数'
-                : '人数:    ${playerAmounts[_selectedIndex]}',
+                : '游戏人数:    ${playerAmounts[_selectedIndex]}',
           ),
           IconButton(
             icon: Icon(Icons.arrow_drop_down),
