@@ -25,11 +25,7 @@ class CreateRoom extends StatefulWidget {
 class _CreateRoomState extends State<CreateRoom> {
   
   int _playerAmount = 0;
-  ConfigChip _configChip = null;
-
-
-  
-
+  //ConfigChip _configChip = null;
   
 
   @override
@@ -44,6 +40,7 @@ class _CreateRoomState extends State<CreateRoom> {
           PlayerAmountChoose(_playerAmount),
           Container(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 TeamConfigChoose(_playerAmount),
                 TeamConfigDetail(),

@@ -18,7 +18,7 @@ class BehaviorInput extends StatefulWidget {
 class _BehaviorInputState extends State<BehaviorInput> {
   final _turnInput = TextEditingController();
   final _playerInput = TextEditingController();
-  List<String> describeTagList = WolfDataBase().describeTagList;
+  final List<String> describeTagList = WolfDataBase().describeTagList;
   String _describeTag; // describeTag
   double _sliderScore = 0;
 
