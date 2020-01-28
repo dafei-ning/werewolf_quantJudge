@@ -10,6 +10,8 @@ import '../../models/gameIntroModel.dart';
 
 class CreateRoom extends StatefulWidget {
   static const routeName = '/create-room';
+  final List<CharacterConfiguration> configs =
+      WolfDataBase().characterConfigurations;
   final String title;
 
   CreateRoom(this.title);
@@ -19,15 +21,12 @@ class CreateRoom extends StatefulWidget {
 }
 
 class _CreateRoomState extends State<CreateRoom> {
-  final List<CharacterConfiguration> configs =
-      WolfDataBase().characterConfigurations;
-  
-
-  final int _playerAmount = 0;
-  final ConfigChip _configChip = null;
+  int _playerAmount = 0;
+  ConfigChip _configChip = null;
 
   
 
+  
 
   @override
   Widget build(BuildContext context) {
@@ -38,16 +37,18 @@ class _CreateRoomState extends State<CreateRoom> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          PlayerAmountChoose(),
+          PlayerAmountChoose(_playerAmount),
           Container(
-              child: Column(children: <Widget>[
-            TeamConfigChoose(),
-            TeamConfigDetail(),
-          ])),
+            child: Column(
+              children: <Widget>[
+                TeamConfigChoose(_playerAmount),
+                TeamConfigDetail(),
+              ],
+            ),
+          ),
         ],
       ),
     );
-
     return Scaffold(
       appBar: createRoomBar,
       body: choiceCard,

@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:werewolf_quantjudge/data/wolfDatabase.dart';
 
 class PlayerAmountChoose extends StatefulWidget {
+  int playerAmount;
+
+  PlayerAmountChoose(this.playerAmount);
+
   @override
   _PlayerAmountChooseState createState() => _PlayerAmountChooseState();
 }
 
 class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
   List<String> playerAmounts = WolfDataBase().playerAmounts;
-  int _selectedIndex = 0;
   void _choose() {
     showModalBottomSheet(
       context: context,
@@ -20,7 +23,7 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
             itemExtent: 40,
             onSelectedItemChanged: (int index) {
               setState(() {
-                _selectedIndex = index;
+                widget.playerAmount = index;
               });
             },
             children: new List<Widget>.generate(
@@ -45,9 +48,9 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
         children: <Widget>[
           SizedBox(width: 30),
           Text(
-            _selectedIndex == 0
+            widget.playerAmount == 0
                 ? '请选择人数'
-                : '游戏人数:    ${playerAmounts[_selectedIndex]}',
+                : '游戏人数:    ${playerAmounts[widget.playerAmount]}',
           ),
           IconButton(
             icon: Icon(Icons.arrow_drop_down),
