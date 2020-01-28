@@ -26,6 +26,12 @@ class _CreateRoomState extends State<CreateRoom> {
   
   int _playerAmount = 0;
   //ConfigChip _configChip = null;
+
+  void _setPlayerAmount(int amount) {
+    setState(() {
+      _playerAmount = amount;
+    });
+  }
   
 
   @override
@@ -37,7 +43,7 @@ class _CreateRoomState extends State<CreateRoom> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          PlayerAmountChoose(_playerAmount),
+          PlayerAmountChoose(_setPlayerAmount),
           Container(
             child: Column(
               mainAxisSize: MainAxisSize.min,
