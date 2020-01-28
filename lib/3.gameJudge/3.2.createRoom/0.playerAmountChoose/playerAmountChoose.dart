@@ -23,7 +23,7 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
             itemExtent: 40,
             onSelectedItemChanged: (int index) {
               setState(() {
-                widget.playerAmount = index;
+                widget.playerAmount = index + 9;
               });
             },
             children: new List<Widget>.generate(

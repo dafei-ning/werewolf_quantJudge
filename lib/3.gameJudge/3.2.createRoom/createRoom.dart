@@ -8,10 +8,12 @@ import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/2.teamConfigDetai
 import '../../data/wolfDatabase.dart';
 import '../../models/gameIntroModel.dart';
 
+final List<AmountConfiguration> acs = WolfDataBase().amountConfigurations;
+final List<CharacterConfiguration> configs =
+      WolfDataBase().characterConfigurations;
+
 class CreateRoom extends StatefulWidget {
   static const routeName = '/create-room';
-  final List<CharacterConfiguration> configs =
-      WolfDataBase().characterConfigurations;
   final String title;
 
   CreateRoom(this.title);
@@ -21,8 +23,10 @@ class CreateRoom extends StatefulWidget {
 }
 
 class _CreateRoomState extends State<CreateRoom> {
+  
   int _playerAmount = 0;
   ConfigChip _configChip = null;
+
 
   
 
