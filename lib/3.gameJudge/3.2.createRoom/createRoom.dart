@@ -2,25 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/0.playerAmountChoose/playerAmountChoose.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/1.choiceChipGroup.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/1.teamConfigChoose/configChip.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/1.teamConfigChoose/teamConfigChoose.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/2.teamConfigDetail/teamConfigDetail.dart';
 import '../../data/wolfDatabase.dart';
 import '../../models/gameIntroModel.dart';
 
-class CreateRoom extends StatelessWidget {
+class CreateRoom extends StatefulWidget {
   static const routeName = '/create-room';
   final String title;
-  final List<CharacterConfiguration> configs =
-      WolfDataBase().characterConfigurations;
 
   CreateRoom(this.title);
 
   @override
+  _CreateRoomState createState() => _CreateRoomState();
+}
+
+class _CreateRoomState extends State<CreateRoom> {
+  final List<CharacterConfiguration> configs =
+      WolfDataBase().characterConfigurations;
+  
+
+  final int _playerAmount = 0;
+  final ConfigChip _configChip = null;
+
+  
+
+
+  @override
   Widget build(BuildContext context) {
     PreferredSizeWidget createRoomBar = CupertinoNavigationBar(
-      middle: Text(title),
+      middle: Text(widget.title),
     );
-
     var choiceCard = Card(
       child: Column(
         mainAxisSize: MainAxisSize.min,
