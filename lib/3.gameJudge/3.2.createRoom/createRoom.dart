@@ -61,6 +61,7 @@ class _CreateRoomState extends State<CreateRoom> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          SizedBox(height: 30),
           PlayerAmountChoose(_setPlayerAmount),
           Container(
             margin: EdgeInsets.all(5),
