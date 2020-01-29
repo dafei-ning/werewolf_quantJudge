@@ -484,7 +484,6 @@ class WolfDataBase {
 
   // 游戏人数限制选项
   List<String> playerAmounts = [
-    '8',
     '9',
     '10',
     '11',

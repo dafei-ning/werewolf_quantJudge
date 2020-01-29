@@ -11,13 +11,17 @@ class TeamConfigChoose extends StatefulWidget {
 }
 
 class _TeamConfigChooseState extends State<TeamConfigChoose> {
-  List<AmountConfiguration> acs = WolfDataBase().amountConfigurations;
+  static List<AmountConfiguration> acs = WolfDataBase().amountConfigurations;
+  
 
   @override
   Widget build(BuildContext context) {
+    AmountConfiguration ac = widget.playerAmount == 0? null : acs.singleWhere((ac) => ac.playerAmount == widget.playerAmount);
+
+    var textss = ac == null? '第一行，选人数' : '第一行，版型 ${ac.playerAmount.toString()}';
 
     return Container(
-      child: Text('第一行，版型 ${widget.playerAmount.toString()}'),
+      child: Text(textss),
     );
   }
 }

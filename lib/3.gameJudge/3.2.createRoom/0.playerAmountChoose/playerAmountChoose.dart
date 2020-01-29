@@ -4,9 +4,7 @@ import 'package:werewolf_quantjudge/data/wolfDatabase.dart';
 
 class PlayerAmountChoose extends StatefulWidget {
   final Function setPlayerAmount;
-
   PlayerAmountChoose(this.setPlayerAmount);
-
   @override
   _PlayerAmountChooseState createState() => _PlayerAmountChooseState();
 }
@@ -26,7 +24,7 @@ class _PlayerAmountChooseState extends State<PlayerAmountChoose> {
               setState(() {
                 _index = index;
               });
-              widget.setPlayerAmount(int.parse(playerAmounts[index]));
+              widget.setPlayerAmount(int.parse(playerAmounts[_index]));
             },
             children: new List<Widget>.generate(
               playerAmounts.length,
