@@ -70,7 +70,7 @@ class _CreateRoomState extends State<CreateRoom> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 TeamConfigChoose(_playerAmount, _setGamePattern),
-                TeamConfigDetail(),
+                TeamConfigDetail(_playerAmount, _gamePattern),
               ],
             ),
           ),

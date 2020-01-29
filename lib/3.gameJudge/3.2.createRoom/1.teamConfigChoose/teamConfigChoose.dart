@@ -50,7 +50,6 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
         ? Text('请选择参与游戏的人数')
         : Wrap(children: _gameConfigChipList(ac));
     var teamConfigChoosePad = Column(
-      // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         SizedBox(height: 20),
