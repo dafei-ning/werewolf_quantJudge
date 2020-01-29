@@ -4,7 +4,8 @@ import '../../../data/wolfDatabase.dart';
 
 class TeamConfigChoose extends StatefulWidget {
   int playerAmount;
-  TeamConfigChoose(this.playerAmount);
+  final Function setGamePattern;
+  TeamConfigChoose(this.playerAmount, this.setGamePattern);
 
   @override
   _TeamConfigChooseState createState() => _TeamConfigChooseState();
@@ -30,7 +31,7 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
           onSelected: (selected) {
             setState(() {
               selectedGcfgName = cfgName;
-              //widget.onSelectionChanged(selectedTag);
+              widget.setGamePattern(k);
             });
           },
         ),
@@ -56,7 +57,7 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
         Container(
           margin: EdgeInsets.only(left: 6),
           child: Text(
-            '可选板子配置',
+            '选择板子配置',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
@@ -64,7 +65,7 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
       ],
     );
     return Container(
-      height: 180,
+      height: 200,
       alignment: Alignment.centerLeft,
       child: teamConfigChoosePad,
     );
