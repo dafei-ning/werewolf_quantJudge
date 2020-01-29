@@ -47,9 +47,6 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
 
     var gameCFGChips = ac == null ? null : _gameConfigChipList(ac);
 
-    var textss =
-        ac == null ? '第一行，选人数' : '第一行，版型 ${ac.playerAmount.toString()}';
-
     return Container(
       child: gameCFGChips == null? Text('第一行，选人数'): Wrap(children: gameCFGChips)
     );
