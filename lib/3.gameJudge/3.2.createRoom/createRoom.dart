@@ -45,6 +45,7 @@ class _CreateRoomState extends State<CreateRoom> {
         children: <Widget>[
           PlayerAmountChoose(_setPlayerAmount),
           Container(
+            alignment: Alignment.centerLeft,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[

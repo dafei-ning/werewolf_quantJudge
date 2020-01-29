@@ -27,12 +27,12 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
             borderRadius: BorderRadius.circular(5),
           ),
           selected: selectedGcfgName == cfgName,
-            onSelected: (selected) {
-              setState(() {
-                selectedGcfgName = cfgName;
-                //widget.onSelectionChanged(selectedTag);
-              });
-            },
+          onSelected: (selected) {
+            setState(() {
+              selectedGcfgName = cfgName;
+              //widget.onSelectionChanged(selectedTag);
+            });
+          },
         ),
       );
       resultList.add(gameConfigChip);
@@ -45,10 +45,28 @@ class _TeamConfigChooseState extends State<TeamConfigChoose> {
     AmountConfiguration ac = widget.playerAmount == 0
         ? null
         : acs.singleWhere((ac) => ac.playerAmount == widget.playerAmount);
-    var gameCFGChips = ac == null ? null : _gameConfigChipList(ac);
+    var gameCFGChips = ac == null
+        ? Text('请选择参与游戏的人数')
+        : Wrap(children: _gameConfigChipList(ac));
+    var teamConfigChoosePad = Column(
+      // mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 20),
+        Container(
+          margin: EdgeInsets.only(left: 6),
+          child: Text(
+            '可选板子配置',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+        gameCFGChips,
+      ],
+    );
     return Container(
-        child: gameCFGChips == null
-            ? Text('请选择参与游戏的人数')
-            : Wrap(children: gameCFGChips));
+      height: 180,
+      alignment: Alignment.centerLeft,
+      child: teamConfigChoosePad,
+    );
   }
 }
