@@ -67,7 +67,7 @@ class WolfDataBase {
       id: 'jc4',
       title: '查看游戏记录',
       color: Colors.teal[400],
-      routeName: '/check-game-info',
+      routeName: '/checking-history',
     ),
   ];
 
