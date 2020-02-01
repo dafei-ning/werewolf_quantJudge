@@ -13,14 +13,27 @@ class ScoreListHomePage extends StatelessWidget {
     PreferredSizeWidget meetupBar = Platform.isIOS
         ? CupertinoNavigationBar(
             middle: Text(title),
+            trailing: TabBar(
+              tabs: [
+                Tab(text: "个人纪录"),
+                Tab(text: "湾区龙虎"),
+                Tab(text: "信用记录"),
+              ],
+            ),
           )
-        : AppBar(title: Text(title));
+        : AppBar(
+            title: Text(title),
+          );
 
-    return Scaffold(
-      appBar: meetupBar,
-      body: SafeArea(
-        child: Center(
-          child: Text('this is for ScoreList'),
+    return DefaultTabController(
+      length: 3,
+      
+      child: Scaffold(
+        appBar: meetupBar,
+        body: SafeArea(
+          child: Center(
+            child: Text('this is for ScoreList'),
+          ),
         ),
       ),
     );

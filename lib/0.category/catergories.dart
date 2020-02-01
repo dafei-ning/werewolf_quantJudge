@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/data/wolfDatabase.dart';
 import 'package:werewolf_quantjudge/models/category.dart';
 import 'categoryItem.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io';
 
-import '../data/simulatedData.dart';
-
 class CatergoriesScreen extends StatelessWidget {
-  final List<Category> categories = SimulateData().categories;
+  final List<Category> categories = WolfDataBase().categories;
   final String title;
 
   CatergoriesScreen(this.title);

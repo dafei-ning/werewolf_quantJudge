@@ -39,7 +39,7 @@ class WolfDataBase {
       id: 'c4',
       title: '狼人杀英雄榜',
       color: Colors.yellow,
-      routeName: '/meetup',
+      routeName: '/score-list',
     ),
   ];
 
