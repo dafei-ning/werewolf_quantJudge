@@ -12,11 +12,20 @@ class EnterRoom extends StatelessWidget {
     PreferredSizeWidget createRoomBar = CupertinoNavigationBar(
       middle: Text(title),
     );
+
+    var body = TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        
+        border: OutlineInputBorder(),
+        labelText: '请输入房间号'
+      ),
+    );
     return Scaffold(
       appBar: createRoomBar,
       body: Container(
         child: Center(
-          child: Text("this is for enter a room"),
+          child: body,
         ),
       ),
     );
