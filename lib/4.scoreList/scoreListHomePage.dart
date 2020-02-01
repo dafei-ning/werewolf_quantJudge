@@ -23,13 +23,31 @@ class ScoreListHomePage extends StatelessWidget {
           )
         : AppBar(
             title: Text(title),
+            bottom: TabBar(
+              tabs: [
+                Tab(text: "个人纪录"),
+                Tab(text: "湾区龙虎"),
+                Tab(text: "信用记录"),
+              ],
+            ),
+          );
+
+    PreferredSizeWidget meetupBar1 = AppBar(
+            title: Text(title),
+            bottom: TabBar(
+              tabs: [
+                Tab(text: "个人纪录"),
+                Tab(text: "湾区龙虎"),
+                Tab(text: "信用记录"),
+              ],
+            ),
           );
 
     return DefaultTabController(
       length: 3,
-      
+      initialIndex: 0,
       child: Scaffold(
-        appBar: meetupBar,
+        appBar: meetupBar1,
         body: SafeArea(
           child: Center(
             child: Text('this is for ScoreList'),
