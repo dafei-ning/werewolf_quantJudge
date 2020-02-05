@@ -27,11 +27,12 @@ class BehaviorHomePage extends StatefulWidget {
 
 class _BehaviorHomePageState extends State<BehaviorHomePage> {
   /*  Properties. */
+  BehaviorController bhCtrl = new BehaviorController();
+  bool _showRoundTable = false;
+
   List<MappedBehavior> mappedBehaviors = [];
   List<IndividualRecord> individualRecords = [];
   List<Behavior> behaviors = [];
-  BehaviorController bhCtrl = new BehaviorController();
-  bool _showRoundTable = false;
 
   // List<Behavior> behaviors = SimulateData().behaviors;
   // List<MappedBehavior> mappedBehaviors = SimulateData().mappedBehaviors;
