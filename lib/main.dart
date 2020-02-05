@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:werewolf_quantjudge/2.meetUp/meetUpHomePage.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/createRoom.dart';
-import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/enterRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/enterRoomDialog/enterRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/gameRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.4.returnToRoom/ReturnRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.5.checkHistory/checkHistory.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/gameIntroduction.dart';
@@ -71,6 +72,7 @@ class MyApp extends StatelessWidget {
          */
         CreateRoom.routeName: (ctx) => CreateRoom('配置房间'),
         EnterRoom.routeName: (ctx) => EnterRoom('进入房间'),
+        GameRoom.routeName: (ctx) => GameRoom('游戏房间'),
         ReturnRoom.routeName: (ctx) => CreateRoom('房间XXXXXXX'),
         CheckHistory.routeName: (ctx) => CheckHistory('个人游戏记录'),
         GameIntroduction.routeName: (ctx) => GameIntroduction('狼人杀游戏介绍')

@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class GameRoom extends StatelessWidget {
+  static const routeName = '/game-room';
+
+  final String title;
+
+  GameRoom(this.title);
+
   @override
   Widget build(BuildContext context) {
     // A raised button 显示从黑商处获得的礼物
@@ -27,14 +33,6 @@ class GameRoom extends StatelessWidget {
 
     PreferredSizeWidget createRoomBar = CupertinoNavigationBar(
       middle: Text("hi"),
-    );
-
-    var body = TextField(
-      obscureText: true,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: '请输入房间号',
-      ),
     );
 
     return Scaffold(

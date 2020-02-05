@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/enterRoomDialog/passwordDialog.dart';
 
 class EnterRoom extends StatelessWidget {
   static const routeName = '/enter-room';
@@ -14,18 +15,10 @@ class EnterRoom extends StatelessWidget {
       middle: Text(title),
     );
 
-    var body = TextField(
-      obscureText: true,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: '请输入房间号',
-      ),
-    );
-
     return Scaffold(
       appBar: createRoomBar,
       body: Center(
-        child: body,
+        child: PasswordDialog(),
       ),
     );
   }
