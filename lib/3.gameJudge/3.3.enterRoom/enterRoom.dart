@@ -17,7 +17,7 @@ class EnterRoom extends StatelessWidget {
       ),
     );
 
-    var showGitFromMarketer = Container(
+    var showGiftFromMarketer = Container(
       child: RaisedButton(
         child: Text('显示获得的礼物'),
         onPressed: () {
@@ -42,7 +42,7 @@ class EnterRoom extends StatelessWidget {
       appBar: createRoomBar,
       body: Builder(
         builder: (context) => Center(
-          child: showGitFromMarketer,
+          child: showGiftFromMarketer,
         ),
       ),
     );
