@@ -17,12 +17,16 @@ class EnterRoom extends StatelessWidget {
       ),
     );
 
-    var showGiftFromMarketer = Container(
-      child: RaisedButton(
-        child: Text('显示获得的礼物'),
-        onPressed: () {
-          Scaffold.of(context).showSnackBar(snackBar);
-        },
+    var showGiftFromMarketer = Builder(
+      builder: (context) => Center(
+        child: Container(
+          child: RaisedButton(
+            child: Text('显示获得的礼物'),
+            onPressed: () {
+              Scaffold.of(context).showSnackBar(snackBar);
+            },
+          ),
+        ),
       ),
     );
 
@@ -40,10 +44,8 @@ class EnterRoom extends StatelessWidget {
 
     return Scaffold(
       appBar: createRoomBar,
-      body: Builder(
-        builder: (context) => Center(
-          child: showGiftFromMarketer,
-        ),
+      body: Container(
+        child: showGiftFromMarketer,
       ),
     );
   }
