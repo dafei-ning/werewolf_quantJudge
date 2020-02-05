@@ -9,26 +9,6 @@ class EnterRoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var snackBar = SnackBar(
-      content: Text('你获得了 猎人的抢！'),
-      action: SnackBarAction(
-        label: 'undo',
-        onPressed: () {},
-      ),
-    );
-
-    var showGiftFromMarketer = Builder(
-      builder: (context) => Center(
-        child: Container(
-          child: RaisedButton(
-            child: Text('显示获得的礼物'),
-            onPressed: () {
-              Scaffold.of(context).showSnackBar(snackBar);
-            },
-          ),
-        ),
-      ),
-    );
 
     PreferredSizeWidget createRoomBar = CupertinoNavigationBar(
       middle: Text(title),
@@ -44,8 +24,8 @@ class EnterRoom extends StatelessWidget {
 
     return Scaffold(
       appBar: createRoomBar,
-      body: Container(
-        child: showGiftFromMarketer,
+      body: Center(
+        child: body,
       ),
     );
   }
