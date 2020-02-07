@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:werewolf_quantjudge/2.meetUp/meetUpHomePage.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.2.createRoom/createRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/enterRoomDialog/enterRoom.dart';
-import 'package:werewolf_quantjudge/3.gameJudge/3.3.enterRoom/gameRoom.dart';
+import 'package:werewolf_quantjudge/3.gameJudge/3.6.gameRoom/gameRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.4.returnToRoom/ReturnRoom.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/3.5.checkHistory/checkHistory.dart';
 import 'package:werewolf_quantjudge/3.gameJudge/gameIntroduction/gameIntroduction.dart';
