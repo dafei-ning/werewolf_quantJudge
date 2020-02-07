@@ -31,6 +31,11 @@ class CharacterSet {
   });
 }
 
+class Character {
+  SeerSight seerSight;
+  Object identity;
+}
+
 enum Special {
   seer, // 预言家
   witch, // 女巫
@@ -76,4 +81,9 @@ enum GamePattern {
   shadow_avenger,
   nightmare_guard,
   s_w_g_h_i3,
+}
+
+enum SeerSight {
+  goodMan,
+  wolfMan,
 }

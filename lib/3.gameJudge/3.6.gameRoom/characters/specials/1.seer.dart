@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Seer extends StatefulWidget {
   final List<int> playerList;
+  final 
   Seer(this.playerList);
 
   @override
