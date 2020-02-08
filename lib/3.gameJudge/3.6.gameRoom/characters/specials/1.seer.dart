@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/data/simulatedData.dart';
+import 'package:werewolf_quantjudge/models/gameIntroModel.dart';
 
 class Seer extends StatefulWidget {
-  final List<int> playerList;
-  final 
+  final Map<int, Character> playerList;
+  final Map<int, Character> simulatedPlayerList = SimulateData().characterGroup;
   Seer(this.playerList);
 
   @override
@@ -13,7 +15,6 @@ class _SeerState extends State<Seer> {
   void _checkOnePlayer() {
 
   }
-
   
   @override
   Widget build(BuildContext context) {

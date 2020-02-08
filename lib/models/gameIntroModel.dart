@@ -34,6 +34,7 @@ class CharacterSet {
 class Character {
   SeerSight seerSight;
   Object identity;
+  Character({this.seerSight, this.identity});
 }
 
 enum Special {

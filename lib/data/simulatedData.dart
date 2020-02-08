@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:werewolf_quantjudge/models/gameIntroModel.dart';
 import '../models/individual.dart';
 import '../models/behavior.dart';
 import '../models/mappedBehavior.dart';
@@ -878,4 +879,59 @@ class SimulateData {
       routeName: '/meetup',
     ),
   ];
+
+  Map<int, Character> characterGroup = {
+    1 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Special.seer,
+    ),
+    2 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Special.idiot,
+    ),
+    3 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Special.blackMarketer,
+    ),
+    4 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Special.witch,
+    ),
+    5 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Villager.ordinVillager,
+    ),
+    6 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Villager.ordinVillager,
+    ),
+    7 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Villager.ordinVillager,
+    ),
+    8 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Villager.ordinVillager,
+    ), 
+    9 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: ThirdParty.bastard,
+    ), 
+    10 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Wolf.brotherOldWolf,
+    ), 
+    11 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Wolf.brotherYoungWolf,
+    ), 
+    12 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Wolf.ordinWolf,
+    ), 
+    13 : Character(
+      seerSight: SeerSight.goodMan,
+      identity: Wolf.ordinWolf,
+    ), 
+  };
 }
