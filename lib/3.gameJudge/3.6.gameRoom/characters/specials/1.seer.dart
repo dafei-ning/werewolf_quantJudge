@@ -4,7 +4,7 @@ import 'package:werewolf_quantjudge/models/gameIntroModel.dart';
 
 class Seer extends StatefulWidget {
   final Map<int, Character> playerList;
-  final Map<int, Character> simulatedPlayerList = SimulateData().characterGroup;
+  final Map<int, Character> playerList1 = SimulateData().characterGroup;
   Seer(this.playerList);
 
   @override
@@ -12,8 +12,14 @@ class Seer extends StatefulWidget {
 }
 
 class _SeerState extends State<Seer> {
-  void _checkOnePlayer() {
 
+  // 预言家功能
+  String _checkOnePlayer(int playerNumber) {
+    Character pickedPlayer =  widget.playerList1[playerNumber];
+    if (pickedPlayer.seerSight == SeerSight.wolfMan) {
+      return '狼人';
+    }
+    return '好人';
   }
   
   @override
