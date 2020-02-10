@@ -890,6 +890,7 @@ class SimulateData {
       seerSight: SeerSight.goodMan,
       identity: Special.idiot,
       live: true,
+      skillStatus: true,
     ),
     3 : Character(
       seerSight: SeerSight.goodMan,
@@ -900,11 +901,13 @@ class SimulateData {
       seerSight: SeerSight.goodMan,
       identity: Special.witch,
       live: true,
+      skillStatus: true,
     ),
     5 : Character(
       seerSight: SeerSight.goodMan,
-      identity: Villager.ordinVillager,
+      identity: Special.hunter,
       live: true,
+      skillStatus: true,
     ),
     6 : Character(
       seerSight: SeerSight.goodMan,

@@ -35,7 +35,13 @@ class Character {
   SeerSight seerSight;
   Object identity;
   bool live;
-  Character({this.seerSight, this.identity, this.live});
+  bool skillStatus;
+  Character({
+    this.seerSight,
+    this.identity,
+    this.live,
+    this.skillStatus,
+  });
 }
 
 enum Special {
