@@ -884,54 +884,67 @@ class SimulateData {
     1 : Character(
       seerSight: SeerSight.goodMan,
       identity: Special.seer,
+      live: true,
     ),
     2 : Character(
       seerSight: SeerSight.goodMan,
       identity: Special.idiot,
+      live: true,
     ),
     3 : Character(
       seerSight: SeerSight.goodMan,
       identity: Special.blackMarketer,
+      live: true,
     ),
     4 : Character(
       seerSight: SeerSight.goodMan,
       identity: Special.witch,
+      live: true,
     ),
     5 : Character(
       seerSight: SeerSight.goodMan,
       identity: Villager.ordinVillager,
+      live: true,
     ),
     6 : Character(
       seerSight: SeerSight.goodMan,
       identity: Villager.ordinVillager,
+      live: true,
     ),
     7 : Character(
       seerSight: SeerSight.goodMan,
       identity: Villager.ordinVillager,
+      live: true,
     ),
     8 : Character(
       seerSight: SeerSight.goodMan,
       identity: Villager.ordinVillager,
+      live: true,
     ), 
     9 : Character(
       seerSight: SeerSight.goodMan,
       identity: ThirdParty.bastard,
+      live: true,
     ), 
     10 : Character(
       seerSight: SeerSight.goodMan,
       identity: Wolf.brotherOldWolf,
+      live: true,
     ), 
     11 : Character(
       seerSight: SeerSight.goodMan,
       identity: Wolf.brotherYoungWolf,
+      live: true,
     ), 
     12 : Character(
       seerSight: SeerSight.goodMan,
       identity: Wolf.ordinWolf,
+      live: true,
     ), 
     13 : Character(
       seerSight: SeerSight.goodMan,
       identity: Wolf.ordinWolf,
+      live: true,
     ), 
   };
 }

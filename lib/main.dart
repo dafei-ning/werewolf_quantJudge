@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
         CreateRoom.routeName: (ctx) => CreateRoom('配置房间'),
         EnterRoom.routeName: (ctx) => EnterRoom('进入房间'),
         GameRoom.routeName: (ctx) => GameRoom('游戏房间'),
-        ReturnRoom.routeName: (ctx) => CreateRoom('房间XXXXXXX'),
+        ReturnRoom.routeName: (ctx) => GameRoom('房间XXXXXXX'),
         CheckHistory.routeName: (ctx) => CheckHistory('个人游戏记录'),
         GameIntroduction.routeName: (ctx) => GameIntroduction('狼人杀游戏介绍')
       },
